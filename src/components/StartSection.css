@@ -1,0 +1,552 @@
+/* =========================================
+   START SECTION
+========================================= */
+
+.start-section {
+  width: 100%;
+
+  background: #f5f4ef;
+  color: #06252a;
+
+  padding: 110px 0 120px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.start-heading {
+  width: min(1050px, 90%);
+
+  margin: 0 auto 42px;
+
+  text-align: center;
+}
+
+.start-heading h2 {
+  margin: 0;
+
+  font-size: clamp(44px, 4.5vw, 64px);
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.start-container {
+  width: min(1040px, 90%);
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #d2d2d2;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  position: relative;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.start-card {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 40px 38px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.start-card:first-child {
+  border-right: 1px solid #d2d2d2;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 470px;
+}
+
+.card-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.card-label.blue {
+  color: #286ac5;
+}
+
+.card-label.green {
+  color: #18864a;
+}
+
+.card-label.red {
+  color: #d53b5d;
+}
+
+
+/* =========================================
+   CARD HEADING
+========================================= */
+
+.start-card h3 {
+  margin: 0 0 20px;
+
+  font-size: clamp(30px, 2.5vw, 40px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 700;
+
+  color: #06252a;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.start-card p {
+  max-width: 480px;
+
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  color: #31565d;
+}
+
+
+/* =========================================
+   OUTLINE BUTTON
+========================================= */
+
+.outline-button {
+  margin-top: 30px;
+
+  padding: 14px 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid #06252a;
+
+  border-radius: 50px;
+
+  background: transparent;
+
+  color: #06252a;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.outline-button:hover {
+  background: #06252a;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   BIG 01 / 02 NUMBERS
+========================================= */
+
+.big-number {
+  position: absolute;
+
+  right: 20px;
+
+  bottom: -35px;
+
+  font-size: 175px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -10px;
+
+  color: #f0f1f2;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONSULTATION
+========================================= */
+
+.consultation-section {
+  grid-column: 1 / -1;
+
+  min-height: 280px;
+
+  padding: 45px 38px;
+
+  display: grid;
+
+  grid-template-columns: 1.35fr 0.9fr;
+
+  gap: 45px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   CONSULTATION CONTENT
+========================================= */
+
+.consultation-content {
+  position: relative;
+  z-index: 2;
+}
+
+.consultation-content h3 {
+  margin: 0 0 18px;
+
+  font-size: clamp(30px, 2.5vw, 40px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+
+  color: #06252a;
+}
+
+.consultation-content p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: #31565d;
+}
+
+
+/* =========================================
+   CONSULTATION ACTION
+========================================= */
+
+.consultation-action {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   COMPANY BOX
+========================================= */
+
+.consultation-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 18px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 15px;
+
+  background: #fafafa;
+}
+
+
+/* =========================================
+   COMPANY CIRCLE
+========================================= */
+
+.consultation-circle {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  flex-shrink: 0;
+}
+
+.consultation-circle img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.consultation-box strong {
+  display: block;
+
+  font-size: 16px;
+
+  color: #06252a;
+}
+
+.consultation-box span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+
+  color: #718083;
+}
+
+
+/* =========================================
+   DARK BUTTON
+========================================= */
+
+.dark-button {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #06252a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.dark-button:hover {
+  transform: translateY(-2px);
+
+  background: #0b3b42;
+}
+
+
+/* =========================================
+   BOTTOM ACCENT
+========================================= */
+
+.start-container::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #286ac5 0%,
+    #286ac5 50%,
+    #3c9658 50%,
+    #3c9658 100%
+  );
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .start-section {
+    padding: 90px 0 100px;
+  }
+
+  .start-heading {
+    margin-bottom: 38px;
+  }
+
+  .start-heading h2 {
+    letter-spacing: -2.5px;
+  }
+
+  .start-container {
+    width: 92%;
+  }
+
+  .start-card {
+    padding: 38px 32px;
+  }
+
+  .consultation-section {
+    padding: 40px 32px;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .start-section {
+    padding: 75px 0 90px;
+  }
+
+  .start-heading {
+    width: 90%;
+
+    margin-bottom: 32px;
+  }
+
+  .start-heading h2 {
+    font-size: 40px;
+
+    letter-spacing: -2px;
+
+    line-height: 1.02;
+  }
+
+  .start-container {
+    width: 92%;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 18px;
+  }
+
+  .start-card {
+    min-height: 380px;
+
+    padding: 35px 26px;
+
+    border-right: none !important;
+  }
+
+  .start-card:first-child {
+    border-bottom: 1px solid #d2d2d2;
+  }
+
+  .start-card h3 {
+    font-size: 32px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .start-card p {
+    font-size: 15px;
+  }
+
+  .big-number {
+    font-size: 140px;
+
+    right: 10px;
+  }
+
+  .consultation-section {
+    padding: 35px 26px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .consultation-content h3 {
+    font-size: 32px;
+  }
+
+  .consultation-content p {
+    font-size: 15px;
+  }
+
+}

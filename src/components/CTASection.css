@@ -1,0 +1,599 @@
+/* ===============================
+   MAIN SECTION
+================================ */
+
+.cta-section {
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(42, 111, 150, 0.45),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 40%,
+      rgba(35, 170, 120, 0.45),
+      transparent 45%
+    ),
+    #073239;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 40px;
+}
+
+
+/* ===============================
+   BACKGROUND DOTS
+================================ */
+
+.cta-dots {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 8px 8px;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+
+/* ===============================
+   MAIN WRAPPER
+================================ */
+
+.cta-wrapper {
+  position: relative;
+
+  width: 950px;
+  max-width: 95%;
+
+  min-height: 370px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+
+.cta-content {
+  position: relative;
+  z-index: 3;
+
+  width: 510px;
+  min-height: 290px;
+
+  padding: 32px 28px;
+
+  background: rgba(3, 39, 44, 0.86);
+
+  border: 1px solid rgba(120, 205, 218, 0.15);
+
+  border-radius: 5px;
+
+  /* Quick appearance */
+  animation: contentAppear 0.55s ease-out both;
+}
+
+
+@keyframes contentAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===============================
+   HEADING
+================================ */
+
+.cta-content h2 {
+  margin: 0 0 14px;
+
+  color: white;
+
+  font-size: 32px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+.cta-content h2 span {
+  color: #75c9d5;
+}
+
+
+/* ===============================
+   DESCRIPTION
+================================ */
+
+.cta-content p {
+  margin: 0 0 18px;
+
+  color: #f4f7f7;
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  font-weight: 400;
+}
+
+
+/* ===============================
+   CONSULTATION BUTTON
+================================ */
+
+.consultation-btn {
+  border: none;
+
+  padding: 12px 18px;
+
+  background: #fff28a;
+
+  color: #1c302f;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.consultation-btn:hover {
+  transform: translateY(-2px);
+
+  background: #fff7a9;
+}
+
+
+/* ===============================
+   CLUTCH CARD
+================================ */
+
+.clutch-card {
+  position: absolute;
+
+  right: 0;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  width: 540px;
+  height: 365px;
+
+  background:
+    linear-gradient(
+      rgba(8, 20, 29, 0.92),
+      rgba(8, 20, 29, 0.92)
+    );
+
+  border: 10px solid #101b20;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* ===============================
+   SUBTLE CARD GRID
+================================ */
+
+.clutch-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 8px 8px;
+
+  pointer-events: none;
+}
+
+
+/* ===============================
+   CLUTCH CONTENT
+================================ */
+
+.clutch-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  margin-top: -20px;
+}
+
+
+/* ===============================
+   CLUTCH TITLE
+================================ */
+
+.clutch-title {
+  color: white;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  margin-bottom: 5px;
+}
+
+
+/* ===============================
+   RATING
+================================ */
+
+.clutch-rating {
+  color: white;
+
+  font-size: 78px;
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  min-width: 180px;
+
+  text-align: center;
+
+  animation: ratingPop 0.45s ease-out;
+}
+
+
+@keyframes ratingPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ===============================
+   STARS
+================================ */
+
+.clutch-stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.clutch-stars.stars-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.clutch-stars span {
+  color: #f6d928;
+
+  font-size: 22px;
+
+  opacity: 0;
+
+  transform: scale(0.5);
+}
+
+
+/* Stars appear one by one */
+
+.stars-visible span:nth-child(1) {
+  animation: starAppear 0.35s ease forwards;
+}
+
+.stars-visible span:nth-child(2) {
+  animation: starAppear 0.35s 0.12s ease forwards;
+}
+
+.stars-visible span:nth-child(3) {
+  animation: starAppear 0.35s 0.24s ease forwards;
+}
+
+.stars-visible span:nth-child(4) {
+  animation: starAppear 0.35s 0.36s ease forwards;
+}
+
+.stars-visible span:nth-child(5) {
+  animation: starAppear 0.35s 0.48s ease forwards;
+}
+
+
+@keyframes starAppear {
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* ===============================
+   VERIFIED REVIEWS
+================================ */
+
+.clutch-reviews {
+  margin-top: 12px;
+
+  color: #e6e9e9;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+.clutch-reviews.reviews-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ===============================
+   REVIEW BUTTON
+================================ */
+
+.reviews-btn {
+  position: absolute;
+
+  right: 30px;
+
+  bottom: 20px;
+
+  z-index: 3;
+
+  padding: 10px 16px;
+
+  background: transparent;
+
+  border: 1px solid white;
+
+  color: white;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.reviews-btn:hover {
+  background: white;
+
+  color: #092d32;
+}
+
+
+/* ===============================
+   BOTTOM SLIDER
+================================ */
+
+.clutch-slider {
+  position: absolute;
+
+  bottom: 8px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  z-index: 3;
+}
+
+
+.clutch-slider span {
+  width: 4px;
+
+  height: 4px;
+
+  background: #dce2e2;
+
+  border-radius: 50%;
+}
+
+
+.clutch-slider span.active {
+  width: 110px;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #68777b;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+
+  .cta-wrapper {
+    width: 900px;
+  }
+
+  .cta-content {
+    width: 470px;
+  }
+
+  .clutch-card {
+    width: 500px;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .cta-section {
+    padding: 60px 20px;
+  }
+
+  .cta-wrapper {
+    width: 100%;
+
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .cta-content {
+    width: 100%;
+
+    min-height: auto;
+  }
+
+  .clutch-card {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    max-width: 540px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .cta-content h2 {
+    font-size: 25px;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+  }
+
+  .clutch-card {
+    height: 330px;
+
+    border-width: 7px;
+
+    border-radius: 20px;
+  }
+
+  .clutch-rating {
+    font-size: 62px;
+  }
+
+  .clutch-reviews {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .reviews-btn {
+    right: 15px;
+
+    bottom: 20px;
+
+    font-size: 11px;
+  }
+}

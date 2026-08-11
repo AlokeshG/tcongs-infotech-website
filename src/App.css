@@ -1,0 +1,831 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #061f23;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: calc(100% - 20px);
+  height: 76px;
+
+  margin: 10px auto 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  background: #06252a;
+
+  position: sticky;
+  top: 10px;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   LEFT BRAND AREA
+========================================= */
+
+.navbar-brand {
+  width: 145px;
+  height: 100%;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  width: 38px;
+  height: 38px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   BRAND TEXT
+========================================= */
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 16px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.4px;
+
+  color: #ffffff;
+}
+
+.brand-subtitle {
+  margin-top: 4px;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 2.2px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar-links {
+  flex: 1;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+}
+
+.navbar-links a {
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+
+  transition: opacity 0.25s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.55;
+}
+
+
+/* =========================================
+   LET'S TALK
+========================================= */
+
+.talk-button {
+  height: 100%;
+
+  min-width: 120px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 0 12px 12px 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.talk-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 72px;
+  }
+
+  .navbar-brand {
+    width: 135px;
+
+    padding: 0 15px;
+  }
+
+  .navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+
+  .talk-button {
+    min-width: 110px;
+
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    width: calc(100% - 16px);
+
+    height: 68px;
+
+    margin-top: 8px;
+
+    border-radius: 10px;
+  }
+
+  .navbar-brand {
+    width: auto;
+
+    padding: 0 14px;
+
+    border-right: none;
+  }
+
+  .navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .talk-button {
+    height: 100%;
+
+    min-width: 105px;
+
+    padding: 0 14px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  padding: 80px 30px 120px;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   HERO BACKGROUND GLOW
+========================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: rgba(78, 210, 190, 0.08);
+
+  filter: blur(100px);
+
+  top: 15%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1200px;
+
+  width: 100%;
+}
+
+
+/* =========================
+   HERO HEADING
+========================= */
+
+.hero h1 {
+  font-size: clamp(55px, 7vw, 110px);
+
+  line-height: 0.95;
+
+  letter-spacing: -5px;
+
+  font-weight: 700;
+
+  margin: 0;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   HERO DESCRIPTION
+========================= */
+
+.hero p {
+  max-width: 650px;
+
+  margin: 35px auto 0;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-button {
+  margin-top: 35px;
+
+  padding: 16px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #ffffff;
+
+  color: #062126;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+
+  padding-left: 35px;
+
+  padding-right: 35px;
+}
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  z-index: 10;
+}
+
+.scroll-icon {
+  width: 50px;
+  height: 62px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  animation: scrollMove 2s infinite;
+}
+
+.scroll-indicator span {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+}
+
+@keyframes scrollMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar-brand {
+    width: 210px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+  }
+
+  .talk-button {
+    padding: 13px 18px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    width: calc(100% - 24px);
+
+    height: 78px;
+
+    margin-top: 12px;
+
+    padding: 0 16px;
+
+    top: 12px;
+  }
+
+
+  .navbar-brand {
+    width: auto;
+
+    flex: 1;
+
+    gap: 10px;
+  }
+
+
+  .navbar-logo {
+    width: 45px;
+
+    height: 45px;
+  }
+
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+
+  .brand-subtitle {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-top: 4px;
+  }
+
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  .talk-button {
+    padding: 11px 16px;
+
+    font-size: 14px;
+  }
+
+
+  .talk-button svg {
+    width: 16px;
+
+    height: 16px;
+  }
+
+
+  .hero {
+    min-height: calc(100vh - 90px);
+
+    padding: 60px 20px 100px;
+  }
+
+
+  .hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+
+    line-height: 1;
+  }
+
+
+  .hero p {
+    font-size: 16px;
+
+    margin-top: 25px;
+  }
+
+
+  .hero-button {
+    margin-top: 25px;
+
+    padding: 14px 25px;
+  }
+
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 72px;
+  }
+
+
+  .navbar-logo {
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+
+  .brand-subtitle {
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .talk-button {
+    padding: 10px 13px;
+  }
+
+
+  .talk-button span {
+    display: none;
+  }
+
+
+  .hero h1 {
+    font-size: 40px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .hero p {
+    font-size: 15px;
+  }
+
+}
+/* =========================
+   PARTNERS SECTION
+========================= */
+
+.partners-section {
+  width: 100%;
+
+  height: 115px;
+
+  display: flex;
+  align-items: stretch;
+
+  background: #062126;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  overflow: hidden;
+}
+
+
+/* Fixed "OUR PARTNERS" */
+
+.partners-title {
+  width: 230px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #050505;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+  z-index: 2;
+}
+
+
+/* Moving area */
+
+.partners-marquee {
+  flex: 1;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* Moving track */
+
+.partners-track {
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  animation: partnerScroll 25s linear infinite;
+}
+
+
+/* Individual company */
+
+.partner-item {
+  min-width: 190px;
+
+  padding: 0 35px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+
+/* Continuous movement */
+
+@keyframes partnerScroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .partners-section {
+    height: 90px;
+  }
+
+  .partners-title {
+    width: 130px;
+
+    font-size: 11px;
+  }
+
+  .partner-item {
+    min-width: 140px;
+
+    padding: 0 20px;
+
+    font-size: 16px;
+  }
+
+}

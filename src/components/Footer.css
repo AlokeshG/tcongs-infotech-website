@@ -1,0 +1,459 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  width: 100%;
+  background: #032d33;
+  color: #ffffff;
+
+  /* IMPORTANT */
+  padding: 105px 0 0;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================
+   EXACT TOP BORDER / STRIPE DESIGN
+========================================= */
+
+.footer::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 76px;
+
+  background:
+    /* Top blue/teal dotted area */
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ) 0 0 / 9px 9px,
+
+    /* Main smooth blue → teal gradient */
+    linear-gradient(
+      90deg,
+      #22557c 0%,
+      #315b80 30%,
+      #365a78 50%,
+      #286873 75%,
+      #176e67 100%
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   STRIPES
+========================================= */
+
+.footer::after {
+  content: "";
+
+  position: absolute;
+
+  top: 17px;
+  left: 0;
+
+  width: 100%;
+  height: 59px;
+
+  background:
+    /* Purple stripe */
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 7px,
+
+      #8f8bc6 7px,
+      #8f8bc6 14px,
+
+      /* Dark gap */
+      #344651 14px,
+      #344651 20px,
+
+      /* Grey stripe */
+      #68717b 20px,
+      #68717b 28px,
+
+      /* Dark grey/teal transition */
+      #3b4e55 28px,
+      #3b4e55 35px,
+
+      /* Dark teal stripe */
+      #193d47 35px,
+      #193d47 42px,
+
+      /* Bottom dark area */
+      #0b2f37 42px,
+      #0b2f37 59px
+    );
+
+  z-index: 1;
+}
+
+/* =========================================
+   TOP CONTENT
+========================================= */
+
+.footer-content {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.1fr;
+
+  column-gap: 80px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.footer-column h4 {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.footer-column a {
+  color: #46c9f3;
+  text-decoration: none;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.footer-column a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-column p {
+  margin: 18px 0 5px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: #ffffff;
+}
+
+
+.contact-column p strong {
+  font-weight: 600;
+}
+
+
+/* =========================================
+   REVIEW
+========================================= */
+
+.footer-review {
+  margin-top: 12px;
+}
+
+
+.footer-review > span {
+  display: block;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  margin-bottom: 2px;
+}
+
+
+.review-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.review-row strong {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+
+.stars {
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+
+.footer-review small {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  margin-left: 3px;
+}
+
+
+/* =========================================
+   LARGE TCONGS INFOTECH LOGO
+========================================= */
+
+.footer-big-logo {
+  width: 100%;
+  max-width: none;
+
+  margin: 55px auto 10px;
+
+  text-align: center;
+
+  font-size: clamp(100px, 14vw, 190px);
+  font-weight: 400;
+  line-height: 0.8;
+
+  letter-spacing: -8px;
+
+  color: transparent;
+  -webkit-text-stroke: 1px #087487;
+
+  opacity: 0.8;
+
+  white-space: nowrap;
+  user-select: none;
+
+  position: relative;
+  z-index: 2;
+
+  /* Force exact center */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.footer-bottom {
+  width: 100%;
+  max-width: 950px;
+
+  margin: 25px auto 0;
+
+  padding-bottom: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  color: #ffffff;
+}
+
+
+.copyright a {
+  color: #4bc7ef;
+  text-decoration: none;
+}
+
+
+.copyright a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.social-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 14px;
+}
+
+
+.social-section strong {
+  font-weight: 600;
+}
+
+
+.social-section a {
+  color: #59cce9;
+
+  text-decoration: none;
+
+  font-size: 20px;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.social-section a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .footer {
+    padding-top: 90px;
+  }
+
+
+  .footer::before {
+    height: 60px;
+  }
+
+
+  .footer::after {
+    top: 17px;
+    height: 38px;
+  }
+
+
+  .footer-content {
+    width: 85%;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+  }
+
+
+  .contact-column {
+    grid-column: span 2;
+  }
+
+
+  .footer-big-logo {
+    margin-top: 55px;
+
+    font-size: 100px;
+
+    letter-spacing: -5px;
+  }
+
+
+  .footer-bottom {
+    width: 85%;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding-top: 80px;
+  }
+
+
+  .footer::before {
+    height: 55px;
+  }
+
+
+  .footer::after {
+    top: 15px;
+    height: 35px;
+  }
+
+
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .contact-column {
+    grid-column: auto;
+  }
+
+
+  .footer-big-logo {
+    font-size: 65px;
+
+    letter-spacing: -3px;
+
+    margin-top: 45px;
+  }
+
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+
+  .copyright {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .social-section {
+    flex-wrap: wrap;
+  }
+}

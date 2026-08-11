@@ -1,0 +1,672 @@
+/* =========================================================
+   APPROACH SECTION
+========================================================= */
+
+.approach-section {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #06252a;
+  color: #ffffff;
+
+  padding: 70px 20px 100px;
+
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DOT BACKGROUND
+========================================================= */
+
+.approach-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
+  );
+
+  background-size: 16px 16px;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.approach-container {
+  width: 100%;
+  max-width: 970px;
+
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.approach-header h2 {
+  margin: 0 0 28px;
+
+  font-size: 30px;
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   THREE STEPS
+========================================================= */
+
+.approach-steps {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 50px;
+
+  margin-bottom: 25px;
+}
+
+
+.approach-step {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   STEP CIRCLE
+========================================================= */
+
+.step-number {
+  width: 29px;
+  height: 29px;
+
+  min-width: 29px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #06252a;
+}
+
+
+.step-blue {
+  background: #78d5e6;
+}
+
+
+.step-purple {
+  background: #a88fd8;
+}
+
+
+.step-green {
+  background: #5fc875;
+}
+
+
+/* =========================================================
+   STEP TEXT
+========================================================= */
+
+.approach-step h3 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.approach-step p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   DIAGRAM
+========================================================= */
+
+.approach-diagram {
+  width: 100%;
+
+  height: 285px;
+
+  position: relative;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 4px;
+
+  background: rgba(3, 35, 40, 0.35);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DIAGRAM TITLE
+========================================================= */
+
+.diagram-title {
+  position: absolute;
+
+  top: 37px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  font-size: 38px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SVG ARROWS
+========================================================= */
+
+.diagram-arrow {
+  position: absolute;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   GREEN ARROW
+========================================================= */
+
+.green-arrow {
+  width: 44%;
+
+  height: 155px;
+
+  left: 5%;
+
+  top: 55px;
+}
+
+
+/* =========================================================
+   BLUE ARROW
+========================================================= */
+
+.blue-arrow {
+  width: 44%;
+
+  height: 155px;
+
+  right: 5%;
+
+  top: 55px;
+}
+
+
+/* =========================================================
+   PURPLE ARROW
+========================================================= */
+
+.purple-arrow {
+  width: 67%;
+
+  height: 135px;
+
+  left: 16.5%;
+
+  bottom: 22px;
+}
+
+
+/* =========================================================
+   SHIP / CRAFT
+========================================================= */
+
+.diagram-label {
+  position: absolute;
+
+  z-index: 8;
+
+  font-size: 38px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+
+  color: #ffffff;
+}
+
+
+/* SHIP */
+
+.ship-label {
+  left: 30px;
+
+  bottom: 76px;
+}
+
+
+/* CRAFT */
+
+.craft-label {
+  right: 30px;
+
+  bottom: 76px;
+}
+
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+.diagram-icons {
+  position: absolute;
+
+  left: 50%;
+  top: 54%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+}
+
+
+.diagram-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  filter: grayscale(1);
+
+  opacity: 0.20;
+}
+
+
+/* =========================================================
+   ICON HIGHLIGHT
+========================================================= */
+
+.bicycle {
+  animation: bicycleHighlight 6s ease-in-out infinite;
+}
+
+
+.car {
+  animation: carHighlight 6s ease-in-out infinite;
+}
+
+
+.skateboard {
+  animation: skateboardHighlight 6s ease-in-out infinite;
+}
+
+
+/* BICYCLE */
+
+@keyframes bicycleHighlight {
+
+  0%,
+  30% {
+    opacity: 0.2;
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+
+  40%,
+  55% {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1.08);
+  }
+
+  65%,
+  100% {
+    opacity: 0.2;
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+}
+
+
+/* CAR */
+
+@keyframes carHighlight {
+
+  0%,
+  50% {
+    opacity: 0.2;
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+
+  60%,
+  75% {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1.08);
+  }
+
+  85%,
+  100% {
+    opacity: 0.2;
+    filter: grayscale(1);
+    transform: scale(0.95);
+  }
+}
+
+
+/* SKATEBOARD */
+
+@keyframes skateboardHighlight {
+
+  0%,
+  70% {
+    opacity: 0.2;
+    filter: grayscale(1);
+  }
+
+  80%,
+  90% {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+
+  100% {
+    opacity: 0.2;
+    filter: grayscale(1);
+  }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.approach-description {
+  margin-top: 13px;
+}
+
+
+.approach-description h3 {
+  margin: 0 0 7px;
+
+  font-size: 16px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+.approach-description p {
+  width: 70%;
+
+  margin: 0 0 14px;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.approach-description button {
+  padding: 9px 16px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #06252a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.approach-description button:hover {
+  background: #75d7e8;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .approach-section {
+    padding: 60px 25px 80px;
+  }
+
+  .approach-steps {
+    column-gap: 25px;
+  }
+
+  .approach-header h2 {
+    font-size: 28px;
+  }
+
+  .diagram-title {
+    font-size: 34px;
+  }
+
+  .diagram-label {
+    font-size: 32px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .approach-section {
+    padding: 50px 18px 70px;
+  }
+
+
+  .approach-header h2 {
+    font-size: 25px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .approach-steps {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+
+  .approach-diagram {
+    height: 380px;
+  }
+
+
+  .diagram-title {
+    top: 28px;
+
+    font-size: 30px;
+  }
+
+
+  .diagram-label {
+    font-size: 28px;
+  }
+
+
+  .ship-label {
+    left: 15px;
+
+    bottom: 110px;
+  }
+
+
+  .craft-label {
+    right: 15px;
+
+    bottom: 110px;
+  }
+
+
+  .green-arrow {
+    width: 70%;
+
+    left: -5%;
+
+    top: 60px;
+  }
+
+
+  .blue-arrow {
+    width: 70%;
+
+    right: -5%;
+
+    top: 60px;
+  }
+
+
+  .purple-arrow {
+    width: 90%;
+
+    left: 5%;
+
+    bottom: 35px;
+  }
+
+
+  .diagram-icons {
+    gap: 10px;
+  }
+
+
+  .diagram-icon {
+    font-size: 28px;
+  }
+
+
+  .approach-description p {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .approach-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+
+  .approach-diagram {
+    height: 350px;
+  }
+
+
+  .diagram-title {
+    font-size: 27px;
+  }
+
+
+  .diagram-label {
+    font-size: 25px;
+  }
+
+}
