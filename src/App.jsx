@@ -1,7 +1,10 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Partners from "./components/Partners";
 import StartSection from "./components/StartSection";
 import SolutionSection from "./components/SolutionSection";
+import ServicesSection from "./components/ServicesSection";
 import ResourcesSection from "./components/ResourcesSection";
 import AboutSection from "./components/AboutSection";
 import ApproachSection from "./components/ApproachSection";
@@ -10,7 +13,10 @@ import CaseStudy from "./components/CaseStudy";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
-function App() {
+import CaseStudyPage from "./pages/CaseStudyPage";
+
+
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -21,21 +27,49 @@ function App() {
 
       <StartSection />
 
+      <ServicesSection />
+
       <ResourcesSection />
 
       <AboutSection />
 
-       <ApproachSection />
+      <ApproachSection />
 
-       <TestimonialsSection />
+      <TestimonialsSection />
 
-       <CaseStudy />
+      <CaseStudy />
 
-       <CTASection />
+      <CTASection />
 
-       <Footer />
+      <Footer />
     </>
   );
 }
+
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* Main Website */}
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+
+        {/* Dynamic Case Study Page */}
+        <Route
+          path="/case-study/:id"
+          element={<CaseStudyPage />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
+
 
 export default App;

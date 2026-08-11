@@ -1,50 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "./CaseStudy.css";
-
-const screens = [
-  {
-    title: "Editing Management Layer",
-    date: "2026-06-26",
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Field Management",
-    date: "2026-06-27",
-    image:
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Crop Analysis",
-    date: "2026-06-28",
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+import projects from "../data/projects";
 
 function CaseStudy() {
-  const [screenIndex, setScreenIndex] = useState(0);
+  const [projectIndex, setProjectIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setScreenIndex((prev) => (prev + 1) % screens.length);
-    }, 4000);
+      setProjectIndex((prev) => (prev + 1) % projects.length);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const currentScreen = screens[screenIndex];
+  const currentProject = projects[projectIndex];
+
+  const handleViewCaseStudy = () => {
+    window.location.href = `/case-study/${currentProject.id}`;
+  };
 
   return (
     <section className="fieldx-section">
 
-      {/* Background */}
       <div className="fieldx-background"></div>
 
-      {/* Dark overlay */}
       <div className="fieldx-overlay"></div>
 
-      {/* Main content */}
       <div className="fieldx-content">
 
         <div className="fieldx-card">
@@ -57,19 +38,26 @@ function CaseStudy() {
               <span>FieldX VRT</span>
             </div>
 
+            <span className="project-category">
+              {currentProject.category}
+            </span>
+
             <h2>
-              Featured&nbsp; Case
-              <br />
-              Study
+              {currentProject.title}
             </h2>
 
             <p>
-              Where Agronomic Expertise Meets
-              Precision Innovation – Transforming
-              Agriculture, One Field at a Time
+              {currentProject.description}
             </p>
 
-            <button className="fieldx-button">
+            <p className="project-date">
+              Project Date: {currentProject.date}
+            </p>
+
+            <button
+              className="fieldx-button"
+              onClick={handleViewCaseStudy}
+            >
               View Case Study
             </button>
 
@@ -78,7 +66,6 @@ function CaseStudy() {
           {/* RIGHT SIDE */}
           <div className="browser-window">
 
-            {/* Browser top */}
             <div className="browser-top">
 
               <div className="browser-dots">
@@ -97,7 +84,7 @@ function CaseStudy() {
               </div>
 
               <div className="browser-url">
-                https://vrt.fieldx.com
+                vrt.fieldx.com
               </div>
 
               <div className="browser-icons">
@@ -107,89 +94,55 @@ function CaseStudy() {
 
             </div>
 
-
-            {/* Browser content */}
             <div className="browser-content">
 
-              {/* Fake navigation */}
               <div className="app-navigation">
 
                 <div className="breadcrumb">
-                  Geneva Acres
+                  Tcongs Infotech
                   <span>›</span>
-                  Western
+                  Our Work
                 </div>
 
                 <div className="zoom-controls">
                   <span>⌕</span>
-
                   <button>4x</button>
-
                   <span>⌕</span>
                 </div>
 
               </div>
 
-
-              {/* Editing bar */}
               <div className="editing-bar">
 
                 <span>
-                  {currentScreen.title} ({currentScreen.date})
+                  {currentProject.title}
                 </span>
 
-                <button className="save-button">
-                  ◯ &nbsp; Save and Close
-                </button>
-
-                <button className="cancel-button">
-                  Cancel
-                </button>
+                <span>
+                  {currentProject.date}
+                </span>
 
               </div>
 
-
-              {/* Map / image */}
               <div className="field-map">
 
                 <img
-                  key={currentScreen.image}
-                  src={currentScreen.image}
-                  alt="Field management"
+                  src={currentProject.image}
+                  alt={currentProject.title}
                 />
 
-                {/* map overlay */}
                 <div className="map-dark-overlay"></div>
-
-                {/* Fake field boundary */}
-                <div className="field-boundary"></div>
-
-                {/* Cursor */}
-                <div
-                  className="animated-cursor"
-                  key={screenIndex}
-                >
-                  <div className="cursor-arrow"></div>
-                </div>
 
               </div>
 
-
-              {/* Bottom browser bar */}
               <div className="browser-bottom">
 
-                <div className="bottom-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-
                 <span className="file-name">
-                  central_crop_vrt.xlsx
+                  {currentProject.title}
                 </span>
 
                 <span className="warning">
-                  OVERUSED SPREADSHEET
+                  AGRICULTURE TECHNOLOGY
                 </span>
 
               </div>
