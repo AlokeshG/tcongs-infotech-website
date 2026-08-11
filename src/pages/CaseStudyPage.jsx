@@ -1,7 +1,5 @@
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import projects from "../data/projects";
-import "./CaseStudyPage.css";
 
 function CaseStudyPage() {
   const { id } = useParams();
@@ -12,128 +10,122 @@ function CaseStudyPage() {
 
   if (!project) {
     return (
-      <div className="case-not-found">
+      <div style={{ padding: "100px", textAlign: "center" }}>
         <h1>Project Not Found</h1>
 
         <Link to="/">
-          Back to Home
+          Go Back Home
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="case-study-page">
+    <div
+      style={{
+        minHeight: "100vh",
+        padding: "80px 8%",
+        background: "#f5f4ef",
+      }}
+    >
 
-      {/* HEADER */}
+      <Link
+        to="/"
+        style={{
+          display: "inline-block",
+          marginBottom: "40px",
+          color: "#06252a",
+          textDecoration: "none",
+          fontWeight: "600",
+        }}
+      >
+        ← Back to Home
+      </Link>
 
-      <header className="case-study-header">
+      <div
+        style={{
+          maxWidth: "1100px",
+          margin: "0 auto",
+          background: "#ffffff",
+          borderRadius: "24px",
+          overflow: "hidden",
+          boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
+        }}
+      >
 
-        <Link to="/" className="back-button">
-          ← Back to Website
-        </Link>
+        <img
+          src={project.image}
+          alt={project.title}
+          style={{
+            width: "100%",
+            height: "450px",
+            objectFit: "cover",
+          }}
+        />
 
-        <span>
-          Tcongs Infotech
-        </span>
+        <div style={{ padding: "45px" }}>
 
-      </header>
-
-
-      {/* HERO */}
-
-      <section className="case-study-hero">
-
-        <div className="case-study-info">
-
-          <span className="case-category">
+          <span
+            style={{
+              color: "#286ac5",
+              fontSize: "13px",
+              fontWeight: "700",
+              letterSpacing: "2px",
+            }}
+          >
             {project.category}
           </span>
 
-          <h1>
+          <h1
+            style={{
+              fontSize: "48px",
+              color: "#06252a",
+              margin: "15px 0",
+            }}
+          >
             {project.title}
           </h1>
 
-          <p>
+          <p
+            style={{
+              color: "#31565d",
+              fontSize: "18px",
+              lineHeight: "1.7",
+              maxWidth: "750px",
+            }}
+          >
             {project.description}
           </p>
 
-          <div className="case-date">
-            Project Date: {project.date}
-          </div>
+          <p
+            style={{
+              marginTop: "25px",
+              color: "#666",
+            }}
+          >
+            <strong>Project Date:</strong> {project.date}
+          </p>
 
           <a
             href={project.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="visit-button"
+            style={{
+              display: "inline-block",
+              marginTop: "25px",
+              padding: "14px 25px",
+              borderRadius: "30px",
+              background: "#06252a",
+              color: "#ffffff",
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
           >
             Visit Project →
           </a>
 
         </div>
-
-
-        <div className="case-study-image">
-
-          <img
-            src={project.image}
-            alt={project.title}
-          />
-
-        </div>
-
-      </section>
-
-
-      {/* PROJECT DETAILS */}
-
-      <section className="case-study-details">
-
-        <span className="case-category">
-          CASE STUDY
-        </span>
-
-        <h2>
-          About This Project
-        </h2>
-
-        <p>
-          {project.description}
-        </p>
-
-        <div className="project-information">
-
-          <div>
-            <strong>Project</strong>
-            <span>{project.title}</span>
-          </div>
-
-          <div>
-            <strong>Category</strong>
-            <span>{project.category}</span>
-          </div>
-
-          <div>
-            <strong>Date</strong>
-            <span>{project.date}</span>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* BACK */}
-
-      <section className="case-study-footer">
-
-        <Link to="/">
-          ← Back to all projects
-        </Link>
-
-      </section>
-
+      </div>
     </div>
   );
 }

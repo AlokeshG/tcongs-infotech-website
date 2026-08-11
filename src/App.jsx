@@ -15,61 +15,40 @@ import Footer from "./components/Footer";
 
 import CaseStudyPage from "./pages/CaseStudyPage";
 
-
 function HomePage() {
   return (
     <>
       <Navbar />
 
       <SolutionSection />
-
       <Partners />
-
       <StartSection />
-
       <ServicesSection />
-
       <ResourcesSection />
-
       <AboutSection />
-
       <ApproachSection />
-
       <TestimonialsSection />
-
       <CaseStudy />
-
       <CTASection />
-
       <Footer />
     </>
   );
 }
 
-
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* Main Website */}
-        <Route
-          path="/"
-          element={<HomePage />}
-        />
+        {/* Home Page */}
+        <Route path="/" element={<HomePage />} />
 
-        {/* Dynamic Case Study Page */}
-        <Route
-          path="/case-study/:id"
-          element={<CaseStudyPage />}
-        />
+        {/* Case Study Page */}
+        <Route path="/case-study/:id" element={<CaseStudyPage />} />
 
       </Routes>
-
     </BrowserRouter>
   );
 }
-
 
 export default App;

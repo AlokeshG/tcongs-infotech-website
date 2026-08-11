@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CaseStudy.css";
 import projects from "../data/projects";
+import { Link } from "react-router-dom";
 
 function CaseStudy() {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -15,22 +16,26 @@ function CaseStudy() {
 
   const currentProject = projects[projectIndex];
 
-  const handleViewCaseStudy = () => {
-    window.location.href = `/case-study/${currentProject.id}`;
-  };
-
   return (
     <section className="fieldx-section">
 
-      <div className="fieldx-background"></div>
+      {/* Background */}
+      <div
+        className="fieldx-background"
+        style={{
+          backgroundImage: `url(${currentProject.image})`,
+        }}
+      ></div>
 
+      {/* Dark overlay */}
       <div className="fieldx-overlay"></div>
 
+      {/* Main content */}
       <div className="fieldx-content">
 
         <div className="fieldx-card">
 
-          {/* LEFT SIDE */}
+          {/* ================= LEFT SIDE ================= */}
           <div className="fieldx-info">
 
             <div className="fieldx-logo">
@@ -54,18 +59,20 @@ function CaseStudy() {
               Project Date: {currentProject.date}
             </p>
 
-            <button
+            {/* View Case Study */}
+            <Link
+              to={`/case-study/${currentProject.id}`}
               className="fieldx-button"
-              onClick={handleViewCaseStudy}
             >
               View Case Study
-            </button>
+            </Link>
 
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* ================= RIGHT SIDE ================= */}
           <div className="browser-window">
 
+            {/* Browser top */}
             <div className="browser-top">
 
               <div className="browser-dots">
@@ -94,8 +101,10 @@ function CaseStudy() {
 
             </div>
 
+            {/* Browser content */}
             <div className="browser-content">
 
+              {/* Navigation */}
               <div className="app-navigation">
 
                 <div className="breadcrumb">
@@ -112,6 +121,7 @@ function CaseStudy() {
 
               </div>
 
+              {/* Project information bar */}
               <div className="editing-bar">
 
                 <span>
@@ -124,6 +134,7 @@ function CaseStudy() {
 
               </div>
 
+              {/* Project image */}
               <div className="field-map">
 
                 <img
@@ -135,6 +146,7 @@ function CaseStudy() {
 
               </div>
 
+              {/* Bottom browser bar */}
               <div className="browser-bottom">
 
                 <span className="file-name">
@@ -142,7 +154,7 @@ function CaseStudy() {
                 </span>
 
                 <span className="warning">
-                  AGRICULTURE TECHNOLOGY
+                  {currentProject.category}
                 </span>
 
               </div>
