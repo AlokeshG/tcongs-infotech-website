@@ -4,12 +4,10 @@
 
 .about-section {
   position: relative;
-
   width: 100%;
   min-height: 720px;
 
   background: #06252a;
-
   color: #ffffff;
 
   overflow: hidden;
@@ -30,11 +28,18 @@
   left: 0;
 
   width: 100%;
-  height: 620px;
+  height: 650px;
 
   z-index: 1;
 
   overflow: hidden;
+}
+
+.about-image picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
 }
 
 .about-image img {
@@ -44,7 +49,6 @@
   display: block;
 
   object-fit: cover;
-
   object-position: center top;
 }
 
@@ -64,8 +68,9 @@
     linear-gradient(
       to bottom,
       rgba(6, 37, 42, 0.05) 0%,
-      rgba(6, 37, 42, 0.15) 25%,
-      rgba(6, 37, 42, 0.75) 65%,
+      rgba(6, 37, 42, 0.08) 20%,
+      rgba(6, 37, 42, 0.35) 45%,
+      rgba(6, 37, 42, 0.78) 68%,
       #06252a 88%,
       #06252a 100%
     );
@@ -81,17 +86,17 @@
 
   z-index: 3;
 
-  width: min(1000px, 90%);
+  width: min(1200px, 90%);
 
   margin: 0 auto;
 
-  padding: 0 0 70px;
+  padding: 0 0 65px;
 
   display: grid;
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 60px;
+  gap: 80px;
 
   align-items: end;
 }
@@ -102,21 +107,21 @@
 ========================================= */
 
 .about-content {
-  max-width: 480px;
+  max-width: 530px;
 }
 
 .about-label {
   display: block;
 
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 
   font-size: 12px;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -125,13 +130,13 @@
 ========================================= */
 
 .about-content h2 {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
 
-  font-size: clamp(48px, 5vw, 66px);
+  font-size: clamp(50px, 5vw, 72px);
 
-  line-height: 0.95;
+  line-height: 0.91;
 
-  letter-spacing: -3px;
+  letter-spacing: -3.5px;
 
   font-weight: 700;
 
@@ -144,13 +149,13 @@
 ========================================= */
 
 .about-description {
-  max-width: 470px;
+  max-width: 520px;
 
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 
   font-size: 16px;
 
-  line-height: 1.45;
+  line-height: 1.5;
 
   font-weight: 500;
 
@@ -163,15 +168,15 @@
 ========================================= */
 
 .about-highlight {
-  max-width: 480px;
+  max-width: 520px;
 
-  margin: 0 0 22px;
+  margin: 0 0 28px;
 
   font-size: 18px;
 
   line-height: 1.45;
 
-  font-weight: 600;
+  font-weight: 700;
 
   color: #ffffff;
 }
@@ -183,7 +188,7 @@
 
   text-decoration-thickness: 4px;
 
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 .about-highlight span:last-child {
@@ -193,7 +198,7 @@
 
   text-decoration-thickness: 4px;
 
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 
@@ -202,13 +207,13 @@
 ========================================= */
 
 .about-button {
-  padding: 10px 17px;
+  padding: 13px 19px;
 
   display: inline-flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 14px;
 
   border: 1px solid rgba(255, 255, 255, 0.8);
 
@@ -228,7 +233,9 @@
 }
 
 .about-button span {
-  font-size: 18px;
+  font-size: 19px;
+
+  line-height: 1;
 
   transition: transform 0.3s ease;
 }
@@ -242,7 +249,7 @@
 }
 
 .about-button:hover span {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
 
@@ -255,9 +262,9 @@
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 12px;
+  gap: 14px;
 
-  padding-bottom: 100px;
+  padding-bottom: 55px;
 }
 
 
@@ -266,9 +273,9 @@
 ========================================= */
 
 .stat-card {
-  min-height: 80px;
+  min-height: 85px;
 
-  padding: 16px 14px;
+  padding: 18px 16px;
 
   display: flex;
 
@@ -276,13 +283,13 @@
 
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 
   border-radius: 9px;
 
-  background: rgba(3, 34, 39, 0.9);
+  background: rgba(3, 34, 39, 0.88);
 
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(7px);
 
   transition: all 0.3s ease;
 }
@@ -303,9 +310,9 @@
 .stat-card strong {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 
-  font-size: 28px;
+  font-size: 29px;
 
   line-height: 1;
 
@@ -335,7 +342,6 @@
 ========================================= */
 
 @media (max-width: 900px) {
-
   .about-section {
     min-height: 800px;
   }
@@ -355,17 +361,16 @@
   }
 
   .about-content {
-    max-width: 600px;
+    max-width: 650px;
   }
 
   .about-stats {
     width: 100%;
 
-    max-width: 600px;
+    max-width: 650px;
 
     padding-bottom: 0;
   }
-
 }
 
 
@@ -374,7 +379,6 @@
 ========================================= */
 
 @media (max-width: 650px) {
-
   .about-section {
     min-height: auto;
 
@@ -385,6 +389,21 @@
 
   .about-image {
     height: 500px;
+  }
+
+  .about-image img {
+    object-position: center top;
+  }
+
+  .about-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(6, 37, 42, 0.05) 0%,
+        rgba(6, 37, 42, 0.15) 35%,
+        rgba(6, 37, 42, 0.55) 65%,
+        #06252a 100%
+      );
   }
 
   .about-container {
@@ -399,18 +418,38 @@
     gap: 35px;
   }
 
+  .about-label {
+    margin-bottom: 16px;
+
+    font-size: 11px;
+  }
+
   .about-content h2 {
+    margin-bottom: 20px;
+
     font-size: 46px;
 
-    letter-spacing: -2px;
+    line-height: 0.94;
+
+    letter-spacing: -2.5px;
   }
 
   .about-description {
     font-size: 15px;
+
+    line-height: 1.5;
   }
 
   .about-highlight {
     font-size: 16px;
+
+    line-height: 1.5;
+  }
+
+  .about-button {
+    padding: 12px 17px;
+
+    font-size: 12px;
   }
 
   .about-stats {
@@ -422,7 +461,7 @@
   }
 
   .stat-card {
-    min-height: 75px;
+    min-height: 78px;
 
     padding: 14px 12px;
   }
@@ -434,5 +473,33 @@
   .stat-card span {
     font-size: 10px;
   }
+}
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .about-section {
+    padding-top: 430px;
+  }
+
+  .about-image {
+    height: 430px;
+  }
+
+  .about-content h2 {
+    font-size: 40px;
+
+    letter-spacing: -2px;
+  }
+
+  .about-container {
+    padding-top: 35px;
+  }
+
+  .stat-card strong {
+    font-size: 22px;
+  }
 }

@@ -1,5 +1,7 @@
 import "./AboutSection.css";
-import rolemodelTeam from "../assets/rolemodel-team.jpg";
+
+import desktopTeam from "../assets/world-map-desktop.png";
+import mobileTeam from "../assets/world-map-mobile.png";
 
 function AboutSection() {
   return (
@@ -7,10 +9,19 @@ function AboutSection() {
 
       {/* Team Image */}
       <div className="about-image">
-        <img
-          src={rolemodelTeam}
-          alt="Team"
-        />
+        <picture>
+          {/* Mobile image */}
+          <source
+            media="(max-width: 768px)"
+            srcSet={mobileTeam}
+          />
+
+          {/* Laptop/Desktop image */}
+          <img
+            src={desktopTeam}
+            alt="Tcongs Infotech Team"
+          />
+        </picture>
       </div>
 
       {/* Dark Overlay */}
@@ -52,7 +63,6 @@ function AboutSection() {
           </button>
 
         </div>
-
 
         {/* RIGHT STATS */}
         <div className="about-stats">
