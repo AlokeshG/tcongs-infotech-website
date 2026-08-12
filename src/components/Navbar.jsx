@@ -1,11 +1,11 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, X } from "lucide-react";
 import tcongsLogo from "../assets/tcongs-logo.png";
 
-function Navbar() {
+function Navbar({ chatOpen, setChatOpen }) {
   return (
     <nav className="navbar">
 
-      {/* LEFT - LOGO + BRAND */}
+      {/* ================= LOGO + BRAND ================= */}
       <div className="navbar-brand">
 
         <img
@@ -21,8 +21,7 @@ function Navbar() {
 
       </div>
 
-
-      {/* CENTER - NAVIGATION */}
+      {/* ================= NAVIGATION ================= */}
       <div className="navbar-links">
 
         <a href="#services">Services</a>
@@ -35,14 +34,21 @@ function Navbar() {
 
       </div>
 
+      {/* ================= LET'S TALK ================= */}
+      <button
+        type="button"
+        className="talk-button"
+        onClick={() => setChatOpen(!chatOpen)}
+      >
+        {chatOpen ? (
+          <X size={20} />
+        ) : (
+          <MessageCircle size={20} />
+        )}
 
-      {/* RIGHT - LET'S TALK */}
-      <button className="talk-button">
-
-        <MessageCircle size={17} />
-
-        <span>Let's Talk</span>
-
+        <span>
+          {chatOpen ? "Close" : "Let's Talk"}
+        </span>
       </button>
 
     </nav>

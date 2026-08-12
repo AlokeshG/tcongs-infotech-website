@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
+import ChatAssistant from "./components/ChatAssistant";
+
 import Partners from "./components/Partners";
 import StartSection from "./components/StartSection";
 import SolutionSection from "./components/SolutionSection";
@@ -15,10 +18,17 @@ import Footer from "./components/Footer";
 
 import CaseStudyPage from "./pages/CaseStudyPage";
 
+
 function HomePage() {
+
+  const [chatOpen, setChatOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar
+        chatOpen={chatOpen}
+        setChatOpen={setChatOpen}
+      />
 
       <SolutionSection />
       <Partners />
@@ -31,20 +41,27 @@ function HomePage() {
       <CaseStudy />
       <CTASection />
       <Footer />
+
+      <ChatAssistant
+        isOpen={chatOpen}
+        setIsOpen={setChatOpen}
+      />
     </>
   );
 }
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* Home Page */}
         <Route path="/" element={<HomePage />} />
 
-        {/* Case Study Page */}
-        <Route path="/case-study/:id" element={<CaseStudyPage />} />
+        <Route
+          path="/case-study/:id"
+          element={<CaseStudyPage />}
+        />
 
       </Routes>
     </BrowserRouter>
