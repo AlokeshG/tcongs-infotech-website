@@ -13,12 +13,12 @@ function AboutSection() {
           {/* Mobile image */}
           <source
             media="(max-width: 768px)"
-            srcSet={mobileTeam}
+            srcSet={mobileTeam.src}
           />
 
           {/* Laptop/Desktop image */}
           <img
-            src={desktopTeam}
+            src={desktopTeam.src}
             alt="Tcongs Infotech Team"
           />
         </picture>

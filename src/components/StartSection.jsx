@@ -115,7 +115,7 @@ function StartSection() {
 
                             <div className="consultation-circle">
                                 <img
-                                    src={tcongsLogo}
+                                    src={tcongsLogo.src}
                                     alt="Tcongs Infotech"
                                 />
                             </div>

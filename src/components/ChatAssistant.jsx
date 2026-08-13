@@ -1,9 +1,11 @@
+"use client";
+
 import { useState } from "react";
 import { X, Send } from "lucide-react";
 import tcongsLogo from "../assets/tcongs-logo.png";
 import "./ChatAssistant.css";
 
-function ChatAssistant({ isOpen, setIsOpen }) {
+function ChatAssistant({ chatOpen, setChatOpen }) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -17,6 +19,7 @@ function ChatAssistant({ isOpen, setIsOpen }) {
     message: "",
   });
 
+  // Initial chatbot messages
   const [messages, setMessages] = useState([
     {
       sender: "bot",
@@ -63,7 +66,9 @@ function ChatAssistant({ isOpen, setIsOpen }) {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send enquiry.");
+        throw new Error(
+          result.error || "Failed to send enquiry."
+        );
       }
 
       addBotMessage(
@@ -98,7 +103,9 @@ function ChatAssistant({ isOpen, setIsOpen }) {
     setContactMode(true);
     setContactStep("name");
 
-    addBotMessage("Sure! Please enter your name.");
+    addBotMessage(
+      "Sure! Please enter your name."
+    );
   };
 
   // --------------------------------------------------
@@ -106,8 +113,10 @@ function ChatAssistant({ isOpen, setIsOpen }) {
   // --------------------------------------------------
 
   const handleContactMessage = async (userMessage) => {
+
     // STEP 1 - NAME
     if (contactStep === "name") {
+
       setContactData((prev) => ({
         ...prev,
         name: userMessage,
@@ -115,19 +124,25 @@ function ChatAssistant({ isOpen, setIsOpen }) {
 
       setContactStep("email");
 
-      addBotMessage("Thanks! Now please enter your email address.");
+      addBotMessage(
+        "Thanks! Now please enter your email address."
+      );
 
       return;
     }
 
     // STEP 2 - EMAIL
     if (contactStep === "email") {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!emailRegex.test(userMessage)) {
+
         addBotMessage(
           "Please enter a valid email address, for example: example@gmail.com"
         );
+
         return;
       }
 
@@ -147,15 +162,19 @@ function ChatAssistant({ isOpen, setIsOpen }) {
 
     // STEP 3 - MESSAGE
     if (contactStep === "message") {
+
       const updatedData = {
         ...contactData,
         message: userMessage,
       };
 
       setContactData(updatedData);
+
       setLoading(true);
 
-      addBotMessage("Thank you. Sending your details to our team...");
+      addBotMessage(
+        "Thank you. Sending your details to our team..."
+      );
 
       await sendContactDetails(updatedData);
     }
@@ -166,7 +185,9 @@ function ChatAssistant({ isOpen, setIsOpen }) {
   // --------------------------------------------------
 
   const handleNormalMessage = (userMessage) => {
-    const lowerMessage = userMessage.toLowerCase();
+
+    const lowerMessage =
+      userMessage.toLowerCase();
 
     // Contact request
     if (
@@ -190,6 +211,7 @@ function ChatAssistant({ isOpen, setIsOpen }) {
       addBotMessage(
         "Tcongs Infotech provides custom software development, AI solutions, web development, cloud solutions and technology services."
       );
+
       return;
     }
 
@@ -202,6 +224,7 @@ function ChatAssistant({ isOpen, setIsOpen }) {
       addBotMessage(
         "Tcongs Infotech is a technology company focused on building software and digital solutions that fit business needs."
       );
+
       return;
     }
 
@@ -214,6 +237,7 @@ function ChatAssistant({ isOpen, setIsOpen }) {
       addBotMessage(
         "Hello! 👋 How can I help you? You can ask about our services or type 'Contact Details' to get in touch with our team."
       );
+
       return;
     }
 
@@ -228,6 +252,7 @@ function ChatAssistant({ isOpen, setIsOpen }) {
   // --------------------------------------------------
 
   const sendMessage = async () => {
+
     if (!message.trim() || loading) {
       return;
     }
@@ -261,50 +286,75 @@ function ChatAssistant({ isOpen, setIsOpen }) {
   // --------------------------------------------------
 
   const handleKeyDown = (e) => {
+
     if (e.key === "Enter" && !e.shiftKey) {
+
       e.preventDefault();
+
       sendMessage();
     }
   };
 
-  // Don't show when closed
-  if (!isOpen) {
+  // --------------------------------------------------
+  // CLOSE CHAT
+  // --------------------------------------------------
+
+  const closeChat = () => {
+    setChatOpen(false);
+  };
+
+  // --------------------------------------------------
+  // DON'T SHOW WHEN CLOSED
+  // --------------------------------------------------
+
+  if (!chatOpen) {
     return null;
   }
 
   // --------------------------------------------------
-  // UI
+  // CHAT UI
   // --------------------------------------------------
 
   return (
     <div className="chat-window">
 
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
+
       <div className="chat-header">
 
         <div className="chat-brand">
 
           <img
-            src={tcongsLogo}
+            src={tcongsLogo.src}
             alt="Tcongs Infotech"
             className="chat-logo"
           />
 
           <div>
-            <h3>Tcongs Assistant</h3>
+
+            <h3>
+              Tcongs Assistant
+            </h3>
 
             <div className="online-status">
+
               <span></span>
+
               Online
+
             </div>
+
           </div>
 
         </div>
 
+
+        {/* CLOSE BUTTON */}
+
         <button
           type="button"
           className="chat-close"
-          onClick={() => setIsOpen(false)}
+          onClick={closeChat}
           aria-label="Close chat"
         >
           <X size={20} />
@@ -312,31 +362,46 @@ function ChatAssistant({ isOpen, setIsOpen }) {
 
       </div>
 
-      {/* MESSAGES */}
+
+      {/* ================= MESSAGES ================= */}
+
       <div className="chat-messages">
 
         {messages.map((msg, index) => (
+
           <div
             key={index}
             className={`message-row ${msg.sender}`}
           >
+
             <div className="message-bubble">
               {msg.text}
             </div>
+
           </div>
+
         ))}
 
+
+        {/* Loading message */}
+
         {loading && (
+
           <div className="message-row bot">
+
             <div className="message-bubble typing">
               Sending...
             </div>
+
           </div>
+
         )}
 
       </div>
 
-      {/* INPUT */}
+
+      {/* ================= INPUT ================= */}
+
       <div className="chat-input-area">
 
         <input
@@ -351,19 +416,28 @@ function ChatAssistant({ isOpen, setIsOpen }) {
               : "Ask anything..."
           }
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) =>
+            setMessage(e.target.value)
+          }
           onKeyDown={handleKeyDown}
           disabled={loading}
         />
+
+
+        {/* SEND BUTTON */}
 
         <button
           type="button"
           className="send-button"
           onClick={sendMessage}
-          disabled={loading || !message.trim()}
+          disabled={
+            loading || !message.trim()
+          }
           aria-label="Send message"
         >
+
           <Send size={18} />
+
         </button>
 
       </div>

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import "./CaseStudy.css";
 import projects from "../data/projects";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 function CaseStudy() {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -19,18 +21,18 @@ function CaseStudy() {
   return (
     <section className="fieldx-section">
 
-      {/* Background */}
+      {/* ================= BACKGROUND ================= */}
       <div
         className="fieldx-background"
         style={{
           backgroundImage: `url(${currentProject.image})`,
         }}
-      ></div>
+      />
 
-      {/* Dark overlay */}
+      {/* ================= DARK OVERLAY ================= */}
       <div className="fieldx-overlay"></div>
 
-      {/* Main content */}
+      {/* ================= MAIN CONTENT ================= */}
       <div className="fieldx-content">
 
         <div className="fieldx-card">
@@ -38,33 +40,39 @@ function CaseStudy() {
           {/* ================= LEFT SIDE ================= */}
           <div className="fieldx-info">
 
+            {/* Logo */}
             <div className="fieldx-logo">
               <span className="fieldx-logo-icon">×</span>
               <span>FieldX VRT</span>
             </div>
 
+            {/* Category */}
             <span className="project-category">
               {currentProject.category}
             </span>
 
+            {/* Title */}
             <h2>
               {currentProject.title}
             </h2>
 
+            {/* Description */}
             <p>
               {currentProject.description}
             </p>
 
+            {/* Date */}
             <p className="project-date">
               Project Date: {currentProject.date}
             </p>
 
             {/* View Case Study */}
             <Link
-              to={`/case-study/${currentProject.id}`}
+              href={`/case-study/${currentProject.id}`}
               className="fieldx-button"
             >
               View Case Study
+              <span>→</span>
             </Link>
 
           </div>
@@ -115,7 +123,7 @@ function CaseStudy() {
 
                 <div className="zoom-controls">
                   <span>⌕</span>
-                  <button>4x</button>
+                  <button type="button">4x</button>
                   <span>⌕</span>
                 </div>
 

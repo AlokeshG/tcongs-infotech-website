@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./CTASection.css";
 
+
 function CTASection() {
   const [rating, setRating] = useState(0);
   const [showStars, setShowStars] = useState(false);

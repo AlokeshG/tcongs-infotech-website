@@ -1,0 +1,368 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #06252a;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: calc(100% - 28px);
+  height: 76px;
+
+  margin: 8px auto 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  background: #06252a;
+
+  position: sticky;
+  top: 8px;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   LOGO + BRAND
+========================================= */
+
+.navbar-brand {
+  width: 180px;
+  height: 100%;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  width: 46px;
+  height: 46px;
+
+  display: block;
+
+  /* Makes the logo circular */
+  border-radius: 50%;
+
+  /* Keeps the logo inside the circle */
+  object-fit: cover;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   BRAND TEXT
+========================================= */
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 4px;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   TCONGS
+========================================= */
+
+.brand-name {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.4px;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   INFOTECH
+========================================= */
+
+.brand-subtitle {
+  display: block;
+
+  margin: 2px;
+  padding: 0;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 2.5px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  text-align: center;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+  flex: 1;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 36px;
+}
+
+.navbar-links a {
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.65;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LET'S TALK BUTTON
+========================================= */
+
+.talk-button {
+  height: 100%;
+
+  min-width: 165px;
+
+  padding: 0 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 0 12px 12px 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.talk-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    width: calc(100% - 20px);
+
+    height: 72px;
+  }
+
+  .navbar-brand {
+    width: 160px;
+
+    padding: 0 16px;
+  }
+
+  .navbar-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+
+  .talk-button {
+    min-width: 130px;
+
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    width: calc(100% - 16px);
+
+    height: 68px;
+
+    margin-top: 8px;
+
+    border-radius: 10px;
+  }
+
+  .navbar-brand {
+    width: auto;
+
+    padding: 0 14px;
+
+    border-right: none;
+  }
+
+  .navbar-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .talk-button {
+    height: 100%;
+
+    min-width: 105px;
+
+    padding: 0 14px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+
+/* =========================================
+   GENERAL RESPONSIVE
+========================================= */
+
+img {
+  max-width: 100%;
+}
+
+section {
+  width: 100%;
+}
