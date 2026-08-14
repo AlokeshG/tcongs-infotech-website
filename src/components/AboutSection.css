@@ -5,7 +5,7 @@
 .about-section {
   position: relative;
   width: 100%;
-  min-height: 720px;
+  min-height: 680px;
 
   background: #06252a;
   color: #ffffff;
@@ -18,17 +18,16 @@
 
 
 /* =========================================
-   TEAM IMAGE
+   WORLD MAP
 ========================================= */
 
 .about-image {
   position: absolute;
 
-  top: 0;
-  left: 0;
+  inset: 0;
 
   width: 100%;
-  height: 650px;
+  height: 100%;
 
   z-index: 1;
 
@@ -43,18 +42,18 @@
 }
 
 .about-image img {
+  display: block;
+
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 
 /* =========================================
-   DARK GRADIENT OVERLAY
+   DARK OVERLAY
 ========================================= */
 
 .about-overlay {
@@ -67,11 +66,11 @@
   background:
     linear-gradient(
       to bottom,
-      rgba(6, 37, 42, 0.05) 0%,
-      rgba(6, 37, 42, 0.08) 20%,
-      rgba(6, 37, 42, 0.35) 45%,
-      rgba(6, 37, 42, 0.78) 68%,
-      #06252a 88%,
+      rgba(6, 37, 42, 0.02) 0%,
+      rgba(6, 37, 42, 0.05) 30%,
+      rgba(6, 37, 42, 0.18) 52%,
+      rgba(6, 37, 42, 0.48) 72%,
+      rgba(6, 37, 42, 0.82) 90%,
       #06252a 100%
     );
 }
@@ -86,17 +85,21 @@
 
   z-index: 3;
 
-  width: min(1200px, 90%);
+  width: min(1180px, 92%);
 
   margin: 0 auto;
 
-  padding: 0 0 65px;
+  padding: 0 0 24px;
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  /*
+    LEFT = CONTENT
+    RIGHT = CARDS
+  */
+  grid-template-columns: 1fr 1.25fr;
 
-  gap: 80px;
+  column-gap: 60px;
 
   align-items: end;
 }
@@ -107,21 +110,51 @@
 ========================================= */
 
 .about-content {
-  max-width: 530px;
+  width: 100%;
+
+  max-width: 540px;
+
+  align-self: end;
 }
+
+
+/* =========================================
+   LABEL
+========================================= */
 
 .about-label {
   display: block;
 
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 
   font-size: 12px;
 
   font-weight: 700;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 
-  color: rgba(255, 255, 255, 0.85);
+  color: #48e75b;
+
+  text-transform: uppercase;
+}
+
+
+/* Green line below label */
+
+.about-label::after {
+  content: "";
+
+  display: block;
+
+  width: 58px;
+
+  height: 3px;
+
+  margin-top: 9px;
+
+  border-radius: 10px;
+
+  background: #45e85d;
 }
 
 
@@ -130,17 +163,34 @@
 ========================================= */
 
 .about-content h2 {
-  margin: 0 0 24px;
+  margin: 0 0 18px;
 
-  font-size: clamp(50px, 5vw, 72px);
+  font-size: clamp(48px, 5vw, 64px);
 
-  line-height: 0.91;
+  line-height: 0.94;
 
-  letter-spacing: -3.5px;
+  letter-spacing: -2.5px;
 
   font-weight: 700;
 
   color: #ffffff;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.about-subtitle {
+  margin: 0 0 14px;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  color: #48e75b;
 }
 
 
@@ -151,11 +201,179 @@
 .about-description {
   max-width: 520px;
 
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 
-  font-size: 16px;
+  font-size: 14px;
 
-  line-height: 1.5;
+  line-height: 1.55;
+
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.about-description strong {
+  color: #48e75b;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TRUSTED CLIENTS BOX
+========================================= */
+
+.trusted-box {
+  width: fit-content;
+
+  min-width: 290px;
+
+  padding: 10px 14px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border: 1px solid rgba(55, 230, 95, 0.35);
+
+  border-radius: 9px;
+
+  background: rgba(4, 47, 48, 0.48);
+}
+
+.trusted-icon {
+  width: 29px;
+
+  height: 29px;
+
+  flex-shrink: 0;
+
+  color: #45e85d;
+
+  stroke-width: 1.8;
+}
+
+.trusted-box div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.trusted-box span {
+  font-size: 11px;
+
+  line-height: 1.2;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.trusted-box strong {
+  font-size: 12px;
+
+  line-height: 1.2;
+
+  color: #48e75b;
+}
+
+
+/* =========================================
+   OUR SOLUTIONS
+========================================= */
+
+.solutions-section {
+  width: 100%;
+
+  max-width: 510px;
+}
+
+
+/* Title */
+
+.solutions-title {
+  padding-bottom: 8px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #45e85d;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================
+   SOLUTIONS GRID
+========================================= */
+
+.solutions-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================
+   SOLUTION ITEM
+========================================= */
+
+.solution-item {
+  min-height: 43px;
+
+  padding: 8px 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #ffffff;
+}
+
+.solution-item:nth-child(3),
+.solution-item:nth-child(6) {
+  border-right: none;
+}
+
+.solution-item:nth-child(n + 4) {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+
+/* Solution icons */
+
+.solution-item svg {
+  width: 23px;
+
+  height: 23px;
+
+  flex-shrink: 0;
+
+  color: #45e85d;
+
+  stroke-width: 1.8;
+}
+
+
+/* Solution text */
+
+.solution-item span {
+  font-size: 10px;
+
+  line-height: 1.2;
 
   font-weight: 500;
 
@@ -164,107 +382,19 @@
 
 
 /* =========================================
-   HIGHLIGHT TEXT
-========================================= */
-
-.about-highlight {
-  max-width: 520px;
-
-  margin: 0 0 28px;
-
-  font-size: 18px;
-
-  line-height: 1.45;
-
-  font-weight: 700;
-
-  color: #ffffff;
-}
-
-.about-highlight span:first-child {
-  text-decoration: underline;
-
-  text-decoration-color: #f1c15b;
-
-  text-decoration-thickness: 4px;
-
-  text-underline-offset: 3px;
-}
-
-.about-highlight span:last-child {
-  text-decoration: underline;
-
-  text-decoration-color: #7fd4a7;
-
-  text-decoration-thickness: 4px;
-
-  text-underline-offset: 3px;
-}
-
-
-/* =========================================
-   BUTTON
-========================================= */
-
-.about-button {
-  padding: 13px 19px;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 14px;
-
-  border: 1px solid rgba(255, 255, 255, 0.8);
-
-  border-radius: 6px;
-
-  background: transparent;
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.about-button span {
-  font-size: 19px;
-
-  line-height: 1;
-
-  transition: transform 0.3s ease;
-}
-
-.about-button:hover {
-  background: #ffffff;
-
-  color: #06252a;
-
-  transform: translateY(-2px);
-}
-
-.about-button:hover span {
-  transform: translateX(5px);
-}
-
-
-/* =========================================
    STATISTICS
 ========================================= */
 
 .about-stats {
+  width: 100%;
+
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 14px;
+  gap: 10px;
 
-  padding-bottom: 55px;
+  align-self: end;
 }
 
 
@@ -273,38 +403,58 @@
 ========================================= */
 
 .stat-card {
-  min-height: 85px;
+  position: relative;
 
-  padding: 18px 16px;
+  min-height: 145px;
+
+  padding: 14px 9px;
 
   display: flex;
 
   flex-direction: column;
 
+  align-items: center;
+
   justify-content: center;
+
+  text-align: center;
 
   border: 1px solid rgba(255, 255, 255, 0.22);
 
   border-radius: 9px;
 
-  background: rgba(3, 34, 39, 0.88);
+  background: rgba(3, 34, 39, 0.78);
 
   backdrop-filter: blur(7px);
 
-  transition: all 0.3s ease;
-}
+  box-sizing: border-box;
 
-.stat-card:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(255, 255, 255, 0.45);
-
-  background: rgba(6, 45, 51, 0.95);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 
 /* =========================================
-   NUMBER
+   STAT ICON
+========================================= */
+
+.stat-card .stat-icon {
+  width: 39px;
+
+  height: 39px;
+
+  margin-bottom: 9px;
+
+  flex-shrink: 0;
+
+  stroke-width: 1.8;
+}
+
+
+/* =========================================
+   STAT NUMBERS
 ========================================= */
 
 .stat-card strong {
@@ -312,24 +462,24 @@
 
   margin-bottom: 5px;
 
-  font-size: 29px;
+  font-size: 38px;
 
   line-height: 1;
 
   font-weight: 700;
-
-  color: #f5c65b;
 }
 
 
 /* =========================================
-   LABEL
+   STAT LABEL
 ========================================= */
 
 .stat-card span {
-  font-size: 11px;
+  display: block;
 
-  line-height: 1.2;
+  font-size: 10px;
+
+  line-height: 1.25;
 
   font-weight: 500;
 
@@ -338,26 +488,163 @@
 
 
 /* =========================================
+   CARD 1 - GREEN
+========================================= */
+
+.stat-card:nth-child(1) .stat-icon {
+  color: #46e95b;
+}
+
+.stat-card:nth-child(1) strong {
+  color: #46e95b;
+}
+
+.stat-card:nth-child(1)::after {
+  background: #46e95b;
+}
+
+
+/* =========================================
+   CARD 2 - BLUE
+========================================= */
+
+.stat-card:nth-child(2) .stat-icon {
+  color: #00bfff;
+}
+
+.stat-card:nth-child(2) strong {
+  color: #00bfff;
+}
+
+.stat-card:nth-child(2)::after {
+  background: #00bfff;
+}
+
+
+/* =========================================
+   CARD 3 - PURPLE
+========================================= */
+
+.stat-card:nth-child(3) .stat-icon {
+  color: #c56cff;
+}
+
+.stat-card:nth-child(3) strong {
+  color: #c56cff;
+}
+
+.stat-card:nth-child(3)::after {
+  background: #c56cff;
+}
+
+
+/* =========================================
+   CARD 4 - YELLOW
+========================================= */
+
+.stat-card:nth-child(4) .stat-icon {
+  color: #ffc928;
+}
+
+.stat-card:nth-child(4) strong {
+  color: #ffc928;
+}
+
+.stat-card:nth-child(4)::after {
+  background: #ffc928;
+}
+
+
+/* =========================================
+   CARD UNDERLINE
+========================================= */
+
+.stat-card::after {
+  content: "";
+
+  width: 34px;
+
+  height: 2px;
+
+  margin-top: 9px;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 255, 255, 0.42);
+
+  background: rgba(6, 45, 51, 0.92);
+}
+
+
+/* =========================================
    TABLET
 ========================================= */
 
+@media (max-width: 1100px) {
+
+  .about-container {
+    width: 90%;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 35px;
+  }
+
+  .about-content h2 {
+    font-size: clamp(42px, 5vw, 56px);
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .stat-card {
+    min-height: 125px;
+  }
+}
+
+
+/* =========================================
+   SMALL LAPTOP / TABLET
+========================================= */
+
 @media (max-width: 900px) {
+
   .about-section {
-    min-height: 800px;
+    min-height: 850px;
+
+    display: block;
+
+    padding-top: 500px;
   }
 
   .about-image {
-    height: 600px;
+    height: 500px;
   }
 
   .about-container {
     width: 90%;
 
-    grid-template-columns: 1fr;
+    display: flex;
+
+    flex-direction: column;
 
     gap: 35px;
 
-    padding-bottom: 60px;
+    padding: 45px 0 60px;
+
+    align-items: stretch;
   }
 
   .about-content {
@@ -367,9 +654,23 @@
   .about-stats {
     width: 100%;
 
-    max-width: 650px;
+    grid-template-columns: repeat(4, 1fr);
 
-    padding-bottom: 0;
+    gap: 10px;
+  }
+
+  .stat-card {
+    min-height: 115px;
+  }
+
+  .stat-card .stat-icon {
+    width: 31px;
+
+    height: 31px;
+  }
+
+  .stat-card strong {
+    font-size: 30px;
   }
 }
 
@@ -379,6 +680,7 @@
 ========================================= */
 
 @media (max-width: 650px) {
+
   .about-section {
     min-height: auto;
 
@@ -387,24 +689,44 @@
     display: block;
   }
 
-  .about-image {
-    height: 500px;
-  }
+ .about-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
 
-  .about-image img {
-    object-position: center top;
-  }
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Shift the map to the LEFT */
+    object-position: left center;
+
+    /* Slightly zoom the image like the reference */
+    transform: scale(1.08);
+    transform-origin: left center;
+}
+
+
+  /* Overlay */
 
   .about-overlay {
     background:
       linear-gradient(
         to bottom,
         rgba(6, 37, 42, 0.05) 0%,
-        rgba(6, 37, 42, 0.15) 35%,
+        rgba(6, 37, 42, 0.15) 30%,
         rgba(6, 37, 42, 0.55) 65%,
         #06252a 100%
       );
   }
+
+
+  /* Container */
 
   .about-container {
     width: 90%;
@@ -418,39 +740,60 @@
     gap: 35px;
   }
 
-  .about-label {
-    margin-bottom: 16px;
 
-    font-size: 11px;
-  }
+  /* Heading */
 
   .about-content h2 {
-    margin-bottom: 20px;
+    font-size: 44px;
 
-    font-size: 46px;
+    line-height: 0.95;
 
-    line-height: 0.94;
-
-    letter-spacing: -2.5px;
+    letter-spacing: -2px;
   }
+
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
 
   .about-description {
-    font-size: 15px;
-
-    line-height: 1.5;
+    font-size: 14px;
   }
 
-  .about-highlight {
-    font-size: 16px;
 
-    line-height: 1.5;
+  /* Trusted */
+
+  .trusted-box {
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
   }
 
-  .about-button {
-    padding: 12px 17px;
 
-    font-size: 12px;
+  /* Solutions */
+
+  .solutions-grid {
+    grid-template-columns: 1fr 1fr;
   }
+
+  .solution-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .solution-item:nth-child(3),
+  .solution-item:nth-child(6) {
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .solution-item:nth-child(even) {
+    border-right: none;
+  }
+
+
+  /* Stats */
 
   .about-stats {
     width: 100%;
@@ -461,13 +804,21 @@
   }
 
   .stat-card {
-    min-height: 78px;
+    min-height: 110px;
 
-    padding: 14px 12px;
+    padding: 14px 10px;
+  }
+
+  .stat-card .stat-icon {
+    width: 30px;
+
+    height: 30px;
+
+    margin-bottom: 6px;
   }
 
   .stat-card strong {
-    font-size: 24px;
+    font-size: 27px;
   }
 
   .stat-card span {
@@ -481,6 +832,7 @@
 ========================================= */
 
 @media (max-width: 400px) {
+
   .about-section {
     padding-top: 430px;
   }
@@ -489,17 +841,37 @@
     height: 430px;
   }
 
-  .about-content h2 {
-    font-size: 40px;
-
-    letter-spacing: -2px;
-  }
-
   .about-container {
     padding-top: 35px;
   }
 
+  .about-content h2 {
+    font-size: 38px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .about-stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    min-height: 100px;
+
+    padding: 12px 8px;
+  }
+
+  .stat-card .stat-icon {
+    width: 27px;
+
+    height: 27px;
+  }
+
   .stat-card strong {
-    font-size: 22px;
+    font-size: 23px;
+  }
+
+  .stat-card span {
+    font-size: 9px;
   }
 }

@@ -1,14 +1,34 @@
 /* =========================================
-   TESTIMONIAL SECTION
+   TESTIMONIAL / COMPANIES SECTION
 ========================================= */
 
 .testimonials-section {
   width: 100%;
+  min-height: 100vh;
+
   background: #06252a;
   color: #ffffff;
-  padding: 0 0 80px;
+
+  padding: 90px 0 70px;
+
   overflow: hidden;
   position: relative;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.companies-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 0 45px;
+
+  box-sizing: border-box;
 }
 
 
@@ -16,476 +36,577 @@
    HEADER
 ========================================= */
 
-.testimonials-header {
+.companies-header {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  padding: 0 40px 20px;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+
+  text-align: center;
+
+  margin-bottom: 40px;
 }
 
-.testimonials-header h2 {
+.companies-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.companies-eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #00d5df;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.companies-heading h2 {
   margin: 0;
 
-  font-size: 42px;
+  color: #ffffff;
+
+  font-size: 46px;
+
   line-height: 1.1;
 
   font-weight: 700;
-  letter-spacing: -1.5px;
 
-  color: #ffffff;
+  letter-spacing: -1.5px;
 }
 
 
 /* =========================================
-   OUR WORK BUTTON
+   SUBTITLE
 ========================================= */
 
-.our-work-btn {
+.companies-heading p {
+  margin: 14px 0 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   COMPANY GRID
+========================================= */
+
+.companies-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   COMPANY CARD
+========================================= */
+
+.company-card {
+  position: relative;
+
+  min-width: 0;
+
+  height: 520px;
+
+  padding: 32px 34px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
   display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   CARD COLORS
+========================================= */
+
+.company-green {
+  background: #087861;
+}
+
+.company-purple {
+  background: #51468c;
+}
+
+.company-red {
+  background: #a92d24;
+}
+
+.company-blue {
+  background: #174b88;
+}
+
+
+/* =========================================
+   LOGO AREA
+========================================= */
+
+.company-logo-wrapper {
+  width: 100%;
+
+  height: 165px;
+
+  display: flex;
+
   align-items: center;
-  gap: 12px;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  overflow: hidden;
+
+  background: transparent;
+}
+
+
+/* =========================================
+   COMPANY LOGO
+========================================= */
+
+.company-logo {
+  display: block;
+
+  width: auto;
+
+  max-width: 80%;
+
+  height: 115px;
+
+  object-fit: contain;
+
+  object-position: center;
 
   background: transparent;
 
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: none;
 
-  border-radius: 7px;
+  outline: none;
 
-  color: #ffffff;
+  /*
+    IMPORTANT:
+    The logo PNG contains a white background.
+    Multiply makes the white area blend
+    with the card background.
+  */
+  mix-blend-mode: multiply;
 
-  padding: 10px 16px;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.our-work-btn span {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.our-work-btn:hover {
-  background: #ffffff;
-  color: #06252a;
-  transform: translateY(-2px);
-}
-
-
-/* =========================================
-   MARQUEE
-========================================= */
-
-.testimonial-marquee {
-  width: 100%;
-  overflow: hidden;
-
-  position: relative;
-
-  margin-top: 0;
-}
-
-.second-marquee {
-  margin-top: 20px;
-}
-
-
-/* =========================================
-   MOVING TRACK
-========================================= */
-
-.testimonial-track {
-  display: flex;
-
-  width: max-content;
-
-  gap: 22px;
-
-  will-change: transform;
-}
-
-
-/* =========================================
-   LEFT → RIGHT / RIGHT → LEFT
-========================================= */
-
-.track-left {
-  animation: testimonialMoveLeft 55s linear infinite;
-}
-
-.track-right {
-  animation: testimonialMoveRight 60s linear infinite;
-}
-
-
-/*
-   IMPORTANT:
-   Pause when mouse is over cards.
-*/
-
-.testimonial-marquee:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
-
-/* =========================================
-   ANIMATION 1
-========================================= */
-
-@keyframes testimonialMoveLeft {
-
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-
-}
-
-
-/* =========================================
-   ANIMATION 2
-========================================= */
-
-@keyframes testimonialMoveRight {
-
-  0% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-
-}
-
-
-/* =========================================
-   TESTIMONIAL CARD
-========================================= */
-
-.testimonial-card {
-  position: relative;
-
-  flex: 0 0 330px;
-
-  width: 330px;
-  height: 428px;
-
-  border-radius: 9px;
-
-  overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-
-  isolation: isolate;
+  /*
+    Keeps the logo visually clean.
+  */
+  filter: contrast(1.05);
 
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 
 /* =========================================
-   CARD HOVER
+   LOGO HOVER
 ========================================= */
 
-.testimonial-card:hover {
-  transform: translateY(-8px) scale(1.015);
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
-
-  z-index: 5;
+.company-card:hover .company-logo {
+  transform: scale(1.05);
 }
 
 
 /* =========================================
-   DARK IMAGE LAYER
+   GODREJ LOGO
 ========================================= */
 
-.testimonial-card::before {
-  content: "";
+.company-green .company-logo {
+  width: 230px;
 
-  position: absolute;
-  inset: 0;
+  height: 125px;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.08)
-    );
+  max-width: 85%;
 
-  z-index: -2;
-}
-
-
-/* =========================================
-   COLORED OVERLAY
-========================================= */
-
-.testimonial-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: -1;
-
-  opacity: 0.78;
+  object-fit: contain;
 
   mix-blend-mode: multiply;
 }
 
 
 /* =========================================
-   COLORS
+   ASIAN PAINTS PPG LOGO
 ========================================= */
 
-.testimonial-red .testimonial-overlay {
-  background: #e63824;
-}
+.company-purple .company-logo {
+  width: 220px;
 
-.testimonial-blue .testimonial-overlay {
-  background: #164ca3;
-}
+  height: 120px;
 
-.testimonial-yellow .testimonial-overlay {
-  background: #a6a600;
-}
+  max-width: 85%;
 
-.testimonial-green .testimonial-overlay {
-  background: #008c63;
-}
+  object-fit: contain;
 
-.testimonial-purple .testimonial-overlay {
-  background: #584394;
-}
+  /*
+    THIS IS THE IMPORTANT PART.
+    It removes the visible white square
+    from the Asian Paints PNG.
+  */
+  mix-blend-mode: multiply;
 
-.testimonial-teal .testimonial-overlay {
-  background: #008c76;
+  filter: contrast(1.08) saturate(1.05);
 }
 
 
 /* =========================================
-   CARD CONTENT
+   GENERAL MILLS LOGO
 ========================================= */
 
-.testimonial-content {
-  position: absolute;
+.company-red .company-logo {
+  width: 220px;
 
-  inset: 0;
+  height: 115px;
 
-  padding: 34px 20px 20px;
+  max-width: 85%;
 
-  display: flex;
+  object-fit: contain;
 
-  flex-direction: column;
-
-  justify-content: flex-end;
+  mix-blend-mode: multiply;
 }
 
 
 /* =========================================
-   QUOTE
+   AL NABOODAH LOGO
 ========================================= */
 
-.testimonial-quote {
-  border-left: 3px solid #ffffff;
+.company-blue .company-logo {
+  width: 230px;
 
-  padding-left: 12px;
+  height: 115px;
 
-  margin-bottom: 30px;
+  max-width: 85%;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.company-divider {
+  width: 100%;
+
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================================
+   COMPANY NAME
+========================================= */
+
+.company-name {
+  margin: 0 0 14px;
 
   color: #ffffff;
 
-  font-size: 21px;
-
-  line-height: 1.12;
-
-  font-weight: 700;
-
-  max-width: 280px;
-}
-
-
-/* =========================================
-   PERSON
-========================================= */
-
-.testimonial-person {
-  margin-bottom: 12px;
-}
-
-.testimonial-person h3 {
-  margin: 0 0 8px;
-
-  font-size: 14px;
+  font-size: 22px;
 
   line-height: 1.2;
 
   font-weight: 700;
-
-  color: #ffffff;
 }
 
-.testimonial-person p {
-  margin: 0;
+
+/* =========================================
+   INDUSTRY
+========================================= */
+
+.company-industry {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 26px;
 
   color: #ffffff;
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.3;
 
   font-weight: 500;
+}
 
-  max-width: 280px;
+.industry-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  line-height: 1;
 }
 
 
 /* =========================================
-   CASE STUDY BUTTON
+   DESCRIPTION
 ========================================= */
 
-.case-study-btn {
-  align-self: flex-start;
+.company-description {
+  margin: 0;
 
-  border: none;
+  max-width: 100%;
 
-  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
 
-  padding: 10px 14px;
+  font-size: 14px;
 
-  color: #ffffff;
+  line-height: 1.65;
 
-  background: rgba(0, 0, 0, 0.2);
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.case-study-btn:hover {
-  background: rgba(0, 0, 0, 0.4);
-
-  transform: translateY(-2px);
+  font-weight: 400;
 }
 
 
 /* =========================================
-   RESPONSIVE - TABLET
+   TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 
-  .testimonials-header {
-    padding-left: 25px;
-    padding-right: 25px;
+  .companies-container {
+    padding: 0 30px;
   }
 
-  .testimonials-header h2 {
-    font-size: 34px;
+  .companies-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
   }
 
-  .testimonial-card {
-    flex-basis: 310px;
-
-    width: 310px;
-    height: 410px;
+  .company-card {
+    height: 500px;
   }
 
+  .companies-heading h2 {
+    font-size: 40px;
+  }
 }
 
 
 /* =========================================
-   RESPONSIVE - MOBILE
+   SMALL TABLET
 ========================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
 
   .testimonials-section {
-    padding-bottom: 50px;
+    padding: 70px 0 60px;
   }
 
-  .testimonials-header {
-    padding: 0 20px 20px;
-
-    gap: 15px;
-
-    align-items: flex-start;
+  .companies-container {
+    padding: 0 24px;
   }
 
-  .testimonials-header h2 {
-    font-size: 28px;
+  .companies-heading h2 {
+    font-size: 36px;
+  }
+
+  .companies-heading p {
+    font-size: 15px;
+  }
+
+  .companies-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .company-card {
+    height: 470px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .testimonials-section {
+    padding: 60px 0 50px;
+  }
+
+  .companies-container {
+    padding: 0 18px;
+  }
+
+  .companies-header {
+    margin-bottom: 30px;
+  }
+
+  .companies-eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 1.6px;
+  }
+
+  .companies-heading h2 {
+    font-size: 30px;
 
     letter-spacing: -0.8px;
   }
 
-  .our-work-btn {
-    flex-shrink: 0;
+  .companies-heading p {
+    font-size: 14px;
 
-    padding: 8px 12px;
-
-    font-size: 12px;
+    max-width: 330px;
   }
 
-  .testimonial-card {
-    flex-basis: 280px;
+  .company-card {
+    height: 450px;
 
-    width: 280px;
-    height: 380px;
+    padding: 28px 24px;
+
+    border-radius: 9px;
   }
 
-  .testimonial-track {
-    gap: 15px;
+  .company-logo-wrapper {
+    height: 145px;
+
+    margin-bottom: 18px;
   }
 
-  .testimonial-quote {
-    font-size: 18px;
+  .company-logo {
+    max-width: 82%;
 
-    max-width: 240px;
+    height: 95px;
   }
 
-  .testimonial-person h3 {
+  .company-green .company-logo {
+    width: 200px;
+
+    height: 105px;
+
+    max-width: 85%;
+  }
+
+  .company-purple .company-logo {
+    width: 200px;
+
+    height: 105px;
+
+    max-width: 85%;
+
+    mix-blend-mode: multiply;
+  }
+
+  .company-divider {
+    margin-bottom: 20px;
+  }
+
+  .company-name {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+  }
+
+  .company-industry {
     font-size: 13px;
+
+    margin-bottom: 22px;
   }
 
-  .testimonial-person p {
-    font-size: 12px;
-  }
+  .company-description {
+    font-size: 13px;
 
+    line-height: 1.6;
+  }
 }
 
 
 /* =========================================
-   REDUCE MOTION
+   VERY SMALL MOBILE
 ========================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 400px) {
 
-  .track-left,
-  .track-right {
-    animation: none;
+  .companies-heading h2 {
+    font-size: 27px;
   }
 
+  .company-card {
+    height: 430px;
+
+    padding: 24px 20px;
+  }
+
+  .company-logo-wrapper {
+    height: 130px;
+  }
+
+  .company-green .company-logo {
+    width: 180px;
+
+    height: 95px;
+  }
+
+  .company-purple .company-logo {
+    width: 180px;
+
+    height: 95px;
+  }
 }

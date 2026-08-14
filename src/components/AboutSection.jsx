@@ -1,90 +1,312 @@
+"use client";
+
 import "./AboutSection.css";
 
 import desktopTeam from "../assets/world-map-desktop.png";
 import mobileTeam from "../assets/world-map-mobile.png";
 
+import {
+  UserRoundCheck,
+  BriefcaseBusiness,
+  Users,
+  Handshake,
+  Monitor,
+  Smartphone,
+  ShoppingCart,
+  Cloud,
+  BarChart3,
+  Settings,
+  Globe2,
+} from "lucide-react";
+
 function AboutSection() {
   return (
     <section className="about-section" id="about">
 
-      {/* Team Image */}
+      {/* =========================================
+          BACKGROUND IMAGE
+      ========================================= */}
       <div className="about-image">
         <picture>
-          {/* Mobile image */}
           <source
             media="(max-width: 768px)"
             srcSet={mobileTeam.src}
           />
 
-          {/* Laptop/Desktop image */}
           <img
             src={desktopTeam.src}
-            alt="Tcongs Infotech Team"
+            alt="Tcongs Infotech World Map"
           />
         </picture>
       </div>
 
-      {/* Dark Overlay */}
+
+      {/* =========================================
+          DARK OVERLAY
+      ========================================= */}
       <div className="about-overlay"></div>
 
-      {/* Content */}
+
+      {/* =========================================
+          MAIN CONTENT
+      ========================================= */}
       <div className="about-container">
 
-        {/* LEFT CONTENT */}
+        {/* =====================================
+            LEFT SIDE
+        ===================================== */}
         <div className="about-content">
 
           <span className="about-label">
-            ABOUT TCONGS INFOTECH
+            TCONGS INFOTECH
           </span>
 
+          <div className="about-label-line"></div>
+
           <h2>
-            Long-term
+            Serving Businesses
             <br />
-            partnership
-            <br />
-            focused on
-            <br />
-            technology.
+            Across Borders
           </h2>
 
+          <div className="about-title-line"></div>
+
+          <h3>
+            Global Technology Partner for Growing Businesses
+          </h3>
+
           <p className="about-description">
-            Serving businesses with reliable digital solutions
-            designed to grow and evolve with your needs.
+            At <strong>Tcongs Infotech</strong>, we deliver reliable,
+            scalable, and innovative digital solutions to businesses
+            across the globe. From startups to growing enterprises,
+            we help transform ideas into powerful websites, mobile apps,
+            software, and digital platforms.
           </p>
 
-          <p className="about-highlight">
-            We build <span>smart</span>, <span>scalable</span> software
-            that helps businesses grow.
-          </p>
 
-          <button className="about-button">
-            Want to learn more?
-            <span>→</span>
-          </button>
+          {/* =================================
+              TRUSTED CLIENTS
+          ================================= */}
+          <div className="trusted-box">
+
+            <div className="trusted-icon">
+              <Globe2 size={28} strokeWidth={1.8} />
+            </div>
+
+            <div className="trusted-text">
+              <span>Trusted by clients across</span>
+
+              <strong>
+                India, UAE, USA, and Canada.
+              </strong>
+            </div>
+
+          </div>
+
+
+          {/* =================================
+              OUR SOLUTIONS
+          ================================= */}
+          <div className="solutions-section">
+
+            <div className="solutions-title">
+              OUR SOLUTIONS
+            </div>
+
+            <div className="solutions-grid">
+
+              {/* ROW 1 */}
+
+              <div className="solution-item">
+                <Monitor
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  Web Development
+                </span>
+              </div>
+
+
+              <div className="solution-item">
+                <Smartphone
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  Mobile App
+                  <br />
+                  Development
+                </span>
+              </div>
+
+
+              <div className="solution-item">
+                <ShoppingCart
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  E-Commerce
+                  <br />
+                  Solutions
+                </span>
+              </div>
+
+
+              {/* ROW 2 */}
+
+              <div className="solution-item">
+                <Cloud
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  Cloud & DevOps
+                  <br />
+                  Solutions
+                </span>
+              </div>
+
+
+              <div className="solution-item">
+                <BarChart3
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  Digital Marketing
+                  <br />
+                  Solutions
+                </span>
+              </div>
+
+
+              <div className="solution-item">
+                <Settings
+                  className="solution-icon"
+                  size={25}
+                  strokeWidth={1.8}
+                />
+
+                <span>
+                  Custom Software
+                  <br />
+                  Development
+                </span>
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
-        {/* RIGHT STATS */}
+
+        {/* =====================================
+            RIGHT SIDE - STAT CARDS
+        ===================================== */}
         <div className="about-stats">
 
-          <div className="stat-card">
+          {/* 10+ */}
+          <div className="stat-card stat-green">
+
+            <div className="stat-icon">
+              <UserRoundCheck
+                size={35}
+                strokeWidth={1.7}
+              />
+            </div>
+
             <strong>10+</strong>
-            <span>Years in Business</span>
+
+            <span>
+              Years of
+              <br />
+              Experience
+            </span>
+
+            <div className="stat-line"></div>
+
           </div>
 
-          <div className="stat-card">
-            <strong>50+</strong>
-            <span>Projects Delivered</span>
+
+          {/* 150+ */}
+          <div className="stat-card stat-blue">
+
+            <div className="stat-icon">
+              <BriefcaseBusiness
+                size={35}
+                strokeWidth={1.7}
+              />
+            </div>
+
+            <strong>150+</strong>
+
+            <span>
+              Projects
+              <br />
+              Delivered
+            </span>
+
+            <div className="stat-line"></div>
+
           </div>
 
-          <div className="stat-card">
+
+          {/* 25+ */}
+          <div className="stat-card stat-purple">
+
+            <div className="stat-icon">
+              <Users
+                size={35}
+                strokeWidth={1.7}
+              />
+            </div>
+
             <strong>25+</strong>
-            <span>Team Members</span>
+
+            <span>
+              Team
+              <br />
+              Members
+            </span>
+
+            <div className="stat-line"></div>
+
           </div>
 
-          <div className="stat-card">
+
+          {/* 100% */}
+          <div className="stat-card stat-yellow">
+
+            <div className="stat-icon">
+              <Handshake
+                size={35}
+                strokeWidth={1.7}
+              />
+            </div>
+
             <strong>100%</strong>
-            <span>Client Focused</span>
+
+            <span>
+              Client-Focused
+              <br />
+              Solutions
+            </span>
+
+            <div className="stat-line"></div>
+
           </div>
 
         </div>

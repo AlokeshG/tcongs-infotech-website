@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
-import "./CTASection.css";
+import {
+  Trophy,
+  ShieldCheck,
+  Users,
+  BadgeCheck,
+  TrendingUp,
+  CalendarDays,
+  ArrowRight,
+} from "lucide-react";
 
+import "./CTASection.css";
 
 function CTASection() {
   const [rating, setRating] = useState(0);
@@ -8,7 +17,6 @@ function CTASection() {
   const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
-    // Animate rating from 0 to 4.9
     let start = 0;
 
     const interval = setInterval(() => {
@@ -18,19 +26,17 @@ function CTASection() {
         start = 4.9;
         clearInterval(interval);
 
-        // Show stars after rating finishes
         setTimeout(() => {
           setShowStars(true);
         }, 200);
 
-        // Show verified text after stars
         setTimeout(() => {
           setShowReviews(true);
-        }, 900);
+        }, 700);
       }
 
       setRating(Number(start.toFixed(1)));
-    }, 100);
+    }, 70);
 
     return () => clearInterval(interval);
   }, []);
@@ -38,12 +44,15 @@ function CTASection() {
   return (
     <section className="cta-section">
 
-      {/* Background dots */}
+      {/* Background */}
       <div className="cta-dots"></div>
 
       <div className="cta-wrapper">
 
-        {/* LEFT CONTENT */}
+        {/* ==============================
+            LEFT CARD
+        ============================== */}
+
         <div className="cta-content">
 
           <h2>
@@ -54,35 +63,46 @@ function CTASection() {
 
           <p>
             Whether you work in construction, manufacturing,
-            <br />
             healthcare, or finance, investing in custom software can
-            <br />
             streamline your workflow, eliminate errors, and increase
-            <br />
             team productivity.
           </p>
 
           <button className="consultation-btn">
-            Schedule a Consultation
+            <CalendarDays size={15} strokeWidth={1.8} />
+
+            <span>Schedule a Consultation</span>
+
+            <ArrowRight size={17} strokeWidth={1.8} />
           </button>
 
         </div>
 
-        {/* RIGHT CLUTCH CARD */}
+
+        {/* ==============================
+            RIGHT CLUTCH CARD
+        ============================== */}
+
         <div className="clutch-card">
 
-          <div className="clutch-content">
+          <div className="clutch-main">
 
+            {/* Trophy */}
+            <div className="clutch-icon">
+              <Trophy size={19} strokeWidth={1.6} />
+            </div>
+
+            {/* Title */}
             <div className="clutch-title">
               Clutch
             </div>
 
-            {/* RATING */}
+            {/* Rating */}
             <div className="clutch-rating">
               {rating.toFixed(1)}
             </div>
 
-            {/* STARS */}
+            {/* Stars */}
             <div
               className={`clutch-stars ${
                 showStars ? "stars-visible" : ""
@@ -95,28 +115,99 @@ function CTASection() {
               <span>★</span>
             </div>
 
-            {/* VERIFIED */}
+            {/* Verified */}
             <div
               className={`clutch-reviews ${
                 showReviews ? "reviews-visible" : ""
               }`}
             >
-              VERIFIED • 25 REVIEWS
+              VERIFIED <span>•</span> 25 REVIEWS
             </div>
 
           </div>
 
-          {/* REVIEW BUTTON */}
-          <button className="reviews-btn">
-            See our reviews on Clutch
-          </button>
 
-          {/* BOTTOM SLIDER */}
+          {/* ==============================
+              STATISTICS
+          ============================== */}
+
+          <div className="clutch-stats">
+
+            {/* STAT 1 */}
+            <div className="clutch-stat">
+
+              <ShieldCheck
+                size={22}
+                strokeWidth={1.5}
+              />
+
+              <div>
+                <strong>Verified</strong>
+                <span>Professionals</span>
+              </div>
+
+            </div>
+
+
+            {/* STAT 2 */}
+            <div className="clutch-stat">
+
+              <Users
+                size={22}
+                strokeWidth={1.5}
+              />
+
+              <div>
+                <strong>25+</strong>
+                <span>Client Reviews</span>
+              </div>
+
+            </div>
+
+
+            {/* STAT 3 */}
+            <div className="clutch-stat">
+
+              <BadgeCheck
+                size={22}
+                strokeWidth={1.5}
+              />
+
+              <div>
+                <strong>4.9/5</strong>
+                <span>Average Rating</span>
+              </div>
+
+            </div>
+
+
+            {/* STAT 4 */}
+            <div className="clutch-stat">
+
+              <TrendingUp
+                size={22}
+                strokeWidth={1.5}
+              />
+
+              <div>
+                <strong>Proven</strong>
+                <span>Track Record</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* Bottom Slider */}
           <div className="clutch-slider">
+
+            <span></span>
             <span></span>
             <span className="active"></span>
             <span></span>
             <span></span>
+
           </div>
 
         </div>
@@ -127,4 +218,4 @@ function CTASection() {
   );
 }
 
-export default CTASection;
+export default CTASection;  

@@ -1,24 +1,12 @@
-/* ===============================
-   MAIN SECTION
-================================ */
+/* =========================================================
+   CTA SECTION
+========================================================= */
 
 .cta-section {
   position: relative;
-  width: 100%;
-  min-height: 540px;
 
-  background:
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(42, 111, 150, 0.45),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 85% 40%,
-      rgba(35, 170, 120, 0.45),
-      transparent 45%
-    ),
-    #073239;
+  width: 100%;
+  min-height: 500px;
 
   overflow: hidden;
 
@@ -26,17 +14,40 @@
   align-items: center;
   justify-content: center;
 
-  padding: 80px 40px;
+  padding: 70px 40px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 15% 55%,
+      rgba(38, 104, 145, 0.45),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 88% 45%,
+      rgba(17, 144, 102, 0.48),
+      transparent 45%
+    ),
+    linear-gradient(
+      110deg,
+      #07363f 0%,
+      #063d42 45%,
+      #075347 100%
+    );
 }
 
 
-/* ===============================
+/* =========================================================
    BACKGROUND DOTS
-================================ */
+========================================================= */
 
 .cta-dots {
   position: absolute;
+
   inset: 0;
+
+  pointer-events: none;
 
   background-image:
     radial-gradient(
@@ -47,53 +58,66 @@
   background-size: 8px 8px;
 
   opacity: 0.35;
-
-  pointer-events: none;
 }
 
 
-/* ===============================
+/* =========================================================
    MAIN WRAPPER
-================================ */
+========================================================= */
 
 .cta-wrapper {
   position: relative;
 
-  width: 950px;
-  max-width: 95%;
+  width: 100%;
+
+  max-width: 1100px;
 
   min-height: 370px;
 
   display: flex;
   align-items: center;
+
+  margin: 0 auto;
 }
 
 
-/* ===============================
-   LEFT CONTENT
-================================ */
+/* =========================================================
+   LEFT CONTENT CARD
+========================================================= */
 
 .cta-content {
   position: relative;
+
   z-index: 3;
 
-  width: 510px;
-  min-height: 290px;
+  width: 570px;
 
-  padding: 32px 28px;
+  min-height: 330px;
 
-  background: rgba(3, 39, 44, 0.86);
+  box-sizing: border-box;
 
-  border: 1px solid rgba(120, 205, 218, 0.15);
+  padding: 44px 36px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(1, 43, 49, 0.97),
+      rgba(2, 51, 55, 0.94)
+    );
+
+  border: 1px solid rgba(91, 190, 201, 0.25);
 
   border-radius: 5px;
 
-  /* Quick appearance */
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
   animation: contentAppear 0.55s ease-out both;
 }
 
 
 @keyframes contentAppear {
+
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -103,87 +127,116 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 
-/* ===============================
+/* =========================================================
    HEADING
-================================ */
+========================================================= */
 
 .cta-content h2 {
-  margin: 0 0 14px;
+  margin: 0 0 22px;
 
-  color: white;
+  color: #ffffff;
 
-  font-size: 32px;
-  line-height: 1.25;
+  font-size: 34px;
+
+  line-height: 1.3;
 
   font-weight: 700;
 
-  letter-spacing: -1px;
+  letter-spacing: -1.1px;
 }
 
 
 .cta-content h2 span {
-  color: #75c9d5;
+  color: #39c4cf;
 }
 
 
-/* ===============================
+/* =========================================================
    DESCRIPTION
-================================ */
+========================================================= */
 
 .cta-content p {
-  margin: 0 0 18px;
+  max-width: 475px;
 
-  color: #f4f7f7;
+  margin: 0 0 28px;
+
+  color: rgba(255, 255, 255, 0.88);
 
   font-size: 16px;
 
-  line-height: 1.55;
+  line-height: 1.65;
 
   font-weight: 400;
 }
 
 
-/* ===============================
+/* =========================================================
    CONSULTATION BUTTON
-================================ */
+========================================================= */
 
 .consultation-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 205px;
+
+  height: 46px;
+
+  padding: 0 16px;
+
   border: none;
-
-  padding: 12px 18px;
-
-  background: #fff28a;
-
-  color: #1c302f;
 
   border-radius: 6px;
 
-  font-size: 14px;
+  background:
+    linear-gradient(
+      90deg,
+      #08b9bd,
+      #14b7c1
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
   transition:
     transform 0.25s ease,
-    background 0.25s ease;
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 
 .consultation-btn:hover {
   transform: translateY(-2px);
 
-  background: #fff7a9;
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 8px 22px rgba(0, 196, 201, 0.22);
 }
 
 
-/* ===============================
+/* =========================================================
    CLUTCH CARD
-================================ */
+========================================================= */
 
 .clutch-card {
   position: absolute;
+
+  z-index: 2;
 
   right: 0;
 
@@ -191,36 +244,35 @@
 
   transform: translateY(-50%);
 
-  z-index: 2;
+  width: 570px;
 
-  width: 540px;
-  height: 365px;
+  height: 390px;
+
+  box-sizing: border-box;
+
+  padding: 28px 28px 20px;
 
   background:
     linear-gradient(
-      rgba(8, 20, 29, 0.92),
-      rgba(8, 20, 29, 0.92)
+      145deg,
+      rgba(5, 25, 32, 0.98),
+      rgba(7, 27, 34, 0.97)
     );
 
-  border: 10px solid #101b20;
+  border: 10px solid #0a1d24;
 
   border-radius: 28px;
 
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.35);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    0 15px 35px rgba(0, 0, 0, 0.35);
 
   overflow: hidden;
 }
 
 
-/* ===============================
-   SUBTLE CARD GRID
-================================ */
+/* =========================================================
+   CARD GRID
+========================================================= */
 
 .clutch-card::before {
   content: "";
@@ -246,60 +298,100 @@
 }
 
 
-/* ===============================
-   CLUTCH CONTENT
-================================ */
+/* =========================================================
+   CLUTCH MAIN
+========================================================= */
 
-.clutch-content {
+.clutch-main {
   position: relative;
 
   z-index: 2;
 
-  text-align: center;
+  display: flex;
 
-  margin-top: -20px;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
 }
 
 
-/* ===============================
+/* =========================================================
+   TROPHY ICON
+========================================================= */
+
+.clutch-icon {
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 4px;
+
+  color: #16c1c3;
+}
+
+
+/* =========================================================
    CLUTCH TITLE
-================================ */
+========================================================= */
 
 .clutch-title {
-  color: white;
+  margin-bottom: 2px;
 
-  font-size: 19px;
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.2;
 
   font-weight: 500;
-
-  margin-bottom: 5px;
 }
 
 
-/* ===============================
+/* =========================================================
    RATING
-================================ */
+========================================================= */
 
 .clutch-rating {
-  color: white;
+  margin-top: 0;
 
-  font-size: 78px;
+  color: #ffffff;
 
-  line-height: 0.95;
+  font-size: 76px;
+
+  line-height: 0.98;
 
   font-weight: 800;
 
-  letter-spacing: -3px;
+  letter-spacing: -4px;
 
-  min-width: 180px;
+  background:
+    linear-gradient(
+      90deg,
+      #73c6f0 0%,
+      #ffffff 48%,
+      #3bd4aa 100%
+    );
 
-  text-align: center;
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 
   animation: ratingPop 0.45s ease-out;
 }
 
 
 @keyframes ratingPop {
+
   0% {
     opacity: 0;
     transform: scale(0.8);
@@ -309,25 +401,28 @@
     opacity: 1;
     transform: scale(1);
   }
+
 }
 
 
-/* ===============================
+/* =========================================================
    STARS
-================================ */
+========================================================= */
 
 .clutch-stars {
   display: flex;
 
   justify-content: center;
 
-  gap: 7px;
+  align-items: center;
 
-  margin-top: 10px;
+  gap: 5px;
+
+  margin-top: 7px;
 
   opacity: 0;
 
-  transform: translateY(8px);
+  transform: translateY(7px);
 
   transition:
     opacity 0.35s ease,
@@ -343,9 +438,11 @@
 
 
 .clutch-stars span {
-  color: #f6d928;
+  color: #ffd429;
 
-  font-size: 22px;
+  font-size: 20px;
+
+  line-height: 1;
 
   opacity: 0;
 
@@ -353,60 +450,80 @@
 }
 
 
-/* Stars appear one by one */
+/* =========================================================
+   STAR ANIMATION
+========================================================= */
 
 .stars-visible span:nth-child(1) {
-  animation: starAppear 0.35s ease forwards;
+  animation:
+    starAppear 0.3s ease forwards;
 }
+
 
 .stars-visible span:nth-child(2) {
-  animation: starAppear 0.35s 0.12s ease forwards;
+  animation:
+    starAppear 0.3s 0.1s ease forwards;
 }
+
 
 .stars-visible span:nth-child(3) {
-  animation: starAppear 0.35s 0.24s ease forwards;
+  animation:
+    starAppear 0.3s 0.2s ease forwards;
 }
+
 
 .stars-visible span:nth-child(4) {
-  animation: starAppear 0.35s 0.36s ease forwards;
+  animation:
+    starAppear 0.3s 0.3s ease forwards;
 }
 
+
 .stars-visible span:nth-child(5) {
-  animation: starAppear 0.35s 0.48s ease forwards;
+  animation:
+    starAppear 0.3s 0.4s ease forwards;
 }
 
 
 @keyframes starAppear {
+
   to {
     opacity: 1;
 
     transform: scale(1);
   }
+
 }
 
 
-/* ===============================
-   VERIFIED REVIEWS
-================================ */
+/* =========================================================
+   VERIFIED TEXT
+========================================================= */
 
 .clutch-reviews {
-  margin-top: 12px;
+  margin-top: 9px;
 
-  color: #e6e9e9;
+  color: #ffffff;
 
-  font-size: 13px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
 
   opacity: 0;
 
-  transform: translateY(8px);
+  transform: translateY(7px);
 
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
+}
+
+
+.clutch-reviews span {
+  color: #6d777b;
+
+  padding: 0 3px;
 }
 
 
@@ -417,30 +534,121 @@
 }
 
 
-/* ===============================
+/* =========================================================
+   STATISTICS AREA
+========================================================= */
+
+.clutch-stats {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 28px;
+
+  right: 28px;
+
+  bottom: 53px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+  padding-top: 16px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STAT
+========================================================= */
+
+.clutch-stat {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  text-align: center;
+
+  color: #08b9bd;
+}
+
+
+.clutch-stat svg {
+  margin-bottom: 7px;
+
+  color: #08b9bd;
+}
+
+
+.clutch-stat div {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.clutch-stat strong {
+  color: #ffffff;
+
+  font-size: 10px;
+
+  line-height: 1.3;
+
+  font-weight: 500;
+}
+
+
+.clutch-stat span {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 9px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
    REVIEW BUTTON
-================================ */
+========================================================= */
 
 .reviews-btn {
   position: absolute;
 
-  right: 30px;
+  z-index: 5;
 
-  bottom: 20px;
+  right: 25px;
 
-  z-index: 3;
+  bottom: 19px;
 
-  padding: 10px 16px;
+  height: 39px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   background: transparent;
 
-  border: 1px solid white;
-
-  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.75);
 
   border-radius: 6px;
 
-  font-size: 13px;
+  color: #ffffff;
+
+  font-size: 12px;
 
   cursor: pointer;
 
@@ -451,22 +659,24 @@
 
 
 .reviews-btn:hover {
-  background: white;
+  background: #ffffff;
 
   color: #092d32;
 }
 
 
-/* ===============================
+/* =========================================================
    BOTTOM SLIDER
-================================ */
+========================================================= */
 
 .clutch-slider {
   position: absolute;
 
-  bottom: 8px;
+  z-index: 4;
 
   left: 50%;
+
+  bottom: 10px;
 
   transform: translateX(-50%);
 
@@ -474,9 +684,7 @@
 
   align-items: center;
 
-  gap: 28px;
-
-  z-index: 3;
+  gap: 25px;
 }
 
 
@@ -485,115 +693,275 @@
 
   height: 4px;
 
-  background: #dce2e2;
-
   border-radius: 50%;
+
+  background: #d9e2e3;
 }
 
 
 .clutch-slider span.active {
-  width: 110px;
+  width: 105px;
 
   height: 4px;
 
   border-radius: 10px;
 
-  background: #68777b;
+  background: #718084;
 }
 
 
-/* ===============================
-   RESPONSIVE
-================================ */
+/* =========================================================
+   LARGE TABLET
+========================================================= */
 
-@media (max-width: 1000px) {
-
-  .cta-wrapper {
-    width: 900px;
-  }
-
-  .cta-content {
-    width: 470px;
-  }
-
-  .clutch-card {
-    width: 500px;
-  }
-}
-
-
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
 
   .cta-section {
-    padding: 60px 20px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
-  .cta-wrapper {
-    width: 100%;
 
+  .cta-wrapper {
+    max-width: 950px;
+  }
+
+
+  .cta-content {
+    width: 500px;
+  }
+
+
+  .clutch-card {
+    width: 520px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .cta-section {
     min-height: auto;
 
-    display: flex;
+    padding: 70px 25px;
+  }
+
+
+  .cta-wrapper {
+    max-width: 700px;
+
+    min-height: auto;
 
     flex-direction: column;
 
     gap: 30px;
   }
 
+
   .cta-content {
     width: 100%;
 
     min-height: auto;
+
+    padding: 38px 32px;
   }
+
 
   .clutch-card {
     position: relative;
 
     top: auto;
+
     right: auto;
 
     transform: none;
 
     width: 100%;
 
-    max-width: 540px;
+    max-width: 570px;
+
+    height: 390px;
   }
+
 }
 
 
-@media (max-width: 500px) {
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .cta-section {
+    padding: 55px 16px;
+  }
+
+
+  .cta-wrapper {
+    width: 100%;
+
+    gap: 25px;
+  }
+
+
+  .cta-content {
+    padding: 30px 24px;
+
+    border-radius: 6px;
+  }
+
 
   .cta-content h2 {
-    font-size: 25px;
+    font-size: 27px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.7px;
   }
+
 
   .cta-content p {
     font-size: 14px;
+
+    line-height: 1.6;
   }
 
+
+  .consultation-btn {
+    width: 100%;
+
+    max-width: 220px;
+  }
+
+
   .clutch-card {
-    height: 330px;
+    width: 100%;
+
+    height: 360px;
+
+    padding: 25px 15px;
 
     border-width: 7px;
 
-    border-radius: 20px;
+    border-radius: 21px;
   }
+
 
   .clutch-rating {
-    font-size: 62px;
+    font-size: 65px;
   }
 
+
+  .clutch-stars span {
+    font-size: 18px;
+  }
+
+
   .clutch-reviews {
-    font-size: 10px;
+    font-size: 9px;
 
     letter-spacing: 2px;
   }
 
+
+  .clutch-stats {
+    left: 10px;
+
+    right: 10px;
+
+    bottom: 55px;
+
+    padding-top: 13px;
+  }
+
+
+  .clutch-stat svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+
+  .clutch-stat strong {
+    font-size: 8px;
+  }
+
+
+  .clutch-stat span {
+    font-size: 7px;
+  }
+
+
   .reviews-btn {
     right: 15px;
 
-    bottom: 20px;
+    bottom: 17px;
 
-    font-size: 11px;
+    height: 35px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
   }
+
+
+  .clutch-slider {
+    gap: 17px;
+
+    bottom: 7px;
+  }
+
+
+  .clutch-slider span.active {
+    width: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .cta-content h2 {
+    font-size: 24px;
+  }
+
+
+  .cta-content p {
+    font-size: 13px;
+  }
+
+
+  .clutch-card {
+    height: 340px;
+  }
+
+
+  .clutch-rating {
+    font-size: 58px;
+  }
+
+
+  .clutch-stat strong {
+    font-size: 7px;
+  }
+
+
+  .clutch-stat span {
+    font-size: 6.5px;
+  }
+
+
+  .reviews-btn {
+    font-size: 9px;
+  }
+
 }

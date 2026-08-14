@@ -14,9 +14,22 @@ function SolutionSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Scroll to the next section
+  const handleScrollDown = () => {
+    const nextSection = document.getElementById("next-section");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="solution-section">
 
+      {/* HERO CONTENT */}
       <div className="solution-content">
 
         <h1 className="solution-title">
@@ -31,15 +44,6 @@ function SolutionSection() {
           business.
         </p>
 
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="scroll-indicator">
-        <div className="scroll-icon">
-          <ArrowDown size={22} strokeWidth={1.5} />
-        </div>
-
-        <span>SCROLL</span>
       </div>
 
     </section>

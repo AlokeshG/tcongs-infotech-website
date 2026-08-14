@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Send } from "lucide-react";
+import { X, Send, MessageCircle } from "lucide-react";
 import tcongsLogo from "../assets/tcongs-logo.png";
 import "./ChatAssistant.css";
 
@@ -103,9 +103,7 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
     setContactMode(true);
     setContactStep("name");
 
-    addBotMessage(
-      "Sure! Please enter your name."
-    );
+    addBotMessage("Sure! Please enter your name.");
   };
 
   // --------------------------------------------------
@@ -113,10 +111,8 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
   // --------------------------------------------------
 
   const handleContactMessage = async (userMessage) => {
-
     // STEP 1 - NAME
     if (contactStep === "name") {
-
       setContactData((prev) => ({
         ...prev,
         name: userMessage,
@@ -133,12 +129,10 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
 
     // STEP 2 - EMAIL
     if (contactStep === "email") {
-
       const emailRegex =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!emailRegex.test(userMessage)) {
-
         addBotMessage(
           "Please enter a valid email address, for example: example@gmail.com"
         );
@@ -162,7 +156,6 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
 
     // STEP 3 - MESSAGE
     if (contactStep === "message") {
-
       const updatedData = {
         ...contactData,
         message: userMessage,
@@ -185,9 +178,7 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
   // --------------------------------------------------
 
   const handleNormalMessage = (userMessage) => {
-
-    const lowerMessage =
-      userMessage.toLowerCase();
+    const lowerMessage = userMessage.toLowerCase();
 
     // Contact request
     if (
@@ -252,7 +243,6 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
   // --------------------------------------------------
 
   const sendMessage = async () => {
-
     if (!message.trim() || loading) {
       return;
     }
@@ -286,13 +276,18 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
   // --------------------------------------------------
 
   const handleKeyDown = (e) => {
-
     if (e.key === "Enter" && !e.shiftKey) {
-
       e.preventDefault();
-
       sendMessage();
     }
+  };
+
+  // --------------------------------------------------
+  // OPEN CHAT
+  // --------------------------------------------------
+
+  const openChat = () => {
+    setChatOpen(true);
   };
 
   // --------------------------------------------------
@@ -303,17 +298,41 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
     setChatOpen(false);
   };
 
-  // --------------------------------------------------
-  // DON'T SHOW WHEN CLOSED
-  // --------------------------------------------------
+  // ==================================================
+  // FLOATING ASSISTANT BUTTON
+  // ==================================================
 
   if (!chatOpen) {
-    return null;
+    return (
+      <button
+        type="button"
+        className="chat-floating-button"
+        onClick={openChat}
+        aria-label="Open Tcongs Assistant"
+      >
+        <div className="chat-floating-logo">
+          <img
+            src={tcongsLogo.src}
+            alt="Tcongs Assistant"
+          />
+        </div>
+
+        <div className="chat-floating-content">
+          <span className="chat-floating-title">
+            Assistant
+          </span>
+
+          <span className="chat-floating-status">
+            <span className="floating-status-dot"></span>
+          </span>
+        </div>
+      </button>
+    );
   }
 
-  // --------------------------------------------------
-  // CHAT UI
-  // --------------------------------------------------
+  // ==================================================
+  // CHAT WINDOW
+  // ==================================================
 
   return (
     <div className="chat-window">
@@ -331,23 +350,17 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
           />
 
           <div>
-
             <h3>
               Tcongs Assistant
             </h3>
 
             <div className="online-status">
-
               <span></span>
-
               Online
-
             </div>
-
           </div>
 
         </div>
-
 
         {/* CLOSE BUTTON */}
 
@@ -362,43 +375,32 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
 
       </div>
 
-
       {/* ================= MESSAGES ================= */}
 
       <div className="chat-messages">
 
         {messages.map((msg, index) => (
-
           <div
             key={index}
             className={`message-row ${msg.sender}`}
           >
-
             <div className="message-bubble">
               {msg.text}
             </div>
-
           </div>
-
         ))}
-
 
         {/* Loading message */}
 
         {loading && (
-
           <div className="message-row bot">
-
             <div className="message-bubble typing">
               Sending...
             </div>
-
           </div>
-
         )}
 
       </div>
-
 
       {/* ================= INPUT ================= */}
 
@@ -423,7 +425,6 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
           disabled={loading}
         />
 
-
         {/* SEND BUTTON */}
 
         <button
@@ -435,9 +436,7 @@ function ChatAssistant({ chatOpen, setChatOpen }) {
           }
           aria-label="Send message"
         >
-
           <Send size={18} />
-
         </button>
 
       </div>

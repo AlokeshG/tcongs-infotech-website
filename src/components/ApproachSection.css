@@ -6,15 +6,16 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #06252a;
-  color: #ffffff;
-
-  padding: 70px 20px 100px;
-
   box-sizing: border-box;
+
+  padding: 70px 30px 70px;
 
   position: relative;
   overflow: hidden;
+
+  background: #03272b;
+
+  color: #ffffff;
 }
 
 
@@ -29,7 +30,7 @@
   inset: 0;
 
   background-image: radial-gradient(
-    rgba(255, 255, 255, 0.15) 1px,
+    rgba(255, 255, 255, 0.13) 1px,
     transparent 1px
   );
 
@@ -43,11 +44,15 @@
 
 /* =========================================================
    CONTAINER
+   IMPORTANT: EXPANDED WIDTH
 ========================================================= */
 
 .approach-container {
   width: 100%;
-  max-width: 970px;
+
+  /* OLD: 600px */
+  /* NEW: much wider */
+  max-width: 1100px;
 
   margin: 0 auto;
 
@@ -60,17 +65,47 @@
    HEADER
 ========================================================= */
 
-.approach-header h2 {
-  margin: 0 0 28px;
+.approach-header {
+  text-align: center;
 
-  font-size: 30px;
-  line-height: 1.05;
+  margin-bottom: 30px;
+}
+
+
+.approach-label {
+  margin-bottom: 10px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #16c6c9;
+}
+
+
+.approach-header h2 {
+  margin: 0;
+
+  font-size: 32px;
+
+  line-height: 1.15;
 
   font-weight: 700;
 
-  letter-spacing: -1px;
+  letter-spacing: -0.8px;
+}
 
-  color: #ffffff;
+
+.approach-subtitle {
+  margin: 10px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.65);
 }
 
 
@@ -79,72 +114,136 @@
 ========================================================= */
 
 .approach-steps {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  column-gap: 50px;
+  gap: 24px;
 
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 
 .approach-step {
+  min-height: 100px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
   display: flex;
 
   align-items: flex-start;
 
-  gap: 10px;
+  padding: 18px 20px 16px 22px;
+
+  border-radius: 7px;
+
+  background: rgba(5, 40, 44, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* LEFT ACCENT */
+
+.approach-step::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+}
+
+
+.step-one::before {
+  background: #00d4d9;
+}
+
+
+.step-two::before {
+  background: #a96ce8;
+}
+
+
+.step-three::before {
+  background: #61d275;
 }
 
 
 /* =========================================================
-   STEP CIRCLE
+   STEP NUMBER
 ========================================================= */
 
 .step-number {
-  width: 29px;
-  height: 29px;
+  width: 25px;
+  height: 25px;
 
-  min-width: 29px;
+  min-width: 25px;
+
+  margin-right: 12px;
 
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  font-size: 14px;
+  font-size: 9px;
 
   font-weight: 700;
 
-  color: #06252a;
+  color: #03272b;
+
+  background: #00cbd2;
 }
 
 
-.step-blue {
-  background: #78d5e6;
+.step-two .step-number {
+  background: #a66ce5;
 }
 
 
-.step-purple {
-  background: #a88fd8;
-}
-
-
-.step-green {
-  background: #5fc875;
+.step-three .step-number {
+  background: #61d275;
 }
 
 
 /* =========================================================
-   STEP TEXT
+   STEP ICON
 ========================================================= */
 
-.approach-step h3 {
-  margin: 0 0 4px;
+.step-icon {
+  display: none;
+}
 
-  font-size: 16px;
+
+/* =========================================================
+   STEP CONTENT
+========================================================= */
+
+.step-content {
+  flex: 1;
+}
+
+
+.approach-step h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
 
   line-height: 1.2;
 
@@ -155,11 +254,11 @@
 .approach-step p {
   margin: 0;
 
-  font-size: 12px;
+  font-size: 11px;
 
   line-height: 1.45;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 
@@ -170,345 +269,459 @@
 .approach-diagram {
   width: 100%;
 
+  /* Increased height slightly */
   height: 285px;
+
+  box-sizing: border-box;
 
   position: relative;
 
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-  border-radius: 4px;
+  border-radius: 8px;
 
-  background: rgba(3, 35, 40, 0.35);
+  background: rgba(2, 34, 39, 0.42);
 
   overflow: hidden;
 }
 
 
 /* =========================================================
-   DIAGRAM TITLE
+   CYCLE SVG
 ========================================================= */
 
-.diagram-title {
+.cycle-svg {
   position: absolute;
 
-  top: 37px;
+  width: 100%;
+  height: 100%;
+
+  left: 0;
+  top: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP EXPLORE
+========================================================= */
+
+.cycle-top {
+  position: absolute;
 
   left: 50%;
 
+  /* Slightly lower so icon doesn't overlap Explore */
+  top: 38px;
+
   transform: translateX(-50%);
 
-  z-index: 10;
+  z-index: 5;
 
-  font-size: 38px;
+  display: flex;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.cycle-top h3 {
+  margin: 0;
+
+  font-size: 22px;
 
   line-height: 1;
 
   font-weight: 700;
+}
 
-  letter-spacing: -1.5px;
+
+/* =========================================================
+   CYCLE NUMBER
+========================================================= */
+
+.cycle-number {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color: #03272b;
+}
+
+
+.cycle-blue {
+  background: #00cbd2;
+}
+
+
+.cycle-green {
+  background: #61d275;
+}
+
+
+.cycle-purple {
+  background: #a66ce5;
+}
+
+
+/* =========================================================
+   SIDE LABELS
+========================================================= */
+
+.cycle-side {
+  position: absolute;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT - SHIP
+========================================================= */
+
+.cycle-left {
+  left: 9%;
+
+  bottom: 48px;
+}
+
+
+.cycle-left h3 {
+  position: absolute;
+
+  left: 2px;
+
+  top: 47px;
+
+  margin: 0;
+
+  font-size: 20px;
 
   white-space: nowrap;
 }
 
 
 /* =========================================================
-   SVG ARROWS
+   RIGHT - CRAFT
 ========================================================= */
 
-.diagram-arrow {
+.cycle-right {
+  right: 9%;
+
+  bottom: 48px;
+}
+
+
+.cycle-right h3 {
   position: absolute;
 
-  overflow: visible;
+  right: 0;
 
-  pointer-events: none;
+  top: 47px;
 
-  z-index: 3;
+  margin: 0;
+
+  font-size: 20px;
+
+  white-space: nowrap;
 }
 
 
 /* =========================================================
-   GREEN ARROW
+   CYCLE ICONS
 ========================================================= */
 
-.green-arrow {
-  width: 44%;
+.cycle-icon {
+  width: 58px;
+  height: 58px;
 
-  height: 155px;
+  border-radius: 50%;
 
-  left: 5%;
+  display: flex;
 
-  top: 55px;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(3, 39, 43, 0.9);
+}
+
+
+/* GREEN ICON */
+
+.green-icon {
+  margin-left: 10px;
+
+  color: #62d275;
+
+  border: 1px solid rgba(98, 210, 117, 0.65);
+
+  box-shadow:
+    0 0 0 7px rgba(98, 210, 117, 0.05),
+    0 0 18px rgba(98, 210, 117, 0.12);
+}
+
+
+/* PURPLE ICON */
+
+.purple-icon {
+  margin-right: 10px;
+
+  color: #a66ce5;
+
+  border: 1px solid rgba(166, 108, 229, 0.65);
+
+  box-shadow:
+    0 0 0 7px rgba(166, 108, 229, 0.05),
+    0 0 18px rgba(166, 108, 229, 0.12);
 }
 
 
 /* =========================================================
-   BLUE ARROW
+   CENTER CONTENT
 ========================================================= */
 
-.blue-arrow {
-  width: 44%;
-
-  height: 155px;
-
-  right: 5%;
-
-  top: 55px;
-}
-
-
-/* =========================================================
-   PURPLE ARROW
-========================================================= */
-
-.purple-arrow {
-  width: 67%;
-
-  height: 135px;
-
-  left: 16.5%;
-
-  bottom: 22px;
-}
-
-
-/* =========================================================
-   SHIP / CRAFT
-========================================================= */
-
-.diagram-label {
-  position: absolute;
-
-  z-index: 8;
-
-  font-size: 38px;
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: -1.5px;
-
-  color: #ffffff;
-}
-
-
-/* SHIP */
-
-.ship-label {
-  left: 30px;
-
-  bottom: 76px;
-}
-
-
-/* CRAFT */
-
-.craft-label {
-  right: 30px;
-
-  bottom: 76px;
-}
-
-
-/* =========================================================
-   ICONS
-========================================================= */
-
-.diagram-icons {
+.cycle-center {
   position: absolute;
 
   left: 50%;
-  top: 54%;
+
+  /* Move center content slightly down */
+  top: 57%;
 
   transform: translate(-50%, -50%);
 
-  z-index: 8;
+  z-index: 5;
 
-  display: flex;
+  text-align: center;
 
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 28px;
-}
-
-
-.diagram-icon {
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-size: 32px;
-
-  filter: grayscale(1);
-
-  opacity: 0.20;
+  width: 300px;
 }
 
 
 /* =========================================================
-   ICON HIGHLIGHT
+   CENTER ICON
 ========================================================= */
 
-.bicycle {
-  animation: bicycleHighlight 6s ease-in-out infinite;
-}
+.center-icon {
+  width: 46px;
+  height: 46px;
 
+  margin: 0 auto 9px;
 
-.car {
-  animation: carHighlight 6s ease-in-out infinite;
-}
+  border-radius: 50%;
 
+  display: flex;
 
-.skateboard {
-  animation: skateboardHighlight 6s ease-in-out infinite;
-}
+  align-items: center;
+  justify-content: center;
 
+  color: #00cbd2;
 
-/* BICYCLE */
+  border: 1px solid rgba(0, 203, 210, 0.65);
 
-@keyframes bicycleHighlight {
-
-  0%,
-  30% {
-    opacity: 0.2;
-    filter: grayscale(1);
-    transform: scale(0.95);
-  }
-
-  40%,
-  55% {
-    opacity: 1;
-    filter: grayscale(0);
-    transform: scale(1.08);
-  }
-
-  65%,
-  100% {
-    opacity: 0.2;
-    filter: grayscale(1);
-    transform: scale(0.95);
-  }
-}
-
-
-/* CAR */
-
-@keyframes carHighlight {
-
-  0%,
-  50% {
-    opacity: 0.2;
-    filter: grayscale(1);
-    transform: scale(0.95);
-  }
-
-  60%,
-  75% {
-    opacity: 1;
-    filter: grayscale(0);
-    transform: scale(1.08);
-  }
-
-  85%,
-  100% {
-    opacity: 0.2;
-    filter: grayscale(1);
-    transform: scale(0.95);
-  }
-}
-
-
-/* SKATEBOARD */
-
-@keyframes skateboardHighlight {
-
-  0%,
-  70% {
-    opacity: 0.2;
-    filter: grayscale(1);
-  }
-
-  80%,
-  90% {
-    opacity: 1;
-    filter: grayscale(0);
-  }
-
-  100% {
-    opacity: 0.2;
-    filter: grayscale(1);
-  }
+  box-shadow:
+    0 0 0 7px rgba(0, 203, 210, 0.05),
+    0 0 18px rgba(0, 203, 210, 0.15);
 }
 
 
 /* =========================================================
-   DESCRIPTION
+   CENTER TEXT
 ========================================================= */
 
-.approach-description {
-  margin-top: 13px;
-}
+.cycle-center h3 {
+  margin: 0 0 5px;
 
+  font-size: 17px;
 
-.approach-description h3 {
-  margin: 0 0 7px;
+  line-height: 1.2;
 
-  font-size: 16px;
-
-  line-height: 1.3;
+  color: #13c4c7;
 
   font-weight: 700;
 }
 
 
-.approach-description p {
-  width: 70%;
+.cycle-center p {
+  margin: 0;
 
-  margin: 0 0 14px;
-
-  font-size: 12px;
+  font-size: 10px;
 
   line-height: 1.45;
 
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 
 /* =========================================================
-   BUTTON
+   DESCRIPTION CARD
 ========================================================= */
 
-.approach-description button {
-  padding: 9px 16px;
+.approach-description {
+  width: 82%;
 
-  border: none;
+  min-height: 65px;
 
-  border-radius: 4px;
+  box-sizing: border-box;
 
-  background: #ffffff;
+  margin: 18px auto 0;
 
-  color: #06252a;
+  padding: 12px 18px;
 
-  font-size: 11px;
+  display: flex;
 
-  font-weight: 600;
+  align-items: center;
 
-  cursor: pointer;
+  gap: 14px;
 
-  transition: 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 6px;
+
+  background: rgba(5, 40, 44, 0.55);
+
+  position: relative;
+
+  overflow: hidden;
 }
 
 
-.approach-description button:hover {
-  background: #75d7e8;
+/* LEFT BORDER */
 
+.approach-description::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+
+  background: #00cbd2;
+}
+
+
+/* =========================================================
+   DESCRIPTION ICON
+========================================================= */
+
+.description-icon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  border: 1px solid rgba(0, 203, 210, 0.5);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #00cbd2;
+}
+
+
+/* =========================================================
+   DESCRIPTION TEXT
+========================================================= */
+
+.description-content {
+  flex: 1;
+}
+
+
+.description-content h3 {
+  margin: 0 0 3px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.description-content p {
+  margin: 0;
+
+  font-size: 9px;
+
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.approach-step:hover {
   transform: translateY(-2px);
+
+  border-color: rgba(0, 203, 210, 0.35);
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .approach-container {
+    max-width: 1180px;
+  }
+
+
+  .approach-header h2 {
+    font-size: 34px;
+  }
+
+
+  .approach-step {
+    min-height: 105px;
+  }
+
+
+  .approach-diagram {
+    height: 300px;
+  }
+
+
+  .cycle-top h3 {
+    font-size: 23px;
+  }
+
+
+  .cycle-left h3,
+  .cycle-right h3 {
+    font-size: 21px;
+  }
+
 }
 
 
@@ -516,26 +729,83 @@
    TABLET
 ========================================================= */
 
+@media (max-width: 1100px) {
+
+  .approach-section {
+    padding: 60px 25px 60px;
+  }
+
+
+  .approach-container {
+    max-width: 900px;
+  }
+
+
+  .approach-steps {
+    gap: 18px;
+  }
+
+
+  .approach-step {
+    padding: 16px;
+  }
+
+
+  .cycle-left {
+    left: 7%;
+  }
+
+
+  .cycle-right {
+    right: 7%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
 @media (max-width: 900px) {
 
   .approach-section {
-    padding: 60px 25px 80px;
+    padding: 55px 20px 50px;
   }
 
-  .approach-steps {
-    column-gap: 25px;
+
+  .approach-container {
+    max-width: 750px;
   }
+
 
   .approach-header h2 {
-    font-size: 28px;
+    font-size: 29px;
   }
 
-  .diagram-title {
-    font-size: 34px;
+
+  .approach-step h3 {
+    font-size: 14px;
   }
 
-  .diagram-label {
-    font-size: 32px;
+
+  .approach-step p {
+    font-size: 10px;
+  }
+
+
+  .approach-diagram {
+    height: 260px;
+  }
+
+
+  .cycle-left {
+    left: 6%;
+  }
+
+
+  .cycle-right {
+    right: 6%;
   }
 
 }
@@ -548,96 +818,142 @@
 @media (max-width: 650px) {
 
   .approach-section {
-    padding: 50px 18px 70px;
+    padding: 45px 16px 45px;
+  }
+
+
+  .approach-container {
+    max-width: 100%;
+  }
+
+
+  .approach-header {
+    margin-bottom: 25px;
   }
 
 
   .approach-header h2 {
     font-size: 25px;
+  }
 
-    margin-bottom: 25px;
+
+  .approach-subtitle {
+    font-size: 10px;
   }
 
 
   .approach-steps {
-    display: flex;
+    grid-template-columns: 1fr;
 
-    flex-direction: column;
-
-    gap: 18px;
-  }
-
-
-  .approach-diagram {
-    height: 380px;
-  }
-
-
-  .diagram-title {
-    top: 28px;
-
-    font-size: 30px;
-  }
-
-
-  .diagram-label {
-    font-size: 28px;
-  }
-
-
-  .ship-label {
-    left: 15px;
-
-    bottom: 110px;
-  }
-
-
-  .craft-label {
-    right: 15px;
-
-    bottom: 110px;
-  }
-
-
-  .green-arrow {
-    width: 70%;
-
-    left: -5%;
-
-    top: 60px;
-  }
-
-
-  .blue-arrow {
-    width: 70%;
-
-    right: -5%;
-
-    top: 60px;
-  }
-
-
-  .purple-arrow {
-    width: 90%;
-
-    left: 5%;
-
-    bottom: 35px;
-  }
-
-
-  .diagram-icons {
     gap: 10px;
   }
 
 
-  .diagram-icon {
-    font-size: 28px;
+  .approach-step {
+    min-height: 78px;
+
+    padding: 15px;
   }
 
 
-  .approach-description p {
+  .approach-step h3 {
+    font-size: 13px;
+  }
+
+
+  .approach-step p {
+    font-size: 9px;
+  }
+
+
+  .approach-diagram {
+    height: 310px;
+  }
+
+
+  .cycle-top {
+    top: 30px;
+  }
+
+
+  .cycle-top h3 {
+    font-size: 18px;
+  }
+
+
+  .cycle-left {
+    left: 25px;
+
+    bottom: 48px;
+  }
+
+
+  .cycle-right {
+    right: 25px;
+
+    bottom: 48px;
+  }
+
+
+  .cycle-left h3,
+  .cycle-right h3 {
+    font-size: 16px;
+  }
+
+
+  .cycle-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+
+  .cycle-center {
+    width: 190px;
+
+    top: 57%;
+  }
+
+
+  .cycle-center h3 {
+    font-size: 14px;
+  }
+
+
+  .cycle-center p {
+    font-size: 8px;
+  }
+
+
+  .center-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .approach-description {
     width: 100%;
+
+    min-height: 58px;
+
+    padding: 10px 14px;
+  }
+
+
+  .description-icon {
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+  }
+
+
+  .description-content h3 {
+    font-size: 10px;
+  }
+
+
+  .description-content p {
+    font-size: 8px;
   }
 
 }
@@ -650,23 +966,45 @@
 @media (max-width: 420px) {
 
   .approach-section {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .approach-header h2 {
+    font-size: 22px;
   }
 
 
   .approach-diagram {
-    height: 350px;
+    height: 290px;
   }
 
 
-  .diagram-title {
-    font-size: 27px;
+  .cycle-left {
+    left: 15px;
   }
 
 
-  .diagram-label {
-    font-size: 25px;
+  .cycle-right {
+    right: 15px;
+  }
+
+
+  .cycle-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .cycle-left h3,
+  .cycle-right h3 {
+    font-size: 14px;
+  }
+
+
+  .cycle-center {
+    width: 170px;
   }
 
 }

@@ -1,151 +1,117 @@
 import "./TestimonialsSection.css";
+import godrejLogo from "../assets/godrej-logo.png";
+import asianpaintsppglogo from "../assets/asian-paints-ppg-logo.png";
+import generalmillsinc from "../assets/General Mills Inc..png";
+import ainaboodahconstructiongroup from "../assets/Al Naboodah Construction Group.png";
 
-const testimonials = [
+const companies = [
   {
-    name: "Eric Freeman",
-    role: "President, Cultivate Leadership Institute",
-    text: "I didn't have to be too verbose in painting pictures for them because they knew where I was going.",
-    color: "red",
-    image: "/images/testimonials/eric.jpg",
-  },
-  {
-    name: "Henry Foah",
-    role: "President, Falcon Railings",
-    text: "The quality of work was great, and we were very happy with them all around.",
-    color: "blue",
-    image: "/images/testimonials/henry.jpg",
-  },
-  {
-    name: "David Krueger",
-    role: "CEO, FieldX VRT",
-    text: "RoleModel Software helped us grow",
-    color: "yellow",
-    image: "/images/testimonials/david.jpg",
-  },
-  {
-    name: "Rodney Pudney",
-    role: "Drafting Team Leader, Kattsafe",
-    text: "We have been able to reduce our quoting time from about 4hrs to approx 30mins. This has provided a ROI of approx 80%",
-    color: "blue",
-    image: "/images/testimonials/rodney.jpg",
-  },
-  {
-    name: "Joshua Martin",
-    role: "Founder, LandOne Materials Estimating",
-    text: "They care about the project—not just building what's asked of them.",
+    name: "Godrej",
+    industry: "Consumer Goods",
+    description:
+      "Custom software solution for streamlined operations and enhanced business efficiency.",
     color: "green",
-    image: "/images/testimonials/joshua.jpg",
+    logo: godrejLogo,
   },
   {
-    name: "Nathan",
-    role: "Program Manager",
-    text: "RoleModel Software has supported our team with thoughtful solutions and great communication.",
+    name: "Asian Paints PPG",
+    industry: "Manufacturing",
+    description:
+      "Digital transformation and systems integration to improve process efficiency and productivity.",
     color: "purple",
-    image: "/images/testimonials/nathan.jpg",
+    logo: asianpaintsppglogo,
   },
   {
-    name: "Partner",
-    role: "Scientific Research",
-    text: "They were able to take a complex scientific process and learn very quickly how to enable it to develop a solution that not only met our requirements but exceeded them.",
+    name: "General Mills Inc.",
+    industry: "Food & Beverages",
+    description:
+      "Enterprise solution for supply chain management and data-driven business insights.",
     color: "red",
-    image: "/images/testimonials/science.jpg",
+    logo: generalmillsinc,
   },
   {
-    name: "Partner",
-    role: "Business Operations",
-    text: "They have great members that are truly a joy to work with; they're high-quality people.",
-    color: "teal",
-    image: "/images/testimonials/office.jpg",
-  },
-  {
-    name: "Partner",
-    role: "Development Team",
-    text: "They continue to be one of our most valued development partners.",
+    name: "Al Naboodah Construction Group",
+    industry: "Construction",
+    description:
+      "Integrated construction management system for better collaboration and project delivery.",
     color: "blue",
-    image: "/images/testimonials/development.jpg",
-  },
-  {
-    name: "Rodney Pudney",
-    role: "Drafting Team Leader, Kattsafe",
-    text: "We have been able to reduce our quoting time from about 4hrs to approx 30mins. This has provided a ROI of approx 80%",
-    color: "blue",
-    image: "/images/testimonials/rodney.jpg",
+    logo: ainaboodahconstructiongroup,
   },
 ];
 
-function TestimonialCard({ item }) {
+function CompanyCard({ company }) {
   return (
-    <div
-      className={`testimonial-card testimonial-${item.color}`}
-      style={{
-        backgroundImage: `url(${item.image})`,
-      }}
-    >
-      <div className="testimonial-overlay"></div>
+    <div className={`company-card company-${company.color}`}>
 
-      <div className="testimonial-content">
-        <div className="testimonial-quote">
-          {item.text}
-        </div>
-
-        <div className="testimonial-person">
-          <h3>{item.name}</h3>
-          <p>{item.role}</p>
-        </div>
-
-        <button className="case-study-btn">
-          Read Case Study
-        </button>
+      {/* COMPANY LOGO */}
+      <div className="company-logo-wrapper">
+        <img
+          src={company.logo.src}
+          alt={`${company.name} logo`}
+          className="company-logo"
+        />
       </div>
+
+      {/* DIVIDER */}
+      <div className="company-divider"></div>
+
+      {/* COMPANY NAME */}
+      <h3 className="company-name">
+        {company.name}
+      </h3>
+
+      {/* INDUSTRY */}
+      <div className="company-industry">
+        <span className="industry-icon">💼</span>
+        <span>{company.industry}</span>
+      </div>
+
+      {/* DESCRIPTION */}
+      <p className="company-description">
+        {company.description}
+      </p>
+
     </div>
   );
 }
 
 function TestimonialsSection() {
-  // Duplicate cards to create a seamless infinite loop
-  const rowOne = [...testimonials, ...testimonials];
-  const rowTwo = [
-    ...testimonials.slice(5),
-    ...testimonials.slice(0, 5),
-    ...testimonials.slice(5),
-    ...testimonials.slice(0, 5),
-  ];
-
   return (
     <section className="testimonials-section">
 
-      {/* HEADER */}
-      <div className="testimonials-header">
-        <h2>What our partners have to say</h2>
+      <div className="companies-container">
 
-        <button className="our-work-btn">
-          Our Work
-          <span>→</span>
-        </button>
-      </div>
+        {/* HEADER */}
+        <div className="companies-header">
+          <div className="companies-heading">
 
-      {/* FIRST RUNNING ROW */}
-      <div className="testimonial-marquee">
-        <div className="testimonial-track track-left">
-          {rowOne.map((item, index) => (
-            <TestimonialCard
-              key={`row1-${index}`}
-              item={item}
+            <span className="companies-eyebrow">
+              OUR WORK
+            </span>
+
+            <h2>
+              Trusted by Leading Businesses
+            </h2>
+
+            <p>
+              Delivering impactful solutions for global brands across industries.
+            </p>
+
+          </div>
+        </div>
+
+        {/* COMPANY CARDS */}
+        <div className="companies-grid">
+
+          {companies.map((company, index) => (
+            <CompanyCard
+              key={index}
+              company={company}
             />
           ))}
-        </div>
-      </div>
 
-      {/* SECOND RUNNING ROW */}
-      <div className="testimonial-marquee second-marquee">
-        <div className="testimonial-track track-right">
-          {rowTwo.map((item, index) => (
-            <TestimonialCard
-              key={`row2-${index}`}
-              item={item}
-            />
-          ))}
         </div>
+
       </div>
 
     </section>

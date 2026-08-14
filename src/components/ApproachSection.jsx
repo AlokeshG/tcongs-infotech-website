@@ -1,68 +1,118 @@
 import "./ApproachSection.css";
 
+import {
+  Compass,
+  Pencil,
+  Rocket,
+  Code2,
+  ArrowUpRight,
+} from "lucide-react";
+
 function ApproachSection() {
   return (
     <section className="approach-section">
       <div className="approach-container">
 
         {/* ================= HEADER ================= */}
-
         <div className="approach-header">
+
+          <div className="approach-label">
+            OUR APPROACH
+          </div>
+
           <h2>
-            Our Approach:
-            <br />
             Process First, Software Second
           </h2>
 
-          <div className="approach-steps">
+          <p className="approach-subtitle">
+            We follow a proven process to deliver impactful software
+            <br />
+            that drives real business value.
+          </p>
 
-            {/* STEP 1 */}
-            <div className="approach-step">
-              <div className="step-number step-blue">1</div>
+        </div>
 
-              <div>
-                <h3>Explore</h3>
-                <p>
-                  We learn your business to drive
-                  <br />
-                  your solution to the highest points
-                  <br />
-                  of value.
-                </p>
-              </div>
+
+        {/* ================= THREE STEPS ================= */}
+        <div className="approach-steps">
+
+          {/* STEP 1 */}
+          <div className="approach-step step-one">
+
+            <div className="step-number">
+              01
             </div>
 
-            {/* STEP 2 */}
-            <div className="approach-step">
-              <div className="step-number step-purple">2</div>
-
-              <div>
-                <h3>Craft</h3>
-                <p>
-                  Then we find the smallest thing
-                  <br />
-                  that will work to get you an early
-                  <br />
-                  ROI.
-                </p>
-              </div>
+            <div className="step-icon">
+              <Compass size={20} />
             </div>
 
-            {/* STEP 3 */}
-            <div className="approach-step">
-              <div className="step-number step-green">3</div>
+            <div className="step-content">
+              <h3>Explore</h3>
 
-              <div>
-                <h3>Ship</h3>
-                <p>
-                  Your software asset then grows
-                  <br />
-                  over the lifetime of our partnership.
-                </p>
-              </div>
+              <p>
+                We learn your business to
+                <br />
+                drive your solution to the
+                <br />
+                highest points of value.
+              </p>
             </div>
 
           </div>
+
+
+          {/* STEP 2 */}
+          <div className="approach-step step-two">
+
+            <div className="step-number">
+              02
+            </div>
+
+            <div className="step-icon">
+              <Pencil size={20} />
+            </div>
+
+            <div className="step-content">
+              <h3>Craft</h3>
+
+              <p>
+                Then we find the smallest
+                <br />
+                thing that will work to get
+                <br />
+                you an early ROI.
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* STEP 3 */}
+          <div className="approach-step step-three">
+
+            <div className="step-number">
+              03
+            </div>
+
+            <div className="step-icon">
+              <Rocket size={20} />
+            </div>
+
+            <div className="step-content">
+              <h3>Ship</h3>
+
+              <p>
+                Your software asset then
+                <br />
+                grows over the lifetime of
+                <br />
+                our partnership.
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
 
@@ -70,171 +120,160 @@ function ApproachSection() {
 
         <div className="approach-diagram">
 
-          {/* TITLE */}
-          <div className="diagram-title">
-            Explore
+          {/* TOP EXPLORE */}
+          <div className="cycle-top">
+            <span className="cycle-number cycle-blue">
+              01
+            </span>
+
+            <h3>Explore</h3>
           </div>
 
 
-          {/* SHIP */}
-          <div className="diagram-label ship-label">
-            Ship
+          {/* LEFT SHIP */}
+          <div className="cycle-side cycle-left">
+
+            <span className="cycle-number cycle-green">
+              03
+            </span>
+
+            <div className="cycle-icon green-icon">
+              <Rocket size={22} />
+            </div>
+
+            <h3>Ship</h3>
+
           </div>
 
 
-          {/* CRAFT */}
-          <div className="diagram-label craft-label">
-            Craft
+          {/* RIGHT CRAFT */}
+          <div className="cycle-side cycle-right">
+
+            <span className="cycle-number cycle-purple">
+              02
+            </span>
+
+            <div className="cycle-icon purple-icon">
+              <Pencil size={22} />
+            </div>
+
+            <h3>Craft</h3>
+
           </div>
 
 
-          {/* =================================================
-              GREEN:
-              SHIP → EXPLORE
-          ================================================= */}
+          {/* ================= ARROWS ================= */}
 
           <svg
-            className="diagram-arrow green-arrow"
-            viewBox="0 0 500 200"
+            className="cycle-svg"
+            viewBox="0 0 600 250"
             preserveAspectRatio="none"
           >
 
+            {/* GREEN */}
             <path
-              id="greenPath"
+              id="greenCycle"
               d="
-                M 70 165
-                C 70 75,
-                  125 35,
-                  220 35
-                L 430 35
+                M 110 145
+                C 110 75 155 45 220 45
+                L 300 45
               "
               fill="none"
-              stroke="#5fc878"
-              strokeWidth="6"
+              stroke="#63d17b"
+              strokeWidth="3"
               strokeLinecap="round"
             />
 
-            {/* MOVING ARROW */}
             <polygon
-              points="0,-7 14,0 0,7"
-              fill="#5fc878"
+              points="0,-5 10,0 0,5"
+              fill="#63d17b"
             >
               <animateMotion
-                dur="2.2s"
+                dur="2.5s"
                 repeatCount="indefinite"
                 rotate="auto"
               >
-                <mpath href="#greenPath" />
+                <mpath href="#greenCycle" />
+              </animateMotion>
+            </polygon>
+
+
+            {/* BLUE */}
+            <path
+              id="blueCycle"
+              d="
+                M 300 45
+                L 380 45
+                C 445 45 490 75 490 145
+              "
+              fill="none"
+              stroke="#51d2e6"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            <polygon
+              points="0,-5 10,0 0,5"
+              fill="#51d2e6"
+            >
+              <animateMotion
+                dur="2.5s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#blueCycle" />
+              </animateMotion>
+            </polygon>
+
+
+            {/* PURPLE */}
+            <path
+              id="purpleCycle"
+              d="
+                M 490 145
+                C 490 205 435 215 370 215
+                L 230 215
+                C 165 215 110 205 110 145
+              "
+              fill="none"
+              stroke="#a98add"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            <polygon
+              points="0,-5 10,0 0,5"
+              fill="#a98add"
+            >
+              <animateMotion
+                dur="2.5s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#purpleCycle" />
               </animateMotion>
             </polygon>
 
           </svg>
 
 
-          {/* =================================================
-              BLUE:
-              EXPLORE → CRAFT
-          ================================================= */}
+          {/* ================= CENTER ================= */}
 
-          <svg
-            className="diagram-arrow blue-arrow"
-            viewBox="0 0 500 200"
-            preserveAspectRatio="none"
-          >
+          <div className="cycle-center">
 
-            <path
-              id="bluePath"
-              d="
-                M 70 35
-                L 330 35
-                C 420 35,
-                  445 80,
-                  445 165
-              "
-              fill="none"
-              stroke="#75d7e8"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-
-            {/* MOVING ARROW */}
-            <polygon
-              points="0,-7 14,0 0,7"
-              fill="#75d7e8"
-            >
-              <animateMotion
-                dur="2.2s"
-                repeatCount="indefinite"
-                rotate="auto"
-              >
-                <mpath href="#bluePath" />
-              </animateMotion>
-            </polygon>
-
-          </svg>
-
-
-          {/* =================================================
-              PURPLE:
-              CRAFT → SHIP
-          ================================================= */}
-
-          <svg
-            className="diagram-arrow purple-arrow"
-            viewBox="0 0 800 180"
-            preserveAspectRatio="none"
-          >
-
-            <path
-              id="purplePath"
-              d="
-                M 700 35
-                C 680 100,
-                  620 135,
-                  520 135
-                L 150 135
-                C 90 135,
-                  60 105,
-                  45 65
-              "
-              fill="none"
-              stroke="#a990d9"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-
-            {/* MOVING ARROW */}
-            <polygon
-              points="0,-7 14,0 0,7"
-              fill="#a990d9"
-            >
-              <animateMotion
-                dur="2.2s"
-                repeatCount="indefinite"
-                rotate="auto"
-              >
-                <mpath href="#purplePath" />
-              </animateMotion>
-            </polygon>
-
-          </svg>
-
-
-          {/* ================= ICONS ================= */}
-
-          <div className="diagram-icons">
-
-            <div className="diagram-icon skateboard">
-              🛹
+            <div className="center-icon">
+              <Compass size={22} />
             </div>
 
-            <div className="diagram-icon bicycle">
-              🚲
-            </div>
+            <h3>
+              A Continuous Cycle
+            </h3>
 
-            <div className="diagram-icon car">
-              🚗
-            </div>
+            <p>
+              We iterate, improve and deliver
+              <br />
+              solutions that scale with your business.
+            </p>
 
           </div>
 
@@ -245,19 +284,23 @@ function ApproachSection() {
 
         <div className="approach-description">
 
-          <h3>
-            Iterative Value Is Depicted With A Skateboard To Car Diagram.
-          </h3>
+          <div className="description-icon">
+            <Code2 size={22} />
+          </div>
 
-          <p>
-            You want the car. But you need to be moving while we build it
-            together. Our approach delivers value quickly then grows your
-            system over time.
-          </p>
+          <div className="description-content">
 
-          <button>
-            More About Our Approach
-          </button>
+            <h3>
+              Built for Long-Term Value
+            </h3>
+
+            <p>
+              Like a skateboard to a car, we start small, move fast,
+              and evolve continuously — delivering software that grows
+              with your business and stands the test of time.
+            </p>
+
+          </div>
 
         </div>
 
