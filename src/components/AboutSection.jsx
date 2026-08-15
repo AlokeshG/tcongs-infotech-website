@@ -57,10 +57,6 @@ function AboutSection() {
         ===================================== */}
         <div className="about-content">
 
-          <span className="about-label">
-            TCONGS INFOTECH
-          </span>
-
           <div className="about-label-line"></div>
 
           <h2>

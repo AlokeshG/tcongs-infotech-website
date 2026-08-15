@@ -4,9 +4,10 @@
 
 .resources-section {
   width: 100%;
+
   min-height: 820px;
 
-  padding: 110px 0 90px;
+  padding: 75px 0 80px;
 
   color: #ffffff;
 
@@ -82,12 +83,13 @@
   max-width: 540px;
 }
 
+
 .resources-label {
   display: block;
 
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 
-  font-size: 13px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -106,12 +108,15 @@
 
   font-size: clamp(48px, 5vw, 72px);
 
-  line-height: 1.03;
+  line-height: 0.98;
 
   letter-spacing: -3px;
 
   font-weight: 700;
+
+  color: #ffffff;
 }
+
 
 .resources-content h2 span {
   background: linear-gradient(
@@ -121,6 +126,7 @@
   );
 
   -webkit-background-clip: text;
+
   background-clip: text;
 
   color: transparent;
@@ -132,9 +138,9 @@
 ========================================= */
 
 .resources-line {
-  width: 103px;
+  width: 100px;
 
-  height: 7px;
+  height: 6px;
 
   margin: 30px 0;
 
@@ -149,16 +155,17 @@
 .resources-content p {
   max-width: 530px;
 
-  margin: 0 0 25px;
+  margin: 0 0 24px;
 
-  font-size: 17px;
+  font-size: 16px;
 
-  line-height: 1.65;
+  line-height: 1.6;
 
   font-weight: 500;
 
   color: #ffffff;
 }
+
 
 .resources-intro {
   font-weight: 700 !important;
@@ -172,17 +179,27 @@
 .resources-buttons {
   display: flex;
 
-  gap: 16px;
+  gap: 14px;
 
-  margin-top: 40px;
+  margin-top: 35px;
 
   flex-wrap: wrap;
 }
 
-.resource-btn {
-  padding: 15px 19px;
 
-  border: 1px solid rgba(255, 255, 255, 0.9);
+.resource-btn {
+  padding: 14px 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.9);
 
   border-radius: 6px;
 
@@ -190,7 +207,7 @@
 
   color: #ffffff;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 600;
 
@@ -202,18 +219,26 @@
     transform 0.3s ease;
 }
 
-.resource-btn span {
-  margin-left: 14px;
 
+.resource-btn span {
   font-size: 18px;
+
+  transition:
+    transform 0.3s ease;
 }
+
 
 .resource-btn:hover {
   background: #ffffff;
 
   color: #06252a;
 
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+}
+
+
+.resource-btn:hover span {
+  transform: translateX(4px);
 }
 
 
@@ -239,7 +264,7 @@
 
 
 /* =========================================
-   ALL GUIDE CARDS
+   GUIDE CARD
 ========================================= */
 
 .guide-card {
@@ -251,26 +276,37 @@
 
   padding: 35px;
 
+  box-sizing: border-box;
+
   border-radius: 12px;
 
   background: #082d33;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
 
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.32);
+    0 20px 45px
+    rgba(0, 0, 0, 0.32);
 
   overflow: hidden;
 
   cursor: pointer;
 
+  user-select: none;
+
+  transform-origin: center center;
+
   transition:
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
     opacity 0.55s ease,
     filter 0.55s ease,
     box-shadow 0.55s ease;
-
-  user-select: none;
 }
 
 
@@ -281,35 +317,41 @@
 .guide-card small {
   font-size: 8px;
 
+  line-height: 1.4;
+
   letter-spacing: 1px;
 
-  color: rgba(255, 255, 255, 0.4);
+  color:
+    rgba(255, 255, 255, 0.42);
 }
 
 
 /* =========================================
-   CARD TITLE
+   FRONT CARD
 ========================================= */
 
-.guide-card h3 {
-  position: absolute;
+.guide-card.position-0 {
+  transform:
+    translateX(65px)
+    rotate(0deg)
+    scale(1);
 
-  left: 38px;
+  z-index: 10;
 
-  bottom: 75px;
+  opacity: 1;
 
-  margin: 0;
+  filter: brightness(1);
 
-  font-size: 38px;
+  background: #082f35;
 
-  line-height: 1;
-
-  color: #ffffff;
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.45);
 }
 
 
 /* =========================================
-   BACK BOOK 1
+   BACK CARD 1
 ========================================= */
 
 .guide-card.position-1 {
@@ -327,7 +369,7 @@
 
 
 /* =========================================
-   BACK BOOK 2
+   BACK CARD 2
 ========================================= */
 
 .guide-card.position-2 {
@@ -345,7 +387,7 @@
 
 
 /* =========================================
-   BACK BOOK 3
+   BACK CARD 3
 ========================================= */
 
 .guide-card.position-3 {
@@ -363,72 +405,60 @@
 
 
 /* =========================================
-   FRONT BOOK
+   FRONT HOVER
 ========================================= */
 
-.guide-card.position-0 {
+.guide-card.position-0:hover {
   transform:
     translateX(65px)
+    translateY(-12px)
     rotate(0deg)
-    scale(1);
-
-  z-index: 10;
-
-  opacity: 1;
-
-  background: #082f35;
-
-  filter: brightness(1);
+    scale(1.02);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.45);
+    0 30px 70px
+    rgba(0, 0, 0, 0.5);
 }
 
 
 /* =========================================
-   HOVER BACK BOOK
+   BACK HOVER
 ========================================= */
 
 .guide-card.position-1:hover {
   transform:
-    translateX(-110px)
+    translateX(-105px)
     translateY(-18px)
     rotate(-14deg)
-    scale(0.97);
+    scale(0.98);
 
-  opacity: 0.9;
+  opacity: 0.95;
 
-  filter: brightness(1.05);
+  filter: brightness(1);
 
   z-index: 20;
-
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 
 .guide-card.position-2:hover {
   transform:
     translateX(-65px)
-    translateY(-20px)
+    translateY(-18px)
     rotate(-8deg)
     scale(1);
 
   opacity: 0.95;
 
-  filter: brightness(1.05);
+  filter: brightness(1);
 
   z-index: 20;
-
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 
 .guide-card.position-3:hover {
   transform:
     translateX(-20px)
-    translateY(-22px)
+    translateY(-20px)
     rotate(-3deg)
     scale(1.01);
 
@@ -437,40 +467,49 @@
   filter: brightness(1.05);
 
   z-index: 20;
-
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 
 /* =========================================
-   HOVER FRONT BOOK
-========================================= */
-
-.guide-card.position-0:hover {
-  transform:
-    translateX(65px)
-    translateY(-15px)
-    rotate(0deg)
-    scale(1.02);
-
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.5);
-}
-
-
-/* =========================================
-   FRONT BOOK CONTENT
+   FRONT CARD TITLE
 ========================================= */
 
 .guide-card.position-0 h3 {
   position: static;
 
-  margin-top: 25px;
+  margin: 25px 0 0;
 
   font-size: 38px;
 
   line-height: 1.05;
+
+  letter-spacing: -1.5px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   BACK CARD TITLES
+========================================= */
+
+.guide-card.position-1 h3,
+.guide-card.position-2 h3,
+.guide-card.position-3 h3 {
+  position: absolute;
+
+  left: 38px;
+
+  bottom: 75px;
+
+  margin: 0;
+
+  font-size: 38px;
+
+  line-height: 1;
+
+  color:
+    rgba(255, 255, 255, 0.28);
 }
 
 
@@ -479,7 +518,7 @@
 ========================================= */
 
 .guide-green-line {
-  width: 55px;
+  width: 52px;
 
   height: 4px;
 
@@ -490,59 +529,77 @@
 
 
 /* =========================================
-   FRONT DESCRIPTION
+   DESCRIPTION
 ========================================= */
 
 .guide-description {
   max-width: 230px;
 
-  margin-top: 25px;
+  margin-top: 24px;
 
-  font-size: 12px;
+  font-size: 10px;
 
   line-height: 1.55;
 
-  color: rgba(255, 255, 255, 0.78);
+  color:
+    rgba(255, 255, 255, 0.78);
 }
 
 
 /* =========================================
-   BACK BOOK BOTTOM LINE
-========================================= */
-
-.guide-bottom-line {
-  position: absolute;
-
-  bottom: 0;
-
-  left: 0;
-
-  width: 100%;
-
-  height: 4px;
-
-  background: #48b873;
-}
-
-
-/* =========================================
-   FRONT BOOK FOOTER
+   FOOTER
 ========================================= */
 
 .guide-footer {
   position: absolute;
 
-  bottom: 42px;
+  bottom: 40px;
 
   left: 35px;
 }
 
-.guide-footer strong {
-  font-size: 10px;
 
-  letter-spacing: 0.2px;
+.guide-footer strong {
+  font-size: 9px;
 
   color: #ffffff;
+}
+
+
+/* =========================================
+   BACK CARD BRAND
+========================================= */
+
+.guide-back-content {
+  position: absolute;
+
+  left: 38px;
+
+  bottom: 38px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  opacity: 0.35;
+}
+
+
+.guide-back-content span {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.guide-back-content strong {
+  font-size: 7px;
+
+  letter-spacing: 2px;
 }
 
 
@@ -551,11 +608,11 @@
 ========================================= */
 
 .resources-consultation {
-  margin-top: 50px;
+  margin-top: 35px;
 
-  padding: 28px;
+  padding: 24px;
 
-  min-height: 140px;
+  min-height: 125px;
 
   display: flex;
 
@@ -563,9 +620,10 @@
 
   justify-content: space-between;
 
-  gap: 35px;
+  gap: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
 
   border-radius: 12px;
 
@@ -574,24 +632,27 @@
 
 
 .resources-consultation h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 
-  font-size: 26px;
+  font-size: 25px;
 
   font-weight: 700;
+
+  color: #ffffff;
 }
 
 
 .resources-consultation p {
-  max-width: 700px;
+  max-width: 680px;
 
   margin: 0;
 
-  font-size: 15px;
+  font-size: 14px;
 
-  line-height: 1.55;
+  line-height: 1.5;
 
-  color: rgba(255, 255, 255, 0.75);
+  color:
+    rgba(255, 255, 255, 0.75);
 }
 
 
@@ -602,7 +663,7 @@
 .resources-consultation button {
   flex-shrink: 0;
 
-  padding: 16px 25px;
+  padding: 16px 24px;
 
   border: none;
 
@@ -612,7 +673,7 @@
 
   color: #111111;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 600;
 
@@ -625,7 +686,7 @@
 
 
 .resources-consultation button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
   background: #ffffff;
 }
@@ -637,57 +698,17 @@
 
 @media (max-width: 1000px) {
 
-  .resources-container {
-    width: 90%;
-  }
-
-  .resources-main {
-    gap: 35px;
-  }
-
-  .guide-card {
-    width: 300px;
-
-    height: 390px;
-  }
-
-  .guide-card.position-0 {
-    transform:
-      translateX(40px)
-      rotate(0deg)
-      scale(1);
-  }
-
-  .guide-card.position-0:hover {
-    transform:
-      translateX(40px)
-      translateY(-12px)
-      rotate(0deg)
-      scale(1.02);
-  }
-
-}
-
-
-/* =========================================
-   TABLET / SMALL LAPTOP
-========================================= */
-
-@media (max-width: 850px) {
-
-  .resources-section {
-    padding: 90px 0 70px;
-  }
-
   .resources-main {
     grid-template-columns: 1fr;
 
-    gap: 70px;
+    gap: 45px;
   }
+
 
   .resources-content {
     max-width: 700px;
   }
+
 
   .guide-stack {
     max-width: 650px;
@@ -695,14 +716,11 @@
     margin: 0 auto;
   }
 
+
   .resources-consultation {
     flex-direction: column;
 
     align-items: flex-start;
-  }
-
-  .resources-consultation button {
-    width: auto;
   }
 
 }
@@ -715,12 +733,16 @@
 @media (max-width: 650px) {
 
   .resources-section {
-    padding: 75px 0 60px;
+    min-height: auto;
+
+    padding: 60px 0;
   }
+
 
   .resources-container {
     width: 90%;
   }
+
 
   .resources-content h2 {
     font-size: 42px;
@@ -728,18 +750,27 @@
     letter-spacing: -2px;
   }
 
+
   .resources-content p {
     font-size: 15px;
   }
 
+
   .resources-buttons {
     flex-direction: column;
 
-    align-items: flex-start;
+    align-items: stretch;
   }
 
 
-  /* BOOK STACK */
+  .resource-btn {
+    width: 100%;
+  }
+
+
+  /* =====================================
+     MOBILE BOOK STACK
+  ====================================== */
 
   .guide-stack {
     height: 390px;
@@ -748,6 +779,7 @@
 
     transform-origin: center;
   }
+
 
   .guide-card {
     width: 285px;
@@ -758,27 +790,6 @@
   }
 
 
-  .guide-card.position-1 {
-    transform:
-      translateX(-70px)
-      rotate(-14deg)
-      scale(0.94);
-  }
-
-  .guide-card.position-2 {
-    transform:
-      translateX(-38px)
-      rotate(-8deg)
-      scale(0.97);
-  }
-
-  .guide-card.position-3 {
-    transform:
-      translateX(-5px)
-      rotate(-3deg)
-      scale(0.99);
-  }
-
   .guide-card.position-0 {
     transform:
       translateX(45px)
@@ -787,12 +798,63 @@
   }
 
 
+  .guide-card.position-1 {
+    transform:
+      translateX(-70px)
+      rotate(-14deg)
+      scale(0.94);
+  }
+
+
+  .guide-card.position-2 {
+    transform:
+      translateX(-38px)
+      rotate(-8deg)
+      scale(0.97);
+  }
+
+
+  .guide-card.position-3 {
+    transform:
+      translateX(-5px)
+      rotate(-3deg)
+      scale(0.99);
+  }
+
+
   .guide-card.position-0:hover {
     transform:
       translateX(45px)
-      translateY(-12px)
+      translateY(-10px)
       rotate(0deg)
       scale(1.02);
+  }
+
+
+  .guide-card.position-1:hover {
+    transform:
+      translateX(-90px)
+      translateY(-12px)
+      rotate(-14deg)
+      scale(0.98);
+  }
+
+
+  .guide-card.position-2:hover {
+    transform:
+      translateX(-55px)
+      translateY(-15px)
+      rotate(-8deg)
+      scale(1);
+  }
+
+
+  .guide-card.position-3:hover {
+    transform:
+      translateX(-20px)
+      translateY(-15px)
+      rotate(-3deg)
+      scale(1.01);
   }
 
 
@@ -801,21 +863,28 @@
   }
 
 
-  /* CONSULTATION */
+  /* =====================================
+     CONSULTATION
+  ====================================== */
 
   .resources-consultation {
     padding: 25px;
 
     gap: 25px;
+
+    align-items: flex-start;
   }
+
 
   .resources-consultation h3 {
     font-size: 22px;
   }
 
+
   .resources-consultation p {
     font-size: 13px;
   }
+
 
   .resources-consultation button {
     width: 100%;
@@ -830,14 +899,432 @@
 
 @media (max-width: 420px) {
 
+  .resources-content h2 {
+    font-size: 38px;
+  }
+
+
   .guide-stack {
+    height: 370px;
+
     transform: scale(0.68);
 
     margin-left: -20px;
   }
 
-  .resources-content h2 {
-    font-size: 38px;
+}
+/* =========================================
+   RESOURCE POPUP OVERLAY
+========================================= */
+
+.resource-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 10, 12, 0.78);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  z-index: 99999;
+
+  animation: modalFadeIn 0.25s ease;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.resource-modal {
+  position: relative;
+
+  width: min(520px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  color: #06252a;
+
+  border-radius: 18px;
+
+  border: 1px solid #d8d8d8;
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.45);
+
+  animation: modalSlideUp 0.35s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.resource-modal-close {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 50%;
+
+  background: #f5f4ef;
+
+  color: #06252a;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.resource-modal-close:hover {
+  background: #06252a;
+
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   MODAL LABEL
+========================================= */
+
+.modal-label {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #286ac5;
+}
+
+
+/* =========================================
+   MODAL HEADING
+========================================= */
+
+.resource-modal h2 {
+  margin: 0 45px 14px 0;
+
+  font-size: clamp(30px, 4vw, 42px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+
+  color: #06252a;
+}
+
+
+/* =========================================
+   MODAL DESCRIPTION
+========================================= */
+
+.modal-description {
+  margin: 0 0 28px;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #4c686d;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.resource-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.form-group label {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #06252a;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d2d8d9;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  color: #06252a;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 100px;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #8a999b;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #286ac5;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(40, 106, 197, 0.1);
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.modal-submit-button {
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 15px 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #06252a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.modal-submit-button span {
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.modal-submit-button:hover {
+  background: #0b3b42;
+
+  transform: translateY(-2px);
+}
+
+
+.modal-submit-button:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes modalFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes modalSlideUp {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE POPUP
+========================================= */
+
+@media (max-width: 650px) {
+
+  .resource-modal-overlay {
+    padding: 15px;
+  }
+
+
+  .resource-modal {
+    width: 100%;
+
+    max-height: 92vh;
+
+    padding: 30px 22px;
+
+    border-radius: 15px;
+  }
+
+
+  .resource-modal-close {
+    top: 12px;
+    right: 12px;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 22px;
+  }
+
+
+  .modal-label {
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .resource-modal h2 {
+    font-size: 30px;
+
+    letter-spacing: -1.3px;
+
+    margin-right: 35px;
+  }
+
+
+  .modal-description {
+    font-size: 14px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .resource-form {
+    gap: 15px;
   }
 
 }

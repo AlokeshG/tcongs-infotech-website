@@ -43,13 +43,13 @@ function Navbar({ chatOpen, setChatOpen }) {
         type="button"
         className="talk-button"
         onClick={() => setChatOpen(!chatOpen)}
+        aria-label={chatOpen ? "Close chat" : "Open chat"}
       >
-        <MessageCircle size={20} />
+        <MessageCircle size={20} strokeWidth={1.8} />
 
         <span>
           {chatOpen ? "Close" : "Let's Talk"}
         </span>
-
       </button>
 
     </nav>

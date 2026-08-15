@@ -4,15 +4,19 @@
 
 .about-section {
   position: relative;
+
   width: 100%;
-  min-height: 680px;
+
+  min-height: 760px;
 
   background: #06252a;
+
   color: #ffffff;
 
   overflow: hidden;
 
   display: flex;
+
   align-items: flex-end;
 }
 
@@ -48,6 +52,7 @@
   height: 100%;
 
   object-fit: cover;
+
   object-position: center center;
 }
 
@@ -67,10 +72,10 @@
     linear-gradient(
       to bottom,
       rgba(6, 37, 42, 0.02) 0%,
-      rgba(6, 37, 42, 0.05) 30%,
-      rgba(6, 37, 42, 0.18) 52%,
-      rgba(6, 37, 42, 0.48) 72%,
-      rgba(6, 37, 42, 0.82) 90%,
+      rgba(6, 37, 42, 0.06) 28%,
+      rgba(6, 37, 42, 0.20) 50%,
+      rgba(6, 37, 42, 0.50) 72%,
+      rgba(6, 37, 42, 0.85) 90%,
       #06252a 100%
     );
 }
@@ -85,21 +90,17 @@
 
   z-index: 3;
 
-  width: min(1180px, 92%);
+  width: min(1180px, 90%);
 
   margin: 0 auto;
 
-  padding: 0 0 24px;
+  padding: 0 0 45px;
 
   display: grid;
 
-  /*
-    LEFT = CONTENT
-    RIGHT = CARDS
-  */
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 0.95fr 1.25fr;
 
-  column-gap: 60px;
+  column-gap: 70px;
 
   align-items: end;
 }
@@ -125,13 +126,13 @@
 .about-label {
   display: block;
 
-  margin-bottom: 17px;
+  margin-bottom: 22px;
 
   font-size: 12px;
 
   font-weight: 700;
 
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
 
   color: #48e75b;
 
@@ -139,7 +140,9 @@
 }
 
 
-/* Green line below label */
+/* =========================================
+   GREEN LINE
+========================================= */
 
 .about-label::after {
   content: "";
@@ -150,7 +153,7 @@
 
   height: 3px;
 
-  margin-top: 9px;
+  margin-top: 11px;
 
   border-radius: 10px;
 
@@ -163,13 +166,13 @@
 ========================================= */
 
 .about-content h2 {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
 
   font-size: clamp(48px, 5vw, 64px);
 
-  line-height: 0.94;
+  line-height: 0.98;
 
-  letter-spacing: -2.5px;
+  letter-spacing: -2.8px;
 
   font-weight: 700;
 
@@ -182,11 +185,11 @@
 ========================================= */
 
 .about-subtitle {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 
   font-size: 17px;
 
-  line-height: 1.3;
+  line-height: 1.45;
 
   font-weight: 700;
 
@@ -201,11 +204,11 @@
 .about-description {
   max-width: 520px;
 
-  margin: 0 0 18px;
+  margin: 0 0 25px;
 
   font-size: 14px;
 
-  line-height: 1.55;
+  line-height: 1.7;
 
   font-weight: 400;
 
@@ -228,27 +231,27 @@
 
   min-width: 290px;
 
-  padding: 10px 14px;
+  padding: 12px 16px;
 
-  margin-bottom: 18px;
+  margin-bottom: 25px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
   border: 1px solid rgba(55, 230, 95, 0.35);
 
-  border-radius: 9px;
+  border-radius: 10px;
 
-  background: rgba(4, 47, 48, 0.48);
+  background: rgba(4, 47, 48, 0.55);
 }
 
 .trusted-icon {
-  width: 29px;
+  width: 30px;
 
-  height: 29px;
+  height: 30px;
 
   flex-shrink: 0;
 
@@ -262,13 +265,13 @@
 
   flex-direction: column;
 
-  gap: 2px;
+  gap: 4px;
 }
 
 .trusted-box span {
   font-size: 11px;
 
-  line-height: 1.2;
+  line-height: 1.3;
 
   color: rgba(255, 255, 255, 0.85);
 }
@@ -276,7 +279,7 @@
 .trusted-box strong {
   font-size: 12px;
 
-  line-height: 1.2;
+  line-height: 1.3;
 
   color: #48e75b;
 }
@@ -292,17 +295,14 @@
   max-width: 510px;
 }
 
-
-/* Title */
-
 .solutions-title {
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 
   font-size: 12px;
 
   font-weight: 700;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
 
   color: #45e85d;
 
@@ -328,19 +328,21 @@
 ========================================= */
 
 .solution-item {
-  min-height: 43px;
+  min-height: 52px;
 
-  padding: 8px 9px;
+  padding: 10px 11px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 
   border-right: 1px solid rgba(255, 255, 255, 0.14);
 
   color: #ffffff;
+
+  box-sizing: border-box;
 }
 
 .solution-item:nth-child(3),
@@ -353,7 +355,9 @@
 }
 
 
-/* Solution icons */
+/* =========================================
+   SOLUTION ICONS
+========================================= */
 
 .solution-item svg {
   width: 23px;
@@ -368,12 +372,14 @@
 }
 
 
-/* Solution text */
+/* =========================================
+   SOLUTION TEXT
+========================================= */
 
 .solution-item span {
   font-size: 10px;
 
-  line-height: 1.2;
+  line-height: 1.35;
 
   font-weight: 500;
 
@@ -388,11 +394,13 @@
 .about-stats {
   width: 100%;
 
+  margin-top: 22px;
+
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
 
-  gap: 10px;
+  gap: 12px;
 
   align-self: end;
 }
@@ -405,9 +413,9 @@
 .stat-card {
   position: relative;
 
-  min-height: 145px;
+  min-height: 155px;
 
-  padding: 14px 9px;
+  padding: 16px 10px;
 
   display: flex;
 
@@ -421,9 +429,9 @@
 
   border: 1px solid rgba(255, 255, 255, 0.22);
 
-  border-radius: 9px;
+  border-radius: 10px;
 
-  background: rgba(3, 34, 39, 0.78);
+  background: rgba(3, 34, 39, 0.82);
 
   backdrop-filter: blur(7px);
 
@@ -441,11 +449,11 @@
 ========================================= */
 
 .stat-card .stat-icon {
-  width: 39px;
+  width: 36px;
 
-  height: 39px;
+  height: 36px;
 
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 
   flex-shrink: 0;
 
@@ -460,9 +468,9 @@
 .stat-card strong {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 
-  font-size: 38px;
+  font-size: 34px;
 
   line-height: 1;
 
@@ -479,7 +487,7 @@
 
   font-size: 10px;
 
-  line-height: 1.25;
+  line-height: 1.35;
 
   font-weight: 500;
 
@@ -488,70 +496,27 @@
 
 
 /* =========================================
-   CARD 1 - GREEN
+   CARD COLORS
 ========================================= */
 
-.stat-card:nth-child(1) .stat-icon {
-  color: #46e95b;
-}
-
+.stat-card:nth-child(1) .stat-icon,
 .stat-card:nth-child(1) strong {
   color: #46e95b;
 }
 
-.stat-card:nth-child(1)::after {
-  background: #46e95b;
-}
-
-
-/* =========================================
-   CARD 2 - BLUE
-========================================= */
-
-.stat-card:nth-child(2) .stat-icon {
-  color: #00bfff;
-}
-
+.stat-card:nth-child(2) .stat-icon,
 .stat-card:nth-child(2) strong {
   color: #00bfff;
 }
 
-.stat-card:nth-child(2)::after {
-  background: #00bfff;
-}
-
-
-/* =========================================
-   CARD 3 - PURPLE
-========================================= */
-
-.stat-card:nth-child(3) .stat-icon {
-  color: #c56cff;
-}
-
+.stat-card:nth-child(3) .stat-icon,
 .stat-card:nth-child(3) strong {
   color: #c56cff;
 }
 
-.stat-card:nth-child(3)::after {
-  background: #c56cff;
-}
-
-
-/* =========================================
-   CARD 4 - YELLOW
-========================================= */
-
-.stat-card:nth-child(4) .stat-icon {
-  color: #ffc928;
-}
-
+.stat-card:nth-child(4) .stat-icon,
 .stat-card:nth-child(4) strong {
   color: #ffc928;
-}
-
-.stat-card:nth-child(4)::after {
-  background: #ffc928;
 }
 
 
@@ -566,9 +531,25 @@
 
   height: 2px;
 
-  margin-top: 9px;
+  margin-top: 10px;
 
   border-radius: 10px;
+}
+
+.stat-card:nth-child(1)::after {
+  background: #46e95b;
+}
+
+.stat-card:nth-child(2)::after {
+  background: #00bfff;
+}
+
+.stat-card:nth-child(3)::after {
+  background: #c56cff;
+}
+
+.stat-card:nth-child(4)::after {
+  background: #ffc928;
 }
 
 
@@ -577,11 +558,11 @@
 ========================================= */
 
 .stat-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 
   border-color: rgba(255, 255, 255, 0.42);
 
-  background: rgba(6, 45, 51, 0.92);
+  background: rgba(6, 45, 51, 0.94);
 }
 
 
@@ -591,26 +572,36 @@
 
 @media (max-width: 1100px) {
 
+  .about-section {
+    min-height: 780px;
+  }
+
   .about-container {
     width: 90%;
 
     grid-template-columns: 1fr 1fr;
 
-    column-gap: 35px;
+    column-gap: 45px;
+
+    padding-bottom: 40px;
   }
 
   .about-content h2 {
     font-size: clamp(42px, 5vw, 56px);
   }
 
+  .about-description {
+    line-height: 1.65;
+  }
+
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 10px;
+    gap: 12px;
   }
 
   .stat-card {
-    min-height: 125px;
+    min-height: 135px;
   }
 }
 
@@ -622,15 +613,15 @@
 @media (max-width: 900px) {
 
   .about-section {
-    min-height: 850px;
+    min-height: auto;
 
     display: block;
 
-    padding-top: 500px;
+    padding-top: 480px;
   }
 
   .about-image {
-    height: 500px;
+    height: 480px;
   }
 
   .about-container {
@@ -640,15 +631,33 @@
 
     flex-direction: column;
 
-    gap: 35px;
+    gap: 45px;
 
-    padding: 45px 0 60px;
+    padding: 55px 0 70px;
 
     align-items: stretch;
   }
 
   .about-content {
+    max-width: 700px;
+  }
+
+  .about-content h2 {
+    margin-bottom: 22px;
+  }
+
+  .about-description {
     max-width: 650px;
+
+    margin-bottom: 25px;
+  }
+
+  .trusted-box {
+    margin-bottom: 28px;
+  }
+
+  .solutions-section {
+    max-width: 100%;
   }
 
   .about-stats {
@@ -656,222 +665,630 @@
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 10px;
+    gap: 12px;
+
+    margin-top: 0;
   }
 
   .stat-card {
-    min-height: 115px;
-  }
-
-  .stat-card .stat-icon {
-    width: 31px;
-
-    height: 31px;
-  }
-
-  .stat-card strong {
-    font-size: 30px;
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 650px) {
-
-  .about-section {
-    min-height: auto;
-
-    padding-top: 500px;
-
-    display: block;
-  }
-
- .about-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    /* Shift the map to the LEFT */
-    object-position: left center;
-
-    /* Slightly zoom the image like the reference */
-    transform: scale(1.08);
-    transform-origin: left center;
-}
-
-
-  /* Overlay */
-
-  .about-overlay {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(6, 37, 42, 0.05) 0%,
-        rgba(6, 37, 42, 0.15) 30%,
-        rgba(6, 37, 42, 0.55) 65%,
-        #06252a 100%
-      );
-  }
-
-
-  /* Container */
-
-  .about-container {
-    width: 90%;
-
-    padding: 40px 0 60px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 35px;
-  }
-
-
-  /* Heading */
-
-  .about-content h2 {
-    font-size: 44px;
-
-    line-height: 0.95;
-
-    letter-spacing: -2px;
-  }
-
-
-  .about-subtitle {
-    font-size: 16px;
-  }
-
-
-  .about-description {
-    font-size: 14px;
-  }
-
-
-  /* Trusted */
-
-  .trusted-box {
-    width: 100%;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-  }
-
-
-  /* Solutions */
-
-  .solutions-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .solution-item {
-    border-right: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .solution-item:nth-child(3),
-  .solution-item:nth-child(6) {
-    border-right: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .solution-item:nth-child(even) {
-    border-right: none;
-  }
-
-
-  /* Stats */
-
-  .about-stats {
-    width: 100%;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 10px;
-  }
-
-  .stat-card {
-    min-height: 110px;
-
-    padding: 14px 10px;
+    min-height: 125px;
   }
 
   .stat-card .stat-icon {
     width: 30px;
 
     height: 30px;
-
-    margin-bottom: 6px;
   }
 
   .stat-card strong {
-    font-size: 27px;
-  }
-
-  .stat-card span {
-    font-size: 10px;
+    font-size: 29px;
   }
 }
 
 
 /* =========================================
-   SMALL MOBILE
+   MOBILE - SPACED LAYOUT
+========================================= */
+
+@media (max-width: 650px) {
+
+  .about-section {
+    width: 100%;
+
+    min-height: auto;
+
+    padding-top: 430px;
+
+    display: block;
+
+    overflow: hidden;
+  }
+
+
+  /* =======================================
+     MOBILE MAP
+  ======================================= */
+
+  .about-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 430px;
+
+    z-index: 1;
+
+    overflow: hidden;
+  }
+
+  .about-image picture {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: left center;
+
+    transform: scale(1.03);
+
+    transform-origin: left center;
+  }
+
+
+  /* =======================================
+     MOBILE OVERLAY
+  ======================================= */
+
+  .about-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(6, 37, 42, 0.02) 0%,
+        rgba(6, 37, 42, 0.08) 25%,
+        rgba(6, 37, 42, 0.25) 50%,
+        rgba(6, 37, 42, 0.65) 75%,
+        #06252a 100%
+      );
+  }
+
+
+  /* =======================================
+     MAIN CONTAINER
+  ======================================= */
+
+  .about-container {
+    width: 88%;
+
+    margin: 0 auto;
+
+    padding: 55px 0 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+
+  /* =======================================
+     MAIN CONTENT
+  ======================================= */
+
+  .about-content {
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  /* =======================================
+     LABEL
+  ======================================= */
+
+  .about-label {
+    margin-bottom: 24px;
+
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+
+    line-height: 1.4;
+  }
+
+  .about-label::after {
+    width: 52px;
+
+    height: 3px;
+
+    margin-top: 10px;
+  }
+
+
+  /* =======================================
+     HEADING
+  ======================================= */
+
+  .about-content h2 {
+    margin: 0 0 26px;
+
+    font-size: 38px;
+
+    line-height: 1.04;
+
+    letter-spacing: -1.7px;
+
+    max-width: 330px;
+  }
+
+
+  /* =======================================
+     SUBTITLE
+  ======================================= */
+
+  .about-subtitle {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    max-width: 330px;
+  }
+
+
+  /* =======================================
+     DESCRIPTION
+  ======================================= */
+
+  .about-description {
+    max-width: 100%;
+
+    margin: 0 0 32px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  /* =======================================
+     TRUSTED CLIENTS
+  ======================================= */
+
+  .trusted-box {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 64px;
+
+    margin: 0;
+
+    padding: 13px 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 10px;
+  }
+
+  .trusted-icon {
+    width: 28px;
+
+    height: 28px;
+  }
+
+  .trusted-box div {
+    gap: 4px;
+  }
+
+  .trusted-box span {
+    font-size: 10px;
+
+    line-height: 1.35;
+  }
+
+  .trusted-box strong {
+    font-size: 11px;
+
+    line-height: 1.35;
+  }
+
+
+  /* =======================================
+     SOLUTIONS SECTION
+  ======================================= */
+
+  .solutions-section {
+    width: 100%;
+
+    max-width: none;
+
+    margin-top: 42px;
+
+    padding: 0;
+  }
+
+
+  /* =======================================
+     SOLUTIONS TITLE
+  ======================================= */
+
+  .solutions-title {
+    margin: 0;
+
+    padding: 0 0 13px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    letter-spacing: 2.2px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  }
+
+
+  /* =======================================
+     SOLUTIONS GRID
+  ======================================= */
+
+  .solutions-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+
+  /* =======================================
+     SOLUTION ITEM
+  ======================================= */
+
+  .solution-item {
+    min-height: 68px;
+
+    padding: 13px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+
+  /* Remove top border from first row */
+
+  .solution-item:nth-child(1),
+  .solution-item:nth-child(2) {
+    border-top: none;
+  }
+
+
+  /* Right column */
+
+  .solution-item:nth-child(even) {
+    border-right: none;
+  }
+
+
+  /* =======================================
+     SOLUTION ICON
+  ======================================= */
+
+  .solution-item svg {
+    width: 21px;
+
+    height: 21px;
+
+    flex-shrink: 0;
+
+    color: #45e85d;
+
+    stroke-width: 1.8;
+  }
+
+
+  /* =======================================
+     SOLUTION TEXT
+  ======================================= */
+
+  .solution-item span {
+    font-size: 9px;
+
+    line-height: 1.45;
+
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+
+  /* =======================================
+     STATISTICS
+  ======================================= */
+
+  .about-stats {
+    width: 100%;
+
+    margin-top: 42px;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    align-self: stretch;
+  }
+
+
+  /* =======================================
+     STAT CARD
+  ======================================= */
+
+  .stat-card {
+    width: 100%;
+
+    min-height: 145px;
+
+    padding: 18px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 10px;
+  }
+
+
+  /* =======================================
+     STAT ICON
+  ======================================= */
+
+  .stat-card .stat-icon {
+    width: 31px;
+
+    height: 31px;
+
+    margin-bottom: 10px;
+  }
+
+
+  /* =======================================
+     STAT NUMBER
+  ======================================= */
+
+  .stat-card strong {
+    margin-bottom: 7px;
+
+    font-size: 28px;
+
+    line-height: 1;
+  }
+
+
+  /* =======================================
+     STAT TEXT
+  ======================================= */
+
+  .stat-card span {
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    max-width: 100px;
+  }
+
+
+  /* =======================================
+     STAT UNDERLINE
+  ======================================= */
+
+  .stat-card::after {
+    width: 32px;
+
+    height: 2px;
+
+    margin-top: 10px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
 ========================================= */
 
 @media (max-width: 400px) {
 
   .about-section {
-    padding-top: 430px;
+    padding-top: 400px;
   }
+
 
   .about-image {
-    height: 430px;
+    height: 400px;
   }
+
 
   .about-container {
-    padding-top: 35px;
+    width: 88%;
+
+    padding-top: 48px;
+
+    padding-bottom: 80px;
   }
+
+
+  /* Heading */
 
   .about-content h2 {
-    font-size: 38px;
+    font-size: 34px;
 
-    letter-spacing: -1.8px;
+    line-height: 1.04;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 24px;
   }
 
-  .about-stats {
+
+  /* Subtitle */
+
+  .about-subtitle {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* Description */
+
+  .about-description {
+    font-size: 12px;
+
+    line-height: 1.75;
+
+    margin-bottom: 28px;
+  }
+
+
+  /* Trusted box */
+
+  .trusted-box {
+    min-height: 62px;
+
+    padding: 12px;
+
+    gap: 10px;
+  }
+
+  .trusted-icon {
+    width: 26px;
+
+    height: 26px;
+  }
+
+  .trusted-box span {
+    font-size: 9px;
+  }
+
+  .trusted-box strong {
+    font-size: 10px;
+  }
+
+
+  /* Solutions */
+
+  .solutions-section {
+    margin-top: 38px;
+  }
+
+  .solutions-title {
+    font-size: 10px;
+
+    padding-bottom: 12px;
+  }
+
+
+  .solution-item {
+    min-height: 64px;
+
+    padding: 11px 8px;
+
     gap: 8px;
   }
 
-  .stat-card {
-    min-height: 100px;
+  .solution-item svg {
+    width: 18px;
 
-    padding: 12px 8px;
+    height: 18px;
   }
+
+  .solution-item span {
+    font-size: 8px;
+
+    line-height: 1.4;
+  }
+
+
+  /* Statistics */
+
+  .about-stats {
+    margin-top: 38px;
+
+    gap: 12px;
+  }
+
+
+  .stat-card {
+    min-height: 130px;
+
+    padding: 15px 8px;
+  }
+
 
   .stat-card .stat-icon {
     width: 27px;
 
     height: 27px;
+
+    margin-bottom: 8px;
   }
+
 
   .stat-card strong {
-    font-size: 23px;
+    font-size: 24px;
   }
 
+
   .stat-card span {
-    font-size: 9px;
+    font-size: 8px;
+
+    line-height: 1.4;
   }
 }

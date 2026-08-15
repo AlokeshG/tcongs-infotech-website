@@ -4,7 +4,9 @@
 
 .solution-section {
   width: 100%;
-  min-height: calc(100vh - 120px);
+
+  /* Reduced from almost full screen */
+  min-height: 50vh;
 
   background-color: #06252a;
 
@@ -15,6 +17,10 @@
   justify-content: center;
 
   overflow: hidden;
+
+  box-sizing: border-box;
+
+  padding: 45px 0 55px;
 }
 
 
@@ -76,11 +82,11 @@
 .solution-title {
   margin: 0;
 
-  font-size: clamp(60px, 8vw, 120px);
+  font-size: clamp(48px, 6.5vw, 100px);
 
   line-height: 0.95;
 
-  letter-spacing: -6px;
+  letter-spacing: -5px;
 
   font-weight: 700;
 
@@ -131,7 +137,7 @@
   0% {
     opacity: 0;
 
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
 
   100% {
@@ -148,15 +154,15 @@
 ========================================= */
 
 .solution-subtitle {
-  margin: 28px auto 0;
+  margin: 20px auto 0;
 
   max-width: 800px;
 
   color: rgba(255, 255, 255, 0.9);
 
-  font-size: 18px;
+  font-size: 17px;
 
-  line-height: 1.6;
+  line-height: 1.5;
 
   font-weight: 500;
 
@@ -172,25 +178,30 @@
   position: absolute;
 
   left: 50%;
-  bottom: 28px;
+
+  bottom: 15px;
 
   transform: translateX(-50%);
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
-  gap: 8px;
+  gap: 5px;
 
   background: transparent;
+
   border: none;
 
   color: white;
 
   cursor: pointer;
 
-  padding: 10px;
+  padding: 6px;
 
   z-index: 10;
 
@@ -205,15 +216,18 @@
 ========================================= */
 
 .scroll-icon {
-  width: 50px;
-  height: 72px;
+  width: 42px;
+
+  height: 58px;
 
   border: 1px solid rgba(255, 255, 255, 0.55);
 
-  border-radius: 30px;
+  border-radius: 28px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   color: white;
@@ -229,15 +243,15 @@
 ========================================= */
 
 .scroll-indicator span {
-  font-size: 11px;
+  font-size: 9px;
 
   font-weight: 700;
 
-  letter-spacing: 6px;
+  letter-spacing: 5px;
 
   color: white;
 
-  margin-left: 6px;
+  margin-left: 5px;
 }
 
 
@@ -246,8 +260,9 @@
 ========================================= */
 
 .scroll-indicator:hover {
-  transform: translateX(-50%) translateY(5px);
+  transform: translateX(-50%) translateY(4px);
 }
+
 
 .scroll-indicator:hover .scroll-icon {
   border-color: #71d5df;
@@ -269,12 +284,40 @@
 
   0%,
   100% {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
   50% {
-    transform: translateY(5px);
+    transform: translateY(4px);
   }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .solution-section {
+    min-height: 50vh;
+
+    padding: 40px 0 50px;
+  }
+
+  .solution-title {
+    font-size: clamp(46px, 7vw, 80px);
+
+    letter-spacing: -4px;
+  }
+
+  .solution-subtitle {
+    margin-top: 18px;
+
+    font-size: 16px;
+  }
+
 }
 
 
@@ -284,17 +327,158 @@
 
 @media (max-width: 768px) {
 
-  .scroll-indicator {
-    bottom: 20px;
+  .solution-section {
+    min-height: 50vh;
+
+    /*
+      Reduced vertical space on mobile
+    */
+    padding: 35px 0 45px;
   }
+
+
+  .solution-content {
+    width: 92%;
+  }
+
+
+  .solution-title {
+    font-size: clamp(40px, 10vw, 62px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+  }
+
+
+  .solution-subtitle {
+    margin-top: 16px;
+
+    max-width: 500px;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+  }
+
+
+  .scroll-indicator {
+    bottom: 10px;
+
+    gap: 4px;
+
+    padding: 5px;
+  }
+
 
   .scroll-icon {
-    width: 44px;
-    height: 62px;
+    width: 38px;
+
+    height: 52px;
   }
 
+
+  .scroll-icon svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+
   .scroll-indicator span {
-    font-size: 9px;
+    font-size: 8px;
+
     letter-spacing: 4px;
   }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .solution-section {
+    min-height: 48vh;
+
+    padding: 30px 0 40px;
+  }
+
+
+  .solution-title {
+    font-size: 39px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+  }
+
+
+  .solution-subtitle {
+    margin-top: 14px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    max-width: 340px;
+  }
+
+
+  .scroll-indicator {
+    bottom: 8px;
+  }
+
+
+  .scroll-icon {
+    width: 35px;
+
+    height: 48px;
+  }
+
+
+  .scroll-indicator span {
+    font-size: 7px;
+
+    letter-spacing: 3px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .solution-section {
+    min-height: 46vh;
+
+    padding: 25px 0 35px;
+  }
+
+
+  .solution-title {
+    font-size: 34px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .solution-subtitle {
+    font-size: 13px;
+
+    max-width: 300px;
+  }
+
+
+  .scroll-icon {
+    width: 32px;
+
+    height: 44px;
+  }
+
 }
