@@ -100,6 +100,16 @@ function ServicesSection() {
                   <ArrowRight size={18} />
                 </button>
 
+                <a
+                  href={`/services/${service.title
+                    .toLowerCase()
+                    .replace(/&/g, "and")
+                    .replace(/\s+/g, "-")}`}
+                  className="service-page-link"
+                >
+                  View Service
+                  <ArrowRight size={18} />
+                </a>
               </div>
 
             </article>
