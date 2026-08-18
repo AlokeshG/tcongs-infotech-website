@@ -389,34 +389,27 @@
 
 .careers-hero-image {
   width: 100%;
-
   max-width: 500px;
-
   height: 260px;
-
   margin-left: auto;
 
   overflow: hidden;
-
   box-sizing: border-box;
 
   border-radius: 7px;
-
   border: 1px solid rgba(77, 194, 202, 0.28);
 
   background: #073c40;
 }
 
-
-.careers-hero-image img {
+.careers-hero-image img,
+.careers-team-image {
   display: block;
 
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   border-radius: inherit;

@@ -12,12 +12,12 @@ import {
     PenTool,
     Mail,
     MapPin,
-    BriefcaseBusiness,
-    CheckCircle2,
     TrendingUp,
     Heart,
-    ShieldCheck,
 } from "lucide-react";
+
+
+import tcongsLogo from "../assets/tcongs-logo.png";
 
 import "./CareersPage.css";
 
@@ -239,14 +239,12 @@ function CareersPage() {
 
 
                 {/* RIGHT IMAGE */}
-
                 <div className="careers-hero-image">
-
                     <img
                         src="/tcongs/careers-team.jpg"
                         alt="Tcongs Infotech team working together"
+                        className="careers-team-image"
                     />
-
                 </div>
 
             </section>
@@ -500,7 +498,7 @@ function CareersPage() {
                 <div className="careers-footer-brand">
 
                     <img
-                        src="/tcongs/tcongs-logo.png"
+                        src={tcongsLogo.src || tcongsLogo}
                         alt="Tcongs Infotech"
                     />
 
