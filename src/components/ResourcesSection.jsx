@@ -399,14 +399,15 @@ Technology that fits your business.
           </div>
 
 
-          <button
-            type="button"
-            onClick={() =>
-              openPopup("consultation")
-            }
+          <a
+            href="https://calendly.com/tcongsinfotech/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resources-consultation-button"
           >
             Schedule a Consultation
-          </button>
+            <span>→</span>
+          </a>
 
         </div>
 

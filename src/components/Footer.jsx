@@ -50,40 +50,25 @@ function Footer() {
 
           <div className="footer-line"></div>
 
-
-          {/* HOME */}
-
           <a href="/tcongs/">
             <ChevronRight size={11} />
             <span>Tcongs Infotech</span>
           </a>
-
-
-          {/* ABOUT */}
 
           <a href="/tcongs/#about">
             <ChevronRight size={11} />
             <span>About</span>
           </a>
 
-
-          {/* OUR WORK */}
-
           <a href="/tcongs/#work">
             <ChevronRight size={11} />
             <span>Our Work</span>
           </a>
 
-
-          {/* CAREERS */}
-
           <a href="/tcongs/careers/">
             <ChevronRight size={11} />
             <span>Careers</span>
           </a>
-
-
-          {/* SERVICES */}
 
           <a href="/tcongs/services/">
             <ChevronRight size={11} />
@@ -101,48 +86,30 @@ function Footer() {
 
           <div className="footer-line"></div>
 
-
-          {/* WEB DEVELOPMENT */}
-
           <a href="/tcongs/services/web-development/">
             <ChevronRight size={11} />
             <span>Web Development</span>
           </a>
-
-
-          {/* APP DEVELOPMENT */}
 
           <a href="/tcongs/services/app-development/">
             <ChevronRight size={11} />
             <span>App Development</span>
           </a>
 
-
-          {/* UI / UX */}
-
           <a href="/tcongs/services/ui-ux-design/">
             <ChevronRight size={11} />
             <span>UI/UX Design</span>
           </a>
-
-
-          {/* SOFTWARE */}
 
           <a href="/tcongs/services/custom-software/">
             <ChevronRight size={11} />
             <span>Software Development</span>
           </a>
 
-
-          {/* AI */}
-
           <a href="/tcongs/services/ai-and-machine-learning/">
             <ChevronRight size={11} />
             <span>AI & Machine Learning</span>
           </a>
-
-
-          {/* DIGITAL */}
 
           <a href="/tcongs/services/digital-solutions/">
             <ChevronRight size={11} />
@@ -238,9 +205,11 @@ function Footer() {
           </a>
 
 
-          {/* REVIEW */}
+          {/* =================================
+              REVIEW - DESKTOP
+          ================================= */}
 
-          <div className="footer-review">
+          <div className="footer-review footer-review-desktop">
 
             <div className="review-divider"></div>
 
@@ -291,6 +260,38 @@ function Footer() {
 
           </div>
 
+
+          {/* =================================
+              REVIEW - MOBILE
+              Appears BELOW Follow Us
+          ================================= */}
+
+          <div className="footer-review footer-review-mobile">
+
+            <div className="review-divider"></div>
+
+            <span className="review-title">
+              REVIEWED BY OUR CLIENTS
+            </span>
+
+            <div className="review-row">
+
+              <strong>
+                Tcongs
+              </strong>
+
+              <span className="stars">
+                ★★★★★
+              </span>
+
+            </div>
+
+            <small>
+              CLIENT REVIEWS
+            </small>
+
+          </div>
+
         </div>
 
       </div>
@@ -321,9 +322,6 @@ function Footer() {
             |
           </span>
 
-
-          {/* PRIVACY */}
-
           <a href="/tcongs/privacy-policy/">
             Privacy Policy
           </a>
@@ -332,9 +330,6 @@ function Footer() {
             |
           </span>
 
-
-          {/* TERMS */}
-
           <a href="/tcongs/terms-of-service/">
             Terms of Service
           </a>
@@ -342,9 +337,6 @@ function Footer() {
           <span className="separator">
             |
           </span>
-
-
-          {/* SITEMAP */}
 
           <a href="/tcongs/sitemap/">
             Sitemap

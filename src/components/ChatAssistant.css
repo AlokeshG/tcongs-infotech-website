@@ -57,19 +57,20 @@
   right: 28px;
   bottom: 28px;
 
-  width: 175px;
-  height: 64px;
+  /* SMALLER DESKTOP SIZE */
+  width: 138px;
+  height: 50px;
 
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: 8px;
 
-  padding: 8px 14px 8px 8px;
+  padding: 5px 10px 5px 5px;
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 
-  border-radius: 18px;
+  border-radius: 14px;
 
   background:
     linear-gradient(
@@ -85,7 +86,7 @@
   z-index: 9999;
 
   box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.30);
+    0 12px 28px rgba(0, 0, 0, 0.28);
 
   transition:
     transform 0.25s ease,
@@ -97,10 +98,10 @@
 
 
 .chat-floating-button:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 
   box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.38);
+    0 16px 32px rgba(0, 0, 0, 0.35);
 
   background:
     linear-gradient(
@@ -116,11 +117,13 @@
 }
 
 
-/* Floating logo */
+/* =========================================
+   FLOATING LOGO
+========================================= */
 
 .chat-floating-logo {
-  width: 46px;
-  height: 46px;
+  width: 38px;
+  height: 38px;
 
   flex-shrink: 0;
 
@@ -130,27 +133,30 @@
 
   background: #ffffff;
 
-  border-radius: 13px;
+  border-radius: 10px;
 
   overflow: hidden;
 }
 
 
 .chat-floating-logo img {
-  width: 38px;
-  height: 38px;
+  width: 31px;
+  height: 31px;
 
   object-fit: contain;
 }
 
 
-/* Floating content */
+/* =========================================
+   FLOATING CONTENT
+========================================= */
 
 .chat-floating-content {
   display: flex;
+
   align-items: center;
 
-  gap: 9px;
+  gap: 7px;
 
   flex: 1;
 
@@ -159,7 +165,7 @@
 
 
 .chat-floating-title {
-  font-size: 16px;
+  font-size: 14px;
 
   font-weight: 700;
 
@@ -167,16 +173,26 @@
 }
 
 
+/* =========================================
+   STATUS
+========================================= */
+
 .chat-floating-status {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 
+/* =========================================
+   BLINKING GREEN STATUS DOT
+========================================= */
+
 .floating-status-dot {
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
 
   display: block;
 
@@ -185,7 +201,42 @@
   background: #35d47b;
 
   box-shadow:
-    0 0 9px rgba(53, 212, 123, 0.8);
+    0 0 6px rgba(53, 212, 123, 0.9);
+
+  animation: assistantStatusBlink 1.4s ease-in-out infinite;
+}
+
+
+/* Continuous blinking / pulsing */
+
+@keyframes assistantStatusBlink {
+
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow:
+      0 0 4px rgba(53, 212, 123, 0.7);
+  }
+
+  50% {
+    opacity: 0.35;
+
+    transform: scale(0.72);
+
+    box-shadow:
+      0 0 2px rgba(53, 212, 123, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow:
+      0 0 7px rgba(53, 212, 123, 0.9);
+  }
 }
 
 
@@ -210,17 +261,14 @@
 }
 
 
-/* Brand */
-
 .chat-brand {
   display: flex;
+
   align-items: center;
 
   gap: 12px;
 }
 
-
-/* Tcongs logo */
 
 .chat-logo {
   width: 48px;
@@ -240,24 +288,22 @@
 }
 
 
-/* Assistant name */
-
 .chat-brand h3 {
   margin: 0;
 
   color: #ffffff;
 
   font-size: 18px;
+
   font-weight: 700;
 
   line-height: 1.2;
 }
 
 
-/* Online */
-
 .online-status {
   display: flex;
+
   align-items: center;
 
   gap: 6px;
@@ -267,6 +313,7 @@
   color: #35d47b;
 
   font-size: 13px;
+
   font-weight: 500;
 }
 
@@ -283,6 +330,8 @@
 
   box-shadow:
     0 0 8px rgba(53, 212, 123, 0.7);
+
+  animation: assistantStatusBlink 1.4s ease-in-out infinite;
 }
 
 
@@ -295,6 +344,7 @@
   height: 42px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -335,6 +385,7 @@
   padding: 22px 18px;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 16px;
@@ -342,8 +393,6 @@
   scroll-behavior: smooth;
 }
 
-
-/* Scrollbar */
 
 .chat-messages::-webkit-scrollbar {
   width: 6px;
@@ -367,8 +416,6 @@
 }
 
 
-/* Message row */
-
 .message-row {
   display: flex;
 
@@ -376,14 +423,10 @@
 }
 
 
-/* Bot message */
-
 .message-row.bot {
   justify-content: flex-start;
 }
 
-
-/* User message */
 
 .message-row.user {
   justify-content: flex-end;
@@ -413,8 +456,6 @@
 }
 
 
-/* Bot */
-
 .message-row.bot .message-bubble {
   background: rgba(255, 255, 255, 0.075);
 
@@ -426,8 +467,6 @@
     0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-
-/* User */
 
 .message-row.user .message-bubble {
   background: linear-gradient(
@@ -464,6 +503,7 @@
 
 .chat-input-area {
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -475,8 +515,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-
-/* Input */
 
 .chat-input-area input {
   flex: 1;
@@ -531,6 +569,7 @@
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -580,46 +619,79 @@
 ========================================= */
 
 @media (max-width: 600px) {
+
+  /* Chat window */
+
   .chat-window {
     right: 10px;
     bottom: 10px;
 
-    width: 365px;
+    width: calc(100vw - 20px);
+
+    max-width: 365px;
 
     height: 480px;
 
-    border-radius: 40px;
+    border-radius: 28px;
   }
-}
 
 
- .chat-floating-button {
-  right: 16px;
-  bottom: 65px; /* moved slightly upward */
+  /* SMALL MOBILE FLOATING BUTTON */
 
-  width: 160px;
-  height: 60px;
+  .chat-floating-button {
+    right: 14px;
 
-  border-radius: 16px;
-}
+    bottom: 55px;
 
+    width: 125px;
+
+    height: 44px;
+
+    gap: 7px;
+
+    padding: 4px 8px 4px 4px;
+
+    border-radius: 12px;
+  }
+
+
+  /* Logo */
 
   .chat-floating-logo {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
   }
 
 
   .chat-floating-logo img {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
   }
 
+
+  /* Text */
 
   .chat-floating-title {
-    font-size: 15px;
+    font-size: 12px;
   }
 
+
+  .chat-floating-content {
+    gap: 5px;
+  }
+
+
+  /* Green dot */
+
+  .floating-status-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+
+  /* Header */
 
   .chat-header {
     min-height: 76px;
@@ -642,3 +714,51 @@
 
     font-size: 14px;
   }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .chat-floating-button {
+    right: 12px;
+
+    bottom: 52px;
+
+    width: 118px;
+
+    height: 42px;
+
+    padding: 4px 7px 4px 4px;
+
+    border-radius: 11px;
+  }
+
+
+  .chat-floating-logo {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 8px;
+  }
+
+
+  .chat-floating-logo img {
+    width: 26px;
+    height: 26px;
+  }
+
+
+  .chat-floating-title {
+    font-size: 11px;
+  }
+
+
+  .floating-status-dot {
+    width: 6px;
+    height: 6px;
+  }
+}

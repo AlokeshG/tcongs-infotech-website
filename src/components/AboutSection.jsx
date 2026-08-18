@@ -24,10 +24,12 @@ function AboutSection() {
     <section className="about-section" id="about">
 
       {/* =========================================
-          BACKGROUND IMAGE
+          WORLD MAP
       ========================================= */}
+
       <div className="about-image">
         <picture>
+
           <source
             media="(max-width: 768px)"
             srcSet={mobileTeam.src}
@@ -37,6 +39,7 @@ function AboutSection() {
             src={desktopTeam.src}
             alt="Tcongs Infotech World Map"
           />
+
         </picture>
       </div>
 
@@ -44,65 +47,112 @@ function AboutSection() {
       {/* =========================================
           DARK OVERLAY
       ========================================= */}
+
       <div className="about-overlay"></div>
+
+
+      {/* =========================================
+          MOBILE HEADING - OVER MAP
+      ========================================= */}
+
+      <div className="about-mobile-heading">
+
+        <div className="about-label-line"></div>
+
+        <h2>
+          Serving Businesses
+          <br />
+          Across Borders
+        </h2>
+
+      </div>
 
 
       {/* =========================================
           MAIN CONTENT
       ========================================= */}
+
       <div className="about-container">
 
-        {/* =====================================
-            LEFT SIDE
-        ===================================== */}
         <div className="about-content">
 
-          <div className="about-label-line"></div>
+          {/* =====================================
+              DESKTOP HEADING
+          ===================================== */}
 
-          <h2>
-            Serving Businesses
-            <br />
-            Across Borders
-          </h2>
+          <div className="about-desktop-heading">
 
-          <div className="about-title-line"></div>
+            <div className="about-label-line"></div>
+
+            <h2>
+              Serving Businesses
+              <br />
+              Across Borders
+            </h2>
+
+            <div className="about-title-line"></div>
+
+          </div>
+
+
+          {/* =====================================
+              SUBTITLE
+          ===================================== */}
 
           <h3>
             Global Technology Partner for Growing Businesses
           </h3>
 
+
+          {/* =====================================
+              DESCRIPTION
+          ===================================== */}
+
           <p className="about-description">
+
             At <strong>Tcongs Infotech</strong>, we deliver reliable,
             scalable, and innovative digital solutions to businesses
             across the globe. From startups to growing enterprises,
             we help transform ideas into powerful websites, mobile apps,
             software, and digital platforms.
+
           </p>
 
 
-          {/* =================================
+          {/* =====================================
               TRUSTED CLIENTS
-          ================================= */}
+          ===================================== */}
+
           <div className="trusted-box">
 
             <div className="trusted-icon">
-              <Globe2 size={28} strokeWidth={1.8} />
+
+              <Globe2
+                size={28}
+                strokeWidth={1.8}
+              />
+
             </div>
 
             <div className="trusted-text">
-              <span>Trusted by clients across</span>
+
+              <span>
+                Trusted by clients across
+              </span>
 
               <strong>
                 India, UAE, USA, and Canada.
               </strong>
+
             </div>
 
           </div>
 
 
-          {/* =================================
+          {/* =====================================
               OUR SOLUTIONS
-          ================================= */}
+          ===================================== */}
+
           <div className="solutions-section">
 
             <div className="solutions-title">
@@ -111,9 +161,8 @@ function AboutSection() {
 
             <div className="solutions-grid">
 
-              {/* ROW 1 */}
-
               <div className="solution-item">
+
                 <Monitor
                   className="solution-icon"
                   size={25}
@@ -123,10 +172,12 @@ function AboutSection() {
                 <span>
                   Web Development
                 </span>
+
               </div>
 
 
               <div className="solution-item">
+
                 <Smartphone
                   className="solution-icon"
                   size={25}
@@ -138,10 +189,12 @@ function AboutSection() {
                   <br />
                   Development
                 </span>
+
               </div>
 
 
               <div className="solution-item">
+
                 <ShoppingCart
                   className="solution-icon"
                   size={25}
@@ -153,12 +206,12 @@ function AboutSection() {
                   <br />
                   Solutions
                 </span>
+
               </div>
 
 
-              {/* ROW 2 */}
-
               <div className="solution-item">
+
                 <Cloud
                   className="solution-icon"
                   size={25}
@@ -170,10 +223,12 @@ function AboutSection() {
                   <br />
                   Solutions
                 </span>
+
               </div>
 
 
               <div className="solution-item">
+
                 <BarChart3
                   className="solution-icon"
                   size={25}
@@ -185,10 +240,12 @@ function AboutSection() {
                   <br />
                   Solutions
                 </span>
+
               </div>
 
 
               <div className="solution-item">
+
                 <Settings
                   className="solution-icon"
                   size={25}
@@ -200,6 +257,7 @@ function AboutSection() {
                   <br />
                   Development
                 </span>
+
               </div>
 
             </div>
@@ -210,11 +268,11 @@ function AboutSection() {
 
 
         {/* =====================================
-            RIGHT SIDE - STAT CARDS
+            STATISTICS
         ===================================== */}
+
         <div className="about-stats">
 
-          {/* 10+ */}
           <div className="stat-card stat-green">
 
             <div className="stat-icon">
@@ -232,12 +290,9 @@ function AboutSection() {
               Experience
             </span>
 
-            <div className="stat-line"></div>
-
           </div>
 
 
-          {/* 150+ */}
           <div className="stat-card stat-blue">
 
             <div className="stat-icon">
@@ -255,12 +310,9 @@ function AboutSection() {
               Delivered
             </span>
 
-            <div className="stat-line"></div>
-
           </div>
 
 
-          {/* 25+ */}
           <div className="stat-card stat-purple">
 
             <div className="stat-icon">
@@ -278,12 +330,9 @@ function AboutSection() {
               Members
             </span>
 
-            <div className="stat-line"></div>
-
           </div>
 
 
-          {/* 100% */}
           <div className="stat-card stat-yellow">
 
             <div className="stat-icon">
@@ -300,8 +349,6 @@ function AboutSection() {
               <br />
               Solutions
             </span>
-
-            <div className="stat-line"></div>
 
           </div>
 

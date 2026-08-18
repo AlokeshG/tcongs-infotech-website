@@ -8,7 +8,8 @@
 
   box-sizing: border-box;
 
-  padding: 70px 30px 70px;
+  /* REDUCED TOP SPACE */
+  padding: 45px 30px 70px;
 
   position: relative;
   overflow: hidden;
@@ -44,14 +45,11 @@
 
 /* =========================================================
    CONTAINER
-   IMPORTANT: EXPANDED WIDTH
 ========================================================= */
 
 .approach-container {
   width: 100%;
 
-  /* OLD: 600px */
-  /* NEW: much wider */
   max-width: 1100px;
 
   margin: 0 auto;
@@ -68,12 +66,16 @@
 .approach-header {
   text-align: center;
 
-  margin-bottom: 30px;
+  /*
+    Reduced from 30px.
+    Keeps the first step cards closer.
+  */
+  margin-bottom: 24px;
 }
 
 
 .approach-label {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
   font-size: 13px;
 
@@ -99,7 +101,7 @@
 
 
 .approach-subtitle {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
 
   font-size: 13px;
 
@@ -122,7 +124,10 @@
 
   gap: 24px;
 
-  margin-bottom: 18px;
+  /*
+    Reduced spacing after cards
+  */
+  margin-bottom: 14px;
 }
 
 
@@ -153,7 +158,9 @@
 }
 
 
-/* LEFT ACCENT */
+/* =========================================================
+   LEFT ACCENT
+========================================================= */
 
 .approach-step::before {
   content: "";
@@ -172,11 +179,9 @@
   background: #00d4d9;
 }
 
-
 .step-two::before {
   background: #a96ce8;
 }
-
 
 .step-three::before {
   background: #61d275;
@@ -215,7 +220,6 @@
 .step-two .step-number {
   background: #a66ce5;
 }
-
 
 .step-three .step-number {
   background: #61d275;
@@ -269,7 +273,6 @@
 .approach-diagram {
   width: 100%;
 
-  /* Increased height slightly */
   height: 285px;
 
   box-sizing: border-box;
@@ -314,7 +317,6 @@
 
   left: 50%;
 
-  /* Slightly lower so icon doesn't overlap Explore */
   top: 38px;
 
   transform: translateX(-50%);
@@ -369,11 +371,9 @@
   background: #00cbd2;
 }
 
-
 .cycle-green {
   background: #61d275;
 }
-
 
 .cycle-purple {
   background: #a66ce5;
@@ -466,8 +466,6 @@
 }
 
 
-/* GREEN ICON */
-
 .green-icon {
   margin-left: 10px;
 
@@ -480,8 +478,6 @@
     0 0 18px rgba(98, 210, 117, 0.12);
 }
 
-
-/* PURPLE ICON */
 
 .purple-icon {
   margin-right: 10px;
@@ -505,7 +501,6 @@
 
   left: 50%;
 
-  /* Move center content slightly down */
   top: 57%;
 
   transform: translate(-50%, -50%);
@@ -517,10 +512,6 @@
   width: 300px;
 }
 
-
-/* =========================================================
-   CENTER ICON
-========================================================= */
 
 .center-icon {
   width: 46px;
@@ -544,10 +535,6 @@
     0 0 18px rgba(0, 203, 210, 0.15);
 }
 
-
-/* =========================================================
-   CENTER TEXT
-========================================================= */
 
 .cycle-center h3 {
   margin: 0 0 5px;
@@ -584,7 +571,10 @@
 
   box-sizing: border-box;
 
-  margin: 18px auto 0;
+  /*
+    Reduced from 18px.
+  */
+  margin: 14px auto 0;
 
   padding: 12px 18px;
 
@@ -605,8 +595,6 @@
   overflow: hidden;
 }
 
-
-/* LEFT BORDER */
 
 .approach-description::before {
   content: "";
@@ -692,30 +680,33 @@
 
 @media (min-width: 1400px) {
 
+  .approach-section {
+    padding-top: 50px;
+  }
+
   .approach-container {
     max-width: 1180px;
   }
 
+  .approach-header {
+    margin-bottom: 25px;
+  }
 
   .approach-header h2 {
     font-size: 34px;
   }
 
-
   .approach-step {
     min-height: 105px;
   }
-
 
   .approach-diagram {
     height: 300px;
   }
 
-
   .cycle-top h3 {
     font-size: 23px;
   }
-
 
   .cycle-left h3,
   .cycle-right h3 {
@@ -732,29 +723,24 @@
 @media (max-width: 1100px) {
 
   .approach-section {
-    padding: 60px 25px 60px;
+    padding: 40px 25px 60px;
   }
-
 
   .approach-container {
     max-width: 900px;
   }
 
-
   .approach-steps {
     gap: 18px;
   }
-
 
   .approach-step {
     padding: 16px;
   }
 
-
   .cycle-left {
     left: 7%;
   }
-
 
   .cycle-right {
     right: 7%;
@@ -770,39 +756,36 @@
 @media (max-width: 900px) {
 
   .approach-section {
-    padding: 55px 20px 50px;
+    padding: 35px 20px 50px;
   }
-
 
   .approach-container {
     max-width: 750px;
   }
 
+  .approach-header {
+    margin-bottom: 22px;
+  }
 
   .approach-header h2 {
     font-size: 29px;
   }
 
-
   .approach-step h3 {
     font-size: 14px;
   }
-
 
   .approach-step p {
     font-size: 10px;
   }
 
-
   .approach-diagram {
     height: 260px;
   }
 
-
   .cycle-left {
     left: 6%;
   }
-
 
   .cycle-right {
     right: 6%;
@@ -818,53 +801,82 @@
 @media (max-width: 650px) {
 
   .approach-section {
-    padding: 45px 16px 45px;
+    /*
+      Main fix:
+      Much smaller top padding.
+    */
+    padding: 25px 16px 40px;
   }
-
 
   .approach-container {
     max-width: 100%;
   }
 
-
   .approach-header {
-    margin-bottom: 25px;
+    /*
+      Reduced spacing before
+      "OUR APPROACH".
+    */
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 
+  .approach-label {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    letter-spacing: 2.2px;
+  }
 
   .approach-header h2 {
-    font-size: 25px;
-  }
+    font-size: 24px;
 
+    line-height: 1.15;
+  }
 
   .approach-subtitle {
-    font-size: 10px;
+    margin-top: 7px;
+
+    font-size: 9px;
+
+    line-height: 1.45;
   }
 
+
+  /* =========================================
+     STEP CARDS
+  ========================================= */
 
   .approach-steps {
     grid-template-columns: 1fr;
 
-    gap: 10px;
-  }
+    gap: 9px;
 
+    /*
+      Keep cards close to heading.
+    */
+    margin-bottom: 12px;
+  }
 
   .approach-step {
-    min-height: 78px;
+    min-height: 76px;
 
-    padding: 15px;
+    padding: 14px;
   }
-
 
   .approach-step h3 {
     font-size: 13px;
   }
 
-
   .approach-step p {
     font-size: 9px;
   }
 
+
+  /* =========================================
+     DIAGRAM
+  ========================================= */
 
   .approach-diagram {
     height: 310px;
@@ -874,7 +886,6 @@
   .cycle-top {
     top: 30px;
   }
-
 
   .cycle-top h3 {
     font-size: 18px;
@@ -886,7 +897,6 @@
 
     bottom: 48px;
   }
-
 
   .cycle-right {
     right: 25px;
@@ -930,10 +940,19 @@
   }
 
 
+  /* =========================================
+     DESCRIPTION
+  ========================================= */
+
   .approach-description {
     width: 100%;
 
     min-height: 58px;
+
+    /*
+      Reduced top spacing.
+    */
+    margin-top: 10px;
 
     padding: 10px 14px;
   }
@@ -966,13 +985,35 @@
 @media (max-width: 420px) {
 
   .approach-section {
-    padding-left: 12px;
-    padding-right: 12px;
+    /*
+      Very compact but still comfortable.
+    */
+    padding: 20px 12px 35px;
   }
 
+  .approach-header {
+    margin-bottom: 18px;
+  }
+
+  .approach-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
 
   .approach-header h2 {
     font-size: 22px;
+  }
+
+  .approach-subtitle {
+    font-size: 8.5px;
+  }
+
+
+  .approach-step {
+    min-height: 74px;
+
+    padding: 13px;
   }
 
 
@@ -1005,6 +1046,11 @@
 
   .cycle-center {
     width: 170px;
+  }
+
+
+  .approach-description {
+    margin-top: 8px;
   }
 
 }

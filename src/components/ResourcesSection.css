@@ -1328,3 +1328,42 @@
   }
 
 }
+.resources-consultation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 14px 24px;
+
+  background: #062126;
+  color: #ffffff;
+
+  border: 1px solid #062126;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.resources-consultation-button span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.resources-consultation-button:hover {
+  background: #12bfd3;
+  border-color: #12bfd3;
+  color: #ffffff;
+  transform: translateY(-2px);
+}

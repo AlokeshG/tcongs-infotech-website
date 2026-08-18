@@ -8,6 +8,7 @@ function Partners() {
 
   return (
     <section
+      className="partners-section"
       style={{
         width: "100%",
         height: "115px",
@@ -20,8 +21,13 @@ function Partners() {
         borderBottom: "1px solid rgba(255,255,255,0.12)",
       }}
     >
-      {/* LEFT TITLE */}
+
+      {/* =========================================
+          OUR PARTNERS
+      ========================================= */}
+
       <div
+        className="partners-title"
         style={{
           width: "230px",
           minWidth: "230px",
@@ -36,13 +42,19 @@ function Partners() {
           letterSpacing: "0.5px",
           flexShrink: 0,
           borderRight: "1px solid rgba(255,255,255,0.15)",
+          boxSizing: "border-box",
         }}
       >
         OUR PARTNERS
       </div>
 
-      {/* MOVING AREA */}
+
+      {/* =========================================
+          MOVING PARTNERS AREA
+      ========================================= */}
+
       <div
+        className="partners-moving-area"
         style={{
           flex: 1,
           minWidth: 0,
@@ -52,6 +64,7 @@ function Partners() {
           alignItems: "center",
         }}
       >
+
         <div
           className="partners-moving-track"
           style={{
@@ -62,10 +75,13 @@ function Partners() {
             height: "100%",
           }}
         >
+
           {/* FIRST SET */}
+
           {partners.map((partner, index) => (
             <div
               key={`first-${index}`}
+              className="partner-item"
               style={{
                 width: "230px",
                 minWidth: "230px",
@@ -86,10 +102,13 @@ function Partners() {
             </div>
           ))}
 
+
           {/* SECOND SET */}
+
           {partners.map((partner, index) => (
             <div
               key={`second-${index}`}
+              className="partner-item"
               style={{
                 width: "230px",
                 minWidth: "230px",
@@ -109,12 +128,22 @@ function Partners() {
               {partner}
             </div>
           ))}
+
         </div>
       </div>
 
-      {/* ANIMATION */}
+
+      {/* =========================================
+          ANIMATION + RESPONSIVE
+      ========================================= */}
+
       <style>
         {`
+
+          /* ========================================
+             DESKTOP
+          ======================================== */
+
           .partners-moving-track {
             animation: partnersMove 25s linear infinite;
           }
@@ -124,6 +153,7 @@ function Partners() {
           }
 
           @keyframes partnersMove {
+
             from {
               transform: translateX(0);
             }
@@ -131,17 +161,106 @@ function Partners() {
             to {
               transform: translateX(-50%);
             }
+
           }
 
-          @media (max-width: 768px) {
-            .partners-moving-track > div {
-              width: 145px !important;
-              min-width: 145px !important;
-              font-size: 14px !important;
+
+          /* ========================================
+             TABLET
+          ======================================== */
+
+          @media (max-width: 900px) {
+
+            .partners-title {
+              width: 30% !important;
+              min-width: 30% !important;
+              font-size: 13px !important;
             }
+
+            .partner-item {
+              width: 190px !important;
+              min-width: 190px !important;
+              font-size: 16px !important;
+            }
+
           }
+
+
+          /* ========================================
+             MOBILE
+          ======================================== */
+
+          @media (max-width: 600px) {
+
+            .partners-section {
+              height: 90px !important;
+            }
+
+            /*
+              LEFT SIDE = 50%
+            */
+
+            .partners-title {
+              width: 50% !important;
+              min-width: 50% !important;
+
+              font-size: 13px !important;
+              letter-spacing: 0.3px !important;
+
+              padding: 0 8px !important;
+            }
+
+            /*
+              RIGHT SIDE = 50%
+            */
+
+            .partners-moving-area {
+              width: 50% !important;
+              min-width: 50% !important;
+              flex: 0 0 50% !important;
+            }
+
+            .partner-item {
+              width: 165px !important;
+              min-width: 165px !important;
+
+              font-size: 14px !important;
+
+              padding: 0 10px !important;
+            }
+
+          }
+
+
+          /* ========================================
+             SMALL MOBILE
+          ======================================== */
+
+          @media (max-width: 400px) {
+
+            .partners-section {
+              height: 85px !important;
+            }
+
+            .partners-title {
+              width: 50% !important;
+              min-width: 50% !important;
+
+              font-size: 12px !important;
+            }
+
+            .partner-item {
+              width: 150px !important;
+              min-width: 150px !important;
+
+              font-size: 13px !important;
+            }
+
+          }
+
         `}
       </style>
+
     </section>
   );
 }

@@ -39,7 +39,18 @@ function CTASection() {
             team productivity.
           </p>
 
-          <button className="consultation-btn">
+
+          {/* =================================================
+              SCHEDULE A CONSULTATION
+              → CALENDLY
+          ================================================= */}
+
+          <a
+            href="https://calendly.com/tcongsinfotech/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="consultation-btn"
+          >
 
             <CalendarDays
               size={15}
@@ -55,7 +66,7 @@ function CTASection() {
               strokeWidth={1.8}
             />
 
-          </button>
+          </a>
 
         </div>
 
@@ -76,7 +87,6 @@ function CTASection() {
 
               <div className="review-card-header">
 
-                {/* REAL GOOGLE LOGO */}
                 <img
                   src="/image.png"
                   alt="Google"

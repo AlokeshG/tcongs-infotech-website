@@ -9,7 +9,8 @@
   background: #06252a;
   color: #ffffff;
 
-  padding: 90px 0 70px;
+  /* REDUCED TOP SPACE */
+  padding: 45px 0 70px;
 
   overflow: hidden;
   position: relative;
@@ -44,12 +45,16 @@
 
   text-align: center;
 
-  margin-bottom: 40px;
+  /* REDUCED */
+  margin-bottom: 32px;
 }
+
 
 .companies-heading {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 }
 
@@ -61,7 +66,8 @@
 .companies-eyebrow {
   display: block;
 
-  margin-bottom: 12px;
+  /* REDUCED */
+  margin-bottom: 9px;
 
   color: #00d5df;
 
@@ -98,7 +104,7 @@
 ========================================= */
 
 .companies-heading p {
-  margin: 14px 0 0;
+  margin: 11px 0 0;
 
   color: rgba(255, 255, 255, 0.72);
 
@@ -155,6 +161,7 @@
     box-shadow 0.3s ease;
 }
 
+
 .company-card:hover {
   transform: translateY(-8px);
 
@@ -196,7 +203,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   margin-bottom: 20px;
@@ -230,17 +236,8 @@
 
   outline: none;
 
-  /*
-    IMPORTANT:
-    The logo PNG contains a white background.
-    Multiply makes the white area blend
-    with the card background.
-  */
   mix-blend-mode: multiply;
 
-  /*
-    Keeps the logo visually clean.
-  */
   filter: contrast(1.05);
 
   transition:
@@ -288,11 +285,6 @@
 
   object-fit: contain;
 
-  /*
-    THIS IS THE IMPORTANT PART.
-    It removes the visible white square
-    from the Asian Paints PNG.
-  */
   mix-blend-mode: multiply;
 
   filter: contrast(1.08) saturate(1.05);
@@ -389,6 +381,7 @@
   font-weight: 500;
 }
 
+
 .industry-icon {
   display: inline-flex;
 
@@ -453,11 +446,18 @@
 @media (max-width: 800px) {
 
   .testimonials-section {
-    padding: 70px 0 60px;
+    /*
+      REDUCED FROM 70px
+    */
+    padding: 40px 0 60px;
   }
 
   .companies-container {
     padding: 0 24px;
+  }
+
+  .companies-header {
+    margin-bottom: 26px;
   }
 
   .companies-heading h2 {
@@ -487,34 +487,86 @@
 @media (max-width: 600px) {
 
   .testimonials-section {
-    padding: 60px 0 50px;
+    /*
+      MAIN MOBILE FIX
+      Reduced from 60px to 25px.
+    */
+    padding: 25px 0 50px;
   }
+
 
   .companies-container {
     padding: 0 18px;
   }
 
+
   .companies-header {
-    margin-bottom: 30px;
+    /*
+      Keeps OUR WORK close to
+      the previous section.
+    */
+    margin-top: 0;
+
+    margin-bottom: 24px;
   }
+
+
+  /* =======================================
+     EYEBROW
+  ======================================= */
 
   .companies-eyebrow {
     font-size: 11px;
 
     letter-spacing: 1.6px;
+
+    /*
+      Reduced spacing below OUR WORK
+    */
+    margin-bottom: 7px;
   }
+
+
+  /* =======================================
+     MAIN HEADING
+  ======================================= */
 
   .companies-heading h2 {
     font-size: 30px;
 
+    line-height: 1.12;
+
     letter-spacing: -0.8px;
   }
+
+
+  /* =======================================
+     SUBTITLE
+  ======================================= */
 
   .companies-heading p {
     font-size: 14px;
 
+    line-height: 1.45;
+
     max-width: 330px;
+
+    margin-top: 9px;
   }
+
+
+  /* =======================================
+     COMPANY GRID
+  ======================================= */
+
+  .companies-grid {
+    gap: 20px;
+  }
+
+
+  /* =======================================
+     COMPANY CARD
+  ======================================= */
 
   .company-card {
     height: 450px;
@@ -524,17 +576,24 @@
     border-radius: 9px;
   }
 
+
+  /* =======================================
+     LOGO
+  ======================================= */
+
   .company-logo-wrapper {
     height: 145px;
 
     margin-bottom: 18px;
   }
 
+
   .company-logo {
     max-width: 82%;
 
     height: 95px;
   }
+
 
   .company-green .company-logo {
     width: 200px;
@@ -543,6 +602,7 @@
 
     max-width: 85%;
   }
+
 
   .company-purple .company-logo {
     width: 200px;
@@ -554,9 +614,19 @@
     mix-blend-mode: multiply;
   }
 
+
+  /* =======================================
+     DIVIDER
+  ======================================= */
+
   .company-divider {
     margin-bottom: 20px;
   }
+
+
+  /* =======================================
+     COMPANY NAME
+  ======================================= */
 
   .company-name {
     font-size: 20px;
@@ -564,17 +634,28 @@
     margin-bottom: 12px;
   }
 
+
+  /* =======================================
+     INDUSTRY
+  ======================================= */
+
   .company-industry {
     font-size: 13px;
 
     margin-bottom: 22px;
   }
 
+
+  /* =======================================
+     DESCRIPTION
+  ======================================= */
+
   .company-description {
     font-size: 13px;
 
     line-height: 1.6;
   }
+
 }
 
 
@@ -584,9 +665,32 @@
 
 @media (max-width: 400px) {
 
+  .testimonials-section {
+    /*
+      EVEN SMALLER TOP GAP
+    */
+    padding: 20px 0 40px;
+  }
+
+
   .companies-heading h2 {
     font-size: 27px;
+
+    line-height: 1.12;
   }
+
+
+  .companies-heading p {
+    font-size: 13px;
+
+    margin-top: 8px;
+  }
+
+
+  .companies-header {
+    margin-bottom: 20px;
+  }
+
 
   .company-card {
     height: 430px;
@@ -594,9 +698,11 @@
     padding: 24px 20px;
   }
 
+
   .company-logo-wrapper {
     height: 130px;
   }
+
 
   .company-green .company-logo {
     width: 180px;
@@ -604,9 +710,11 @@
     height: 95px;
   }
 
+
   .company-purple .company-logo {
     width: 180px;
 
     height: 95px;
   }
+
 }

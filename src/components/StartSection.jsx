@@ -178,7 +178,7 @@ function StartSection() {
 
                 <div className="consultation-circle">
                   <img
-                    src={tcongsLogo.src}
+                    src={tcongsLogo.src || tcongsLogo}
                     alt="Tcongs Infotech"
                   />
                 </div>
@@ -196,14 +196,20 @@ function StartSection() {
               </div>
 
 
-              <button
-                type="button"
+              {/* =========================================
+                  SCHEDULE A CONSULTATION
+                  OPENS CALENDLY
+              ========================================== */}
+
+              <a
+                href="https://calendly.com/tcongsinfotech/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="dark-button"
-                onClick={() => openForm("Schedule a Consultation")}
               >
                 Schedule a Consultation
                 <ArrowRight size={17} />
-              </button>
+              </a>
 
             </div>
 
@@ -216,6 +222,7 @@ function StartSection() {
 
       {/* =================================================
           POPUP FORM
+          USED BY LET'S TALK + GET STARTED
       ================================================= */}
 
       {showForm && (
@@ -271,6 +278,7 @@ function StartSection() {
               <div className="form-row">
 
                 <div className="form-group">
+
                   <label htmlFor="full-name">
                     Full Name
                   </label>
@@ -281,10 +289,12 @@ function StartSection() {
                     placeholder="Enter your name"
                     required
                   />
+
                 </div>
 
 
                 <div className="form-group">
+
                   <label htmlFor="email">
                     Email Address
                   </label>
@@ -295,6 +305,7 @@ function StartSection() {
                     placeholder="Enter your email"
                     required
                   />
+
                 </div>
 
               </div>
@@ -303,6 +314,7 @@ function StartSection() {
               <div className="form-row">
 
                 <div className="form-group">
+
                   <label htmlFor="phone">
                     Phone Number
                   </label>
@@ -312,10 +324,12 @@ function StartSection() {
                     type="tel"
                     placeholder="+91 00000 00000"
                   />
+
                 </div>
 
 
                 <div className="form-group">
+
                   <label htmlFor="company">
                     Company
                   </label>
@@ -325,6 +339,7 @@ function StartSection() {
                     type="text"
                     placeholder="Company name"
                   />
+
                 </div>
 
               </div>

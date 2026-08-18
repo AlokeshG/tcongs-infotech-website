@@ -4,19 +4,12 @@
 
 .footer {
   position: relative;
-
   width: 100%;
-
   background: #00383b;
-
   color: #ffffff;
-
   overflow: hidden;
-
   border-top: 5px solid #0a7f82;
-
   padding: 35px 0 0;
-
   box-sizing: border-box;
 }
 
@@ -27,11 +20,9 @@
 
 .footer-content {
   position: relative;
-
   z-index: 2;
 
   width: calc(100% - 70px);
-
   max-width: 1350px;
 
   margin: 0 auto;
@@ -62,21 +53,15 @@
   box-sizing: border-box;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
 }
 
-
-/* First column */
 
 .footer-column:first-child {
   padding-left: 0;
 }
 
-
-/* Vertical separators */
 
 .footer-column + .footer-column {
   border-left: 1px solid rgba(96, 177, 181, 0.16);
@@ -93,7 +78,6 @@
   color: #ffffff;
 
   font-size: 11px;
-
   line-height: 1.2;
 
   font-weight: 700;
@@ -105,16 +89,14 @@
 
 
 /* =========================================================
-   SMALL TEAL LINE UNDER HEADING
+   HEADING LINE
 ========================================================= */
 
 .footer-line {
   width: 24px;
-
   height: 2px;
 
   margin-top: 7px;
-
   margin-bottom: 10px;
 
   background: #08a9ae;
@@ -131,13 +113,11 @@
   width: 100%;
 
   display: flex;
-
   align-items: center;
 
   gap: 5px;
 
   margin: 0;
-
   padding: 4px 0;
 
   color: #c5d8d9;
@@ -145,9 +125,7 @@
   text-decoration: none;
 
   font-size: 10px;
-
   line-height: 1.45;
-
   font-weight: 400;
 
   transition:
@@ -158,22 +136,19 @@
 
 .footer-column > a svg {
   flex-shrink: 0;
-
   color: #08b4b8;
-
   stroke-width: 2.5;
 }
 
 
 .footer-column > a:hover {
   color: #ffffff;
-
   transform: translateX(3px);
 }
 
 
 /* =========================================================
-   CONTACT SECTION
+   CONTACT
 ========================================================= */
 
 .contact-column {
@@ -182,13 +157,10 @@
 }
 
 
-/* Contact rows */
-
 .contact-item {
   width: 100%;
 
   display: flex;
-
   align-items: flex-start;
 
   gap: 9px;
@@ -200,7 +172,6 @@
   text-decoration: none;
 
   font-size: 10px;
-
   line-height: 1.45;
 }
 
@@ -218,7 +189,6 @@
 
 .contact-text {
   display: flex;
-
   flex-direction: column;
 
   gap: 1px;
@@ -229,7 +199,6 @@
   color: #ffffff;
 
   font-size: 10px;
-
   font-weight: 700;
 }
 
@@ -240,8 +209,6 @@
   font-size: 10px;
 }
 
-
-/* Phone / email */
 
 .contact-link {
   align-items: center;
@@ -254,27 +221,22 @@
 
 .contact-link:hover {
   color: #ffffff;
-
   transform: translateX(3px);
 }
 
 
 /* =========================================================
-   REVIEW SECTION
+   CLIENT REVIEW
 ========================================================= */
 
 .footer-review {
   width: 100%;
-
   margin-top: 8px;
 }
 
 
-/* Divider */
-
 .review-divider {
   width: 100%;
-
   height: 1px;
 
   margin-bottom: 12px;
@@ -283,15 +245,12 @@
 }
 
 
-/* Review title */
-
 .review-title {
   display: block;
 
   color: #d8e4e4;
 
   font-size: 8px;
-
   line-height: 1.2;
 
   font-weight: 600;
@@ -302,11 +261,8 @@
 }
 
 
-/* Tcongs + stars */
-
 .review-row {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
@@ -317,7 +273,6 @@
   color: #ffffff;
 
   font-size: 23px;
-
   line-height: 1;
 
   font-weight: 700;
@@ -328,14 +283,11 @@
   color: #08b6ba;
 
   font-size: 11px;
-
   line-height: 1;
 
   letter-spacing: 1px;
 }
 
-
-/* Client reviews */
 
 .footer-review small {
   display: block;
@@ -345,12 +297,26 @@
   color: #ffffff;
 
   font-size: 8px;
-
   line-height: 1;
 
   font-weight: 600;
 
   letter-spacing: 0.6px;
+}
+
+
+/* =========================================================
+   REVIEW POSITION
+========================================================= */
+
+/* Desktop review stays under Contact Information */
+.footer-review-desktop {
+  display: block;
+}
+
+/* Mobile review is hidden until mobile */
+.footer-review-mobile {
+  display: none;
 }
 
 
@@ -362,8 +328,6 @@
   padding-left: 30px;
 }
 
-
-/* Social grid */
 
 .social-icons {
   display: grid;
@@ -378,17 +342,13 @@
 }
 
 
-/* Social button */
-
 .social-icon {
   width: 32px;
-
   height: 32px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   box-sizing: border-box;
@@ -402,7 +362,6 @@
   text-decoration: none;
 
   font-size: 13px;
-
   font-weight: 500;
 
   transition:
@@ -423,13 +382,7 @@
 
 .social-icon.linkedin {
   font-size: 11px;
-
   font-weight: 600;
-}
-
-
-.social-icon.youtube {
-  font-size: 10px;
 }
 
 
@@ -492,7 +445,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   background: rgba(0, 30, 33, 0.65);
@@ -501,15 +453,10 @@
 }
 
 
-/* =========================================================
-   COPYRIGHT
-========================================================= */
-
 .copyright {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   flex-wrap: wrap;
@@ -519,7 +466,6 @@
   color: #d1dddd;
 
   font-size: 9px;
-
   line-height: 1.3;
 }
 
@@ -551,19 +497,16 @@
   position: fixed;
 
   right: 14px;
-
   bottom: 10px;
 
   z-index: 20;
 
   width: 26px;
-
   height: 26px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border: none;
@@ -577,7 +520,6 @@
   cursor: pointer;
 
   opacity: 0;
-
   visibility: hidden;
 
   transform: translateY(10px);
@@ -592,7 +534,6 @@
 
 .back-to-top.show {
   opacity: 1;
-
   visibility: visible;
 
   transform: translateY(0);
@@ -616,13 +557,11 @@
 
   .footer-content {
     width: calc(100% - 120px);
-
     max-width: 1350px;
   }
 
   .footer-column {
     padding-left: 30px;
-
     padding-right: 30px;
   }
 
@@ -632,7 +571,6 @@
 
   .footer-big-logo {
     margin-top: 32px;
-
     font-size: 145px;
   }
 }
@@ -640,8 +578,6 @@
 
 /* =========================================================
    TABLET
-   IMPORTANT:
-   Keep FOUR COLUMNS like HR reference
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -650,11 +586,8 @@
     padding-top: 32px;
   }
 
-
   .footer-content {
     width: calc(100% - 70px);
-
-    max-width: none;
 
     grid-template-columns:
       1.05fr
@@ -663,35 +596,27 @@
       0.9fr;
   }
 
-
   .footer-column {
     padding-left: 18px;
-
     padding-right: 18px;
   }
-
 
   .footer-column:first-child {
     padding-left: 0;
   }
 
-
   .follow-column {
     padding-left: 22px;
   }
-
 
   .footer-column h4 {
     font-size: 10px;
   }
 
-
   .footer-column > a {
     font-size: 9px;
-
     padding: 3px 0;
   }
-
 
   .contact-item,
   .contact-text span,
@@ -699,54 +624,39 @@
     font-size: 9px;
   }
 
-
   .review-row strong {
     font-size: 20px;
   }
-
 
   .stars {
     font-size: 9px;
   }
 
-
   .social-icons {
     grid-template-columns: repeat(3, 30px);
-
     grid-auto-rows: 30px;
-
     gap: 8px;
   }
 
-
   .social-icon {
     width: 30px;
-
     height: 30px;
-
     font-size: 12px;
   }
 
-
   .footer-big-logo {
     margin-top: 25px;
-
     font-size: 90px;
-
     letter-spacing: -4px;
   }
 
-
   .footer-bottom {
     min-height: 36px;
-
     padding: 0 20px;
   }
 
-
   .copyright {
     font-size: 8px;
-
     gap: 10px;
   }
 }
@@ -768,33 +678,26 @@
       0.9fr;
   }
 
-
   .footer-column {
     padding-left: 12px;
-
     padding-right: 12px;
   }
-
 
   .footer-column:first-child {
     padding-left: 0;
   }
 
-
   .follow-column {
     padding-left: 16px;
   }
-
 
   .footer-column h4 {
     font-size: 9px;
   }
 
-
   .footer-column > a {
     font-size: 8px;
   }
-
 
   .contact-item,
   .contact-text span,
@@ -802,33 +705,30 @@
     font-size: 8px;
   }
 
-
   .footer-big-logo {
     font-size: 70px;
-
     letter-spacing: -3px;
   }
 
-
   .copyright {
     font-size: 7px;
-
     gap: 7px;
   }
 }
 
 
 /* =========================================================
-   MOBILE - FULLY CENTERED & SPACED FOOTER
+   MOBILE
 ========================================================= */
 
 @media (max-width: 560px) {
 
   .footer {
     width: 100%;
+
     padding: 35px 0 0;
+
     overflow: hidden;
-    box-sizing: border-box;
   }
 
 
@@ -843,18 +743,19 @@
     margin: 0 auto;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     column-gap: 20px;
+
     row-gap: 42px;
 
     align-items: start;
-    justify-content: center;
   }
 
 
   /* =======================================================
-     FOOTER COLUMNS
+     COLUMNS
   ======================================================= */
 
   .footer-column {
@@ -862,12 +763,15 @@
     min-width: 0;
 
     padding: 0 !important;
+
     margin: 0;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: flex-start;
 
     text-align: center;
@@ -875,8 +779,6 @@
     box-sizing: border-box;
   }
 
-
-  /* Divider between columns */
 
   .footer-column + .footer-column {
     border-left: 1px solid rgba(96, 177, 181, 0.18);
@@ -897,6 +799,7 @@
     text-align: center;
 
     font-size: 10px;
+
     line-height: 1.3;
 
     letter-spacing: 0.8px;
@@ -907,12 +810,9 @@
   }
 
 
-  /* =======================================================
-     HEADING LINE
-  ======================================================= */
-
   .footer-line {
     width: 28px;
+
     height: 2px;
 
     margin: 7px auto 13px;
@@ -924,7 +824,7 @@
 
 
   /* =======================================================
-     FOOTER LINKS
+     LINKS
   ======================================================= */
 
   .footer-column > a {
@@ -933,11 +833,13 @@
     min-height: 25px;
 
     margin: 0;
+
     padding: 3px 0;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 5px;
@@ -967,13 +869,14 @@
 
 
   /* =======================================================
-     CONTACT INFORMATION
+     CONTACT
   ======================================================= */
 
   .contact-column {
     width: 100%;
 
     padding: 0 !important;
+
     margin: 0;
 
     border-left: none !important;
@@ -996,6 +899,7 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 7px;
@@ -1028,6 +932,7 @@
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 2px;
@@ -1064,42 +969,53 @@
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    text-align: center;
+    justify-content: center;
   }
 
 
   /* =======================================================
-     CLIENT REVIEW
+     DESKTOP REVIEW HIDDEN ON MOBILE
   ======================================================= */
 
-  .footer-review {
+  .footer-review-desktop {
+    display: none;
+  }
+
+
+  /* =======================================================
+     MOBILE REVIEW
+     THIS APPEARS UNDER FOLLOW US
+  ======================================================= */
+
+  .footer-review-mobile {
+    display: block;
+
     width: 100%;
 
-    margin-top: 18px;
+    margin-top: 28px;
 
     text-align: center;
   }
 
 
-  .review-divider {
-    width: 100%;
+  .footer-review-mobile .review-divider {
+    width: 70%;
 
     height: 1px;
 
-    margin: 0 auto 12px;
+    margin: 0 auto 14px;
 
     background: rgba(103, 184, 187, 0.2);
   }
 
 
-  .review-title {
+  .footer-review-mobile .review-title {
     display: block;
 
     width: 100%;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 
     text-align: center;
 
@@ -1107,29 +1023,30 @@
 
     line-height: 1.3;
 
-    letter-spacing: 0.7px;
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
 
     color: #d8e4e4;
   }
 
 
-  .review-row {
+  .footer-review-mobile .review-row {
     width: 100%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 7px;
-
-    flex-wrap: nowrap;
 
     text-align: center;
   }
 
 
-  .review-row strong {
+  .footer-review-mobile .review-row strong {
     font-size: 19px;
 
     line-height: 1;
@@ -1138,18 +1055,18 @@
   }
 
 
-  .stars {
+  .footer-review-mobile .stars {
+    color: #08b6ba;
+
     font-size: 9px;
 
     line-height: 1;
 
     letter-spacing: 0.8px;
-
-    color: #08b6ba;
   }
 
 
-  .footer-review small {
+  .footer-review-mobile small {
     display: block;
 
     margin-top: 6px;
@@ -1159,6 +1076,8 @@
     font-size: 7px;
 
     line-height: 1.2;
+
+    font-weight: 600;
 
     color: #ffffff;
   }
@@ -1206,17 +1125,14 @@
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    box-sizing: border-box;
+    justify-content: center;
 
     border: 1px solid rgba(0, 180, 184, 0.65);
 
     border-radius: 50%;
 
     color: #00b4b8;
-
-    text-decoration: none;
 
     font-size: 11px;
   }
@@ -1227,18 +1143,11 @@
   }
 
 
-  .social-icon.youtube {
-    font-size: 9px;
-  }
-
-
   /* =======================================================
-     LARGE BACKGROUND LOGO
+     BIG LOGO
   ======================================================= */
 
   .footer-big-logo {
-    position: relative;
-
     width: 100%;
 
     margin-top: 45px;
@@ -1277,15 +1186,12 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     box-sizing: border-box;
   }
 
-
-  /* =======================================================
-     COPYRIGHT
-  ======================================================= */
 
   .copyright {
     width: 100%;
@@ -1293,6 +1199,7 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     flex-wrap: wrap;
@@ -1309,8 +1216,6 @@
 
   .copyright a {
     white-space: nowrap;
-
-    text-align: center;
   }
 
 
@@ -1346,13 +1251,13 @@
 
 
   .footer-content {
-    width: 90%;
+    width: 88%;
 
     max-width: 340px;
 
     column-gap: 14px;
 
-    row-gap: 38px;
+    row-gap: 34px;
   }
 
 
@@ -1376,13 +1281,11 @@
 
 
   .footer-column > a {
-    min-height: 23px;
+    min-height: 22px;
 
     font-size: 7.5px;
 
-    justify-content: center;
-
-    text-align: center;
+    gap: 5px;
   }
 
 
@@ -1390,78 +1293,46 @@
     min-height: 28px;
 
     font-size: 7.5px;
-
-    justify-content: center;
-
-    text-align: center;
-  }
-
-
-  .contact-text {
-    align-items: center;
-
-    text-align: center;
   }
 
 
   .contact-text strong {
     font-size: 7.5px;
-
-    text-align: center;
   }
 
 
   .contact-text span {
     font-size: 7px;
-
-    text-align: center;
   }
 
 
-  .footer-review {
-    margin-top: 16px;
-
-    text-align: center;
+  .footer-review-mobile {
+    margin-top: 24px;
   }
 
 
-  .review-title {
+  .footer-review-mobile .review-title {
     font-size: 7px;
-
-    text-align: center;
   }
 
 
-  .review-row {
-    justify-content: center;
-
-    text-align: center;
-  }
-
-
-  .review-row strong {
+  .footer-review-mobile .review-row strong {
     font-size: 17px;
   }
 
 
-  .stars {
+  .footer-review-mobile .stars {
     font-size: 8px;
   }
 
 
-  .footer-review small {
+  .footer-review-mobile small {
     font-size: 6.5px;
-
-    text-align: center;
   }
 
 
   .follow-column {
     padding-left: 15px !important;
-
-    align-items: center;
-
-    text-align: center;
   }
 
 
@@ -1471,8 +1342,6 @@
     grid-auto-rows: 27px;
 
     gap: 7px;
-
-    justify-content: center;
   }
 
 
@@ -1486,197 +1355,6 @@
 
   .footer-big-logo {
     margin-top: 40px;
-
-    font-size: 44px;
-
-    text-align: center;
-  }
-
-
-  .footer-bottom {
-    min-height: 46px;
-
-    margin-top: 10px;
-
-    padding: 7px 10px;
-  }
-
-
-  .copyright {
-    font-size: 6px;
-
-    justify-content: center;
-
-    text-align: center;
-  }
-}
-
-
-  .copyright a {
-    white-space: nowrap;
-  }
-
-
-  .separator {
-    display: inline-block;
-  }
-
-
-  /* =======================================================
-     BACK TO TOP
-  ======================================================= */
-
-  .back-to-top {
-    right: 10px;
-
-    bottom: 9px;
-
-    width: 25px;
-
-    height: 25px;
-  }
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .footer {
-    padding-top: 30px;
-  }
-
-
-  .footer-content {
-    width: 88%;
-
-    max-width: 340px;
-
-    column-gap: 18px;
-
-    row-gap: 34px;
-  }
-
-
-  .footer-column + .footer-column {
-    padding-left: 16px;
-  }
-
-
-  .footer-column h4 {
-    font-size: 9px;
-
-    letter-spacing: 0.5px;
-  }
-
-
-  .footer-line {
-    width: 22px;
-
-    margin-top: 6px;
-
-    margin-bottom: 10px;
-  }
-
-
-  .footer-column > a {
-    min-height: 22px;
-
-    font-size: 7.5px;
-
-    gap: 5px;
-  }
-
-
-  .footer-column > a svg {
-    width: 9px;
-
-    height: 9px;
-  }
-
-
-  .contact-item {
-    min-height: 29px;
-
-    gap: 7px;
-
-    font-size: 7.5px;
-  }
-
-
-  .contact-icon {
-    width: 10px;
-
-    height: 10px;
-  }
-
-
-  .contact-text strong {
-    font-size: 7.5px;
-  }
-
-
-  .contact-text span {
-    font-size: 7px;
-  }
-
-
-  .footer-review {
-    margin-top: 14px;
-  }
-
-
-  .review-title {
-    font-size: 7px;
-  }
-
-
-  .review-row {
-    gap: 6px;
-  }
-
-
-  .review-row strong {
-    font-size: 17px;
-  }
-
-
-  .stars {
-    font-size: 8px;
-  }
-
-
-  .footer-review small {
-    font-size: 6.5px;
-  }
-
-
-  .follow-column {
-    padding-left: 16px !important;
-  }
-
-
-  .social-icons {
-    grid-template-columns: repeat(3, 27px);
-
-    grid-auto-rows: 27px;
-
-    gap: 7px;
-  }
-
-
-  .social-icon {
-    width: 27px;
-
-    height: 27px;
-
-    font-size: 10px;
-  }
-
-
-  .footer-big-logo {
-    margin-top: 36px;
 
     font-size: 44px;
 
@@ -1699,64 +1377,5 @@
     gap: 5px;
 
     line-height: 1.45;
-  }
-}
-
-  .back-to-top {
-    right: 10px;
-
-    bottom: 8px;
-  }
-
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .footer-content {
-    width: calc(100% - 24px);
-
-    column-gap: 0;
-  }
-
-
-  .footer-column > a {
-    font-size: 7px;
-  }
-
-
-  .contact-item,
-  .contact-text span,
-  .contact-text strong {
-    font-size: 7px;
-  }
-
-
-  .footer-column h4 {
-    font-size: 8px;
-  }
-
-
-  .footer-big-logo {
-    font-size: 40px;
-  }
-
-
-  .social-icons {
-    grid-template-columns: repeat(3, 27px);
-
-    grid-auto-rows: 27px;
-
-    gap: 6px;
-  }
-
-
-  .social-icon {
-    width: 27px;
-
-    height: 27px;
   }
 }
