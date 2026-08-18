@@ -1,26 +1,23 @@
-/* =========================================
+/* =========================================================
    ABOUT SECTION
-========================================= */
+========================================================= */
 
 .about-section {
   position: relative;
 
   width: 100%;
-  min-height: 760px;
-
-  background: #06252a;
-  color: #ffffff;
+  min-height: 780px;
 
   overflow: hidden;
 
-  display: flex;
-  align-items: flex-end;
+  background: #06252a;
+  color: #ffffff;
 }
 
 
-/* =========================================
+/* =========================================================
    WORLD MAP
-========================================= */
+========================================================= */
 
 .about-image {
   position: absolute;
@@ -30,7 +27,7 @@
   width: 100%;
   height: 100%;
 
-  z-index: 1;
+  z-index: 0;
 
   overflow: hidden;
 }
@@ -49,263 +46,229 @@
   height: 100%;
 
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
+
+  user-select: none;
 }
 
 
-/* =========================================
+/* =========================================================
    DARK OVERLAY
-========================================= */
+========================================================= */
 
 .about-overlay {
   position: absolute;
 
   inset: 0;
 
-  z-index: 2;
-
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
 
   background:
     linear-gradient(
-      to bottom,
-      rgba(6, 37, 42, 0.02) 0%,
-      rgba(6, 37, 42, 0.06) 28%,
-      rgba(6, 37, 42, 0.20) 50%,
-      rgba(6, 37, 42, 0.50) 72%,
-      rgba(6, 37, 42, 0.85) 90%,
-      #06252a 100%
+      90deg,
+      rgba(3, 27, 32, 0.25) 0%,
+      rgba(3, 27, 32, 0.12) 50%,
+      rgba(3, 27, 32, 0.25) 100%
     );
+
+  z-index: 1;
+
+  pointer-events: none;
 }
 
 
-/* =========================================
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.about-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1500px;
+
+  min-height: 780px;
+
+  margin: 0 auto;
+
+  padding: 80px 55px 70px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(430px, 0.95fr);
+
+  column-gap: 55px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.about-content {
+  width: 100%;
+  max-width: 720px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   DESKTOP HEADING
+========================================================= */
+
+.about-desktop-heading {
+  display: block;
+
+  margin-bottom: 28px;
+}
+
+.about-label-line {
+  width: 72px;
+  height: 3px;
+
+  margin-bottom: 18px;
+
+  background: #35d47b;
+
+  border-radius: 10px;
+}
+
+.about-desktop-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 4vw, 64px);
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+.about-title-line {
+  width: 72px;
+  height: 3px;
+
+  margin-top: 30px;
+
+  background: #35d47b;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
    MOBILE HEADING
-   HIDDEN ON DESKTOP
-========================================= */
+========================================================= */
 
 .about-mobile-heading {
   display: none;
 }
 
 
-/* =========================================
-   DESKTOP HEADING
-========================================= */
+/* =========================================================
+   SUBTITLE
+========================================================= */
 
-.about-desktop-heading {
-  display: block;
-}
-
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
-.about-container {
-  position: relative;
-
-  z-index: 3;
-
-  width: min(1180px, 90%);
-
-  margin: 0 auto;
-
-  padding: 0 0 45px;
-
-  display: grid;
-
-  grid-template-columns: 0.95fr 1.25fr;
-
-  column-gap: 70px;
-
-  align-items: end;
-}
-
-
-/* =========================================
-   LEFT CONTENT
-========================================= */
-
-.about-content {
-  width: 100%;
-
-  max-width: 540px;
-
-  align-self: end;
-}
-
-
-/* =========================================
-   LABEL
-========================================= */
-
-.about-label {
-  display: block;
-
-  margin-bottom: 22px;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-
-  color: #48e75b;
-
-  text-transform: uppercase;
-}
-
-.about-label::after {
-  content: "";
-
-  display: block;
-
-  width: 58px;
-
-  height: 3px;
-
-  margin-top: 11px;
-
-  border-radius: 10px;
-
-  background: #45e85d;
-}
-
-
-/* =========================================
-   LABEL LINE
-========================================= */
-
-.about-label-line {
-  width: 58px;
-
-  height: 3px;
-
-  margin-bottom: 14px;
-
-  border-radius: 10px;
-
-  background: #45e85d;
-}
-
-
-/* =========================================
-   HEADING
-========================================= */
-
-.about-content h2 {
-  margin: 0 0 24px;
-
-  font-size: clamp(48px, 5vw, 64px);
-
-  line-height: 0.98;
-
-  letter-spacing: -2.8px;
-
-  font-weight: 700;
+.about-content h3 {
+  margin: 0 0 20px;
 
   color: #ffffff;
-}
 
+  font-size: 22px;
 
-/* =========================================
-   TITLE LINE
-========================================= */
-
-.about-title-line {
-  width: 58px;
-
-  height: 3px;
-
-  margin: 0 0 22px;
-
-  border-radius: 10px;
-
-  background: #45e85d;
-}
-
-
-/* =========================================
-   SUBTITLE
-========================================= */
-
-.about-subtitle {
-  margin: 0 0 18px;
-
-  font-size: 17px;
-
-  line-height: 1.45;
+  line-height: 1.35;
 
   font-weight: 700;
-
-  color: #48e75b;
 }
 
 
-/* =========================================
+/* =========================================================
    DESCRIPTION
-========================================= */
+========================================================= */
 
 .about-description {
-  max-width: 520px;
+  max-width: 680px;
 
-  margin: 0 0 25px;
+  margin: 0 0 28px;
 
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 16px;
 
   line-height: 1.7;
 
   font-weight: 400;
-
-  color: rgba(255, 255, 255, 0.88);
 }
 
 .about-description strong {
-  color: #48e75b;
+  color: #35d47b;
 
   font-weight: 700;
 }
 
 
-/* =========================================
-   TRUSTED CLIENTS BOX
-========================================= */
+/* =========================================================
+   TRUSTED CLIENTS
+========================================================= */
 
 .trusted-box {
-  width: fit-content;
+  width: 100%;
+  max-width: 500px;
 
-  min-width: 290px;
-
-  padding: 12px 16px;
-
-  margin-bottom: 25px;
+  min-height: 70px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 15px;
 
-  border: 1px solid rgba(55, 230, 95, 0.35);
+  padding: 14px 18px;
+
+  margin-bottom: 30px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(53, 212, 123, 0.45);
 
   border-radius: 10px;
 
-  background: rgba(4, 47, 48, 0.55);
+  background: rgba(3, 45, 48, 0.55);
+
+  backdrop-filter: blur(8px);
 }
 
 .trusted-icon {
-  width: 30px;
-  height: 30px;
+  width: 46px;
+  height: 46px;
 
   flex-shrink: 0;
 
-  color: #45e85d;
+  display: flex;
 
-  stroke-width: 1.8;
+  align-items: center;
+  justify-content: center;
+
+  color: #35d47b;
 }
 
-.trusted-box div {
+.trusted-text {
   display: flex;
 
   flex-direction: column;
@@ -313,35 +276,36 @@
   gap: 4px;
 }
 
-.trusted-box span {
-  font-size: 11px;
+.trusted-text span {
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 13px;
 
   line-height: 1.3;
-
-  color: rgba(255, 255, 255, 0.85);
 }
 
-.trusted-box strong {
-  font-size: 12px;
+.trusted-text strong {
+  color: #35d47b;
+
+  font-size: 14px;
 
   line-height: 1.3;
-
-  color: #48e75b;
 }
 
 
-/* =========================================
-   OUR SOLUTIONS
-========================================= */
+/* =========================================================
+   SOLUTIONS
+========================================================= */
 
 .solutions-section {
   width: 100%;
-
-  max-width: 510px;
+  max-width: 680px;
 }
 
 .solutions-title {
-  padding-bottom: 10px;
+  margin-bottom: 12px;
+
+  color: #35d47b;
 
   font-size: 12px;
 
@@ -349,117 +313,91 @@
 
   letter-spacing: 2px;
 
-  color: #45e85d;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  text-transform: uppercase;
 }
-
-
-/* =========================================
-   SOLUTIONS GRID
-========================================= */
 
 .solutions-grid {
+  width: 100%;
+
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-
-/* =========================================
-   SOLUTION ITEM
-========================================= */
-
 .solution-item {
-  min-height: 52px;
-
-  padding: 10px 11px;
+  min-height: 78px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 12px;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 14px 15px;
+
+  box-sizing: border-box;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   color: #ffffff;
 
-  box-sizing: border-box;
+  background: rgba(3, 45, 48, 0.30);
 }
 
-.solution-item:nth-child(3),
-.solution-item:nth-child(6) {
-  border-right: none;
-}
-
-.solution-item:nth-child(n + 4) {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-
-/* =========================================
-   SOLUTION ICONS
-========================================= */
-
-.solution-item svg {
-  width: 23px;
-  height: 23px;
-
+.solution-icon {
   flex-shrink: 0;
 
-  color: #45e85d;
-
-  stroke-width: 1.8;
+  color: #35d47b;
 }
 
-
-/* =========================================
-   SOLUTION TEXT
-========================================= */
-
 .solution-item span {
-  font-size: 10px;
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 12px;
 
   line-height: 1.35;
 
   font-weight: 500;
-
-  color: rgba(255, 255, 255, 0.92);
 }
 
 
-/* =========================================
+/* =========================================================
    STATISTICS
-========================================= */
+========================================================= */
 
 .about-stats {
   width: 100%;
 
-  margin-top: 22px;
-
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 12px;
 
   align-self: end;
+
+  min-width: 0;
 }
 
 
-/* =========================================
+/* =========================================================
    STAT CARD
-========================================= */
+========================================================= */
 
 .stat-card {
   position: relative;
 
-  min-height: 155px;
+  min-height: 145px;
 
-  padding: 16px 10px;
+  padding: 20px;
+
+  box-sizing: border-box;
 
   display: flex;
 
@@ -475,104 +413,104 @@
 
   border-radius: 10px;
 
-  background: rgba(3, 34, 39, 0.82);
+  background: rgba(3, 45, 48, 0.55);
 
-  backdrop-filter: blur(7px);
-
-  box-sizing: border-box;
+  backdrop-filter: blur(8px);
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+
+  background: rgba(3, 45, 48, 0.72);
 }
 
 
-/* =========================================
+/* =========================================================
    STAT ICON
-========================================= */
+========================================================= */
 
-.stat-card .stat-icon {
-  width: 36px;
+.stat-icon {
+  display: flex;
 
-  height: 36px;
+  align-items: center;
+  justify-content: center;
 
-  margin-bottom: 10px;
-
-  flex-shrink: 0;
-
-  stroke-width: 1.8;
+  margin-bottom: 8px;
 }
 
-
-/* =========================================
-   STAT NUMBERS
-========================================= */
-
-.stat-card strong {
-  display: block;
-
-  margin-bottom: 6px;
-
-  font-size: 34px;
-
-  line-height: 1;
-
-  font-weight: 700;
+.stat-green .stat-icon {
+  color: #35e87a;
 }
 
-
-/* =========================================
-   STAT LABEL
-========================================= */
-
-.stat-card span {
-  display: block;
-
-  font-size: 10px;
-
-  line-height: 1.35;
-
-  font-weight: 500;
-
-  color: #ffffff;
+.stat-blue .stat-icon {
+  color: #00c8ff;
 }
 
-
-/* =========================================
-   CARD COLORS
-========================================= */
-
-.stat-card:nth-child(1) .stat-icon,
-.stat-card:nth-child(1) strong {
-  color: #46e95b;
+.stat-purple .stat-icon {
+  color: #c06cff;
 }
 
-.stat-card:nth-child(2) .stat-icon,
-.stat-card:nth-child(2) strong {
-  color: #00bfff;
-}
-
-.stat-card:nth-child(3) .stat-icon,
-.stat-card:nth-child(3) strong {
-  color: #c56cff;
-}
-
-.stat-card:nth-child(4) .stat-icon,
-.stat-card:nth-child(4) strong {
+.stat-yellow .stat-icon {
   color: #ffc928;
 }
 
 
-/* =========================================
-   CARD UNDERLINE
-========================================= */
+/* =========================================================
+   STAT NUMBER
+========================================================= */
 
-.stat-card::after {
-  content: "";
+.stat-card strong {
+  margin-bottom: 5px;
 
-  width: 34px;
+  font-size: 25px;
 
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.stat-green strong {
+  color: #35e87a;
+}
+
+.stat-blue strong {
+  color: #00c8ff;
+}
+
+.stat-purple strong {
+  color: #c06cff;
+}
+
+.stat-yellow strong {
+  color: #ffc928;
+}
+
+
+/* =========================================================
+   STAT TEXT
+========================================================= */
+
+.stat-card span {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 11px;
+
+  line-height: 1.35;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   STAT LINE
+========================================================= */
+
+.stat-line {
+  width: 30px;
   height: 2px;
 
   margin-top: 10px;
@@ -580,157 +518,438 @@
   border-radius: 10px;
 }
 
-.stat-card:nth-child(1)::after {
-  background: #46e95b;
+.stat-green .stat-line {
+  background: #35e87a;
 }
 
-.stat-card:nth-child(2)::after {
-  background: #00bfff;
+.stat-blue .stat-line {
+  background: #00c8ff;
 }
 
-.stat-card:nth-child(3)::after {
-  background: #c56cff;
+.stat-purple .stat-line {
+  background: #c06cff;
 }
 
-.stat-card:nth-child(4)::after {
+.stat-yellow .stat-line {
   background: #ffc928;
 }
 
 
-/* =========================================
-   CARD HOVER
-========================================= */
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
 
-.stat-card:hover {
-  transform: translateY(-5px);
+@media (min-width: 1400px) {
 
-  border-color: rgba(255, 255, 255, 0.42);
+  .about-container {
+    padding-left: 80px;
+    padding-right: 80px;
 
-  background: rgba(6, 45, 51, 0.94);
+    column-gap: 70px;
+  }
+
+  .about-desktop-heading h2 {
+    font-size: 64px;
+  }
+
+  .about-content h3 {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 17px;
+  }
+
+  .stat-card {
+    min-height: 155px;
+  }
+
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 1100px) {
 
   .about-section {
-    min-height: 780px;
+    min-height: 750px;
   }
 
   .about-container {
-    width: 90%;
+    min-height: 750px;
 
-    grid-template-columns: 1fr 1fr;
+    padding: 65px 35px 55px;
 
-    column-gap: 45px;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(350px, 0.85fr);
 
-    padding-bottom: 40px;
+    column-gap: 30px;
   }
 
-  .about-content h2 {
-    font-size: clamp(42px, 5vw, 56px);
+  .about-desktop-heading h2 {
+    font-size: 46px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .about-content h3 {
+    font-size: 19px;
   }
 
   .about-description {
-    line-height: 1.65;
+    font-size: 14px;
   }
 
-  .about-stats {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
+  .solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stat-card {
     min-height: 135px;
   }
+
 }
 
 
-/* =========================================
-   SMALL LAPTOP / TABLET
-========================================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   .about-section {
     min-height: auto;
 
-    display: block;
-
-    padding-top: 480px;
+    background: #06252a;
   }
+
+
+  /* -----------------------------------------
+     MOBILE MAP
+  ----------------------------------------- */
 
   .about-image {
-    height: 480px;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 390px;
+
+    z-index: 0;
   }
 
+  .about-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE OVERLAY
+  ----------------------------------------- */
+
+  .about-overlay {
+    height: 390px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(3, 27, 32, 0.08) 0%,
+        rgba(3, 27, 32, 0.10) 50%,
+        #06252a 100%
+      );
+  }
+
+
+  /* -----------------------------------------
+     MOBILE HEADING
+  ----------------------------------------- */
+
+  .about-mobile-heading {
+    position: absolute;
+
+    top: 245px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 0 45px;
+
+    box-sizing: border-box;
+
+    display: block;
+
+    z-index: 3;
+  }
+
+  .about-mobile-heading .about-label-line {
+    width: 55px;
+
+    height: 3px;
+
+    margin-bottom: 12px;
+  }
+
+  .about-mobile-heading h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 1.02;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    text-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.45);
+  }
+
+
+  /* -----------------------------------------
+     MAIN CONTAINER
+  ----------------------------------------- */
+
   .about-container {
-    width: 90%;
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 360px 20px 55px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 45px;
+    gap: 30px;
 
-    padding: 55px 0 70px;
-
-    align-items: stretch;
+    box-sizing: border-box;
   }
+
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
 
   .about-content {
-    max-width: 700px;
+    width: 100%;
+
+    max-width: none;
   }
 
-  .about-content h2 {
-    margin-bottom: 22px;
+
+  /* Hide desktop heading */
+
+  .about-desktop-heading {
+    display: none;
   }
+
+
+  /* -----------------------------------------
+     SUBTITLE
+  ----------------------------------------- */
+
+  .about-content h3 {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+  ----------------------------------------- */
 
   .about-description {
-    max-width: 650px;
-
     margin-bottom: 25px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
   }
+
+
+  /* -----------------------------------------
+     TRUSTED BOX
+  ----------------------------------------- */
 
   .trusted-box {
+    max-width: none;
+
+    min-height: 58px;
+
+    padding: 10px 12px;
+
     margin-bottom: 28px;
+
+    gap: 10px;
   }
 
-  .solutions-section {
-    max-width: 100%;
+  .trusted-icon {
+    width: 38px;
+    height: 38px;
   }
+
+  .trusted-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .trusted-text span {
+    font-size: 10px;
+  }
+
+  .trusted-text strong {
+    font-size: 11px;
+  }
+
+
+  /* -----------------------------------------
+     SOLUTIONS
+  ----------------------------------------- */
+
+  .solutions-section {
+    max-width: none;
+  }
+
+  .solutions-title {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-item {
+    min-height: 68px;
+
+    padding: 10px 11px;
+
+    gap: 8px;
+  }
+
+  .solution-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .solution-item span {
+    font-size: 10px;
+  }
+
+
+  /* -----------------------------------------
+     STATS
+  ----------------------------------------- */
 
   .about-stats {
     width: 100%;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 0;
+    align-self: auto;
   }
 
   .stat-card {
-    min-height: 125px;
+    min-height: 115px;
+
+    padding: 14px;
   }
 
-  .stat-card .stat-icon {
-    width: 30px;
-    height: 30px;
+  .stat-icon svg {
+    width: 27px;
+    height: 27px;
   }
 
   .stat-card strong {
-    font-size: 29px;
+    font-size: 21px;
   }
+
+  .stat-card span {
+    font-size: 9px;
+  }
+
 }
 
 
 /* =========================================================
-   MOBILE - FULL WORLD MAP WITHOUT CROPPING
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-image {
+    height: 365px;
+  }
+
+  .about-overlay {
+    height: 365px;
+  }
+
+  .about-mobile-heading {
+    top: 225px;
+
+    padding: 0 38px;
+  }
+
+  .about-mobile-heading h2 {
+    font-size: 27px;
+  }
+
+  .about-container {
+    padding-top: 335px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .about-content h3 {
+    font-size: 15px;
+  }
+
+  .about-description {
+    font-size: 12px;
+  }
+
+  .stat-card {
+    min-height: 105px;
+
+    padding: 12px;
+  }
+
+  .stat-card strong {
+    font-size: 19px;
+  }
+
+}
+/* =========================================================
+   MOBILE - FULL WORLD MAP
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -738,64 +957,60 @@
   .about-section {
     position: relative;
     width: 100%;
-    min-height: auto;
-    padding: 0;
     overflow: hidden;
     background: #06252a;
   }
 
 
-  /* =====================================================
-     MAP
-  ===================================================== */
+  /* =======================================================
+     WORLD MAP
+  ======================================================= */
 
   .about-image {
     position: relative;
 
+    top: auto;
+    left: auto;
+
     width: 100%;
-    height: 390px;
+    height: auto;
 
     overflow: hidden;
 
-    z-index: 1;
+    z-index: 0;
 
-    background: #06252a;
+    background: #031f2b;
   }
-
 
   .about-image picture {
     display: block;
 
     width: 100%;
-    height: 100%;
+    height: auto;
   }
-
 
   .about-image img {
     display: block;
 
     width: 100%;
-    height: 100%;
+    height: auto;
 
     /*
       IMPORTANT:
-      contain keeps the COMPLETE map visible.
-      It prevents the top/bottom of the map
-      from being cropped.
+      Do NOT use cover here.
+      This keeps the complete map visible.
     */
     object-fit: contain;
 
-    object-position: center center;
+    object-position: center;
 
-    transform: none;
-
-    background: #06252a;
+    background: #031f2b;
   }
 
 
-  /* =====================================================
-     OVERLAY
-  ===================================================== */
+  /* =======================================================
+     MAP OVERLAY
+  ======================================================= */
 
   .about-overlay {
     position: absolute;
@@ -804,394 +1019,124 @@
     left: 0;
 
     width: 100%;
-    height: 490px;
 
-    z-index: 2;
+    /*
+      Overlay follows the map area.
+    */
+    height: 330px;
 
-    pointer-events: none;
+    z-index: 1;
 
     background:
       linear-gradient(
         to bottom,
-        rgba(6, 37, 42, 0.02) 0%,
-        rgba(6, 37, 42, 0.04) 35%,
-        rgba(6, 37, 42, 0.10) 55%,
-        rgba(6, 37, 42, 0.35) 72%,
-        rgba(6, 37, 42, 0.75) 88%,
-        #06252a 100%
+        rgba(3, 27, 32, 0.02) 0%,
+        rgba(3, 27, 32, 0.05) 55%,
+        rgba(6, 37, 42, 0.88) 100%
       );
+
+    pointer-events: none;
   }
 
 
-  /* =====================================================
-     HEADING ON MAP
-  ===================================================== */
+  /* =======================================================
+     HEADING OVER MAP
+  ======================================================= */
 
   .about-mobile-heading {
-    display: block;
-
     position: absolute;
 
     top: 205px;
-
     left: 0;
 
     width: 100%;
 
-    padding: 0 24px;
+    padding: 0 42px;
 
     box-sizing: border-box;
 
-    z-index: 5;
+    display: block;
+
+    z-index: 3;
   }
 
 
   .about-mobile-heading .about-label-line {
-    width: 38px;
-
+    width: 48px;
     height: 3px;
 
     margin-bottom: 10px;
 
-    border-radius: 10px;
+    background: #35d47b;
 
-    background: #45e85d;
+    border-radius: 10px;
   }
 
 
   .about-mobile-heading h2 {
     margin: 0;
 
-    max-width: 300px;
+    color: #ffffff;
 
-    font-size: 26px;
+    font-size: 27px;
 
-    line-height: 1.06;
-
-    letter-spacing: -0.7px;
+    line-height: 1.04;
 
     font-weight: 800;
 
-    color: #ffffff;
+    letter-spacing: -0.7px;
 
     text-shadow:
       0 2px 8px rgba(0, 0, 0, 0.65);
   }
 
 
-  /* =====================================================
-     CONTENT BELOW MAP
-  ===================================================== */
+  /* =======================================================
+     MAIN CONTENT
+  ======================================================= */
 
   .about-container {
     position: relative;
-
-    z-index: 4;
-
-    width: 88%;
-
-    margin: 0 auto;
-
-    padding: 30px 0 75px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 0;
-  }
-
-
-  .about-desktop-heading {
-    display: none;
-  }
-
-
-  .about-content {
-    width: 100%;
-
-    max-width: none;
-
-    margin: 0;
-
-    padding: 0;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .about-image {
-    height: 365px;
-  }
-
-
-  .about-overlay {
-    height: 470px;
-  }
-
-
-  .about-mobile-heading {
-    top: 195px;
-
-    padding: 0 22px;
-  }
-
-
-  .about-mobile-heading h2 {
-    max-width: 285px;
-
-    font-size: 24px;
-
-    line-height: 1.07;
-
-    letter-spacing: -0.5px;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .about-image {
-    height: 345px;
-  }
-
-
-  .about-overlay {
-    height: 450px;
-  }
-
-
-  .about-mobile-heading {
-    top: 185px;
-
-    padding: 0 20px;
-  }
-
-
-  .about-mobile-heading h2 {
-    max-width: 270px;
-
-    font-size: 22px;
-
-    line-height: 1.08;
-  }
-
-}
-
-
-  /* =====================================================
-     MAP
-  ===================================================== */
-
-  .about-image {
-    position: relative;
-
-    width: 100%;
-
-    /*
-      Map gets enough vertical space
-      to look natural on mobile.
-    */
-    height: 390px;
-
-    overflow: hidden;
-
-    z-index: 1;
-  }
-
-
-  .about-image picture {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .about-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    /*
-      IMPORTANT:
-      Cover instead of contain.
-      This removes the small rectangle
-      effect from the previous version.
-    */
-    object-fit: cover;
-
-    object-position: center center;
-
-    transform: scale(1.02);
-  }
-
-
-  /* =====================================================
-     MAP OVERLAY
-  ===================================================== */
-
-  .about-overlay {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    height: 500px;
 
     z-index: 2;
 
-    pointer-events: none;
-
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(6, 37, 42, 0.02) 0%,
-        rgba(6, 37, 42, 0.04) 35%,
-        rgba(6, 37, 42, 0.10) 55%,
-        rgba(6, 37, 42, 0.40) 72%,
-        rgba(6, 37, 42, 0.80) 90%,
-        #06252a 100%
-      );
-  }
-
-
-  /* =====================================================
-     MOBILE HEADING
-     OVER THE MAP
-  ===================================================== */
-
-  .about-mobile-heading {
-    display: block;
-
-    position: absolute;
-
-    /*
-      Position it around the lower-middle
-      portion of the map.
-    */
-    top: 205px;
-
-    left: 0;
-
     width: 100%;
 
-    padding: 0 24px;
+    min-height: auto;
+
+    margin: 0;
+
+    padding: 25px 20px 55px;
 
     box-sizing: border-box;
 
-    z-index: 5;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
   }
 
 
-  .about-mobile-heading .about-label-line {
-    width: 40px;
-
-    height: 3px;
-
-    margin-bottom: 11px;
-
-    border-radius: 10px;
-
-    background: #45e85d;
-  }
-
-
-  .about-mobile-heading h2 {
-    margin: 0;
-
-    max-width: 300px;
-
-    /*
-      Smaller than the previous 34px.
-    */
-    font-size: 27px;
-
-    line-height: 1.05;
-
-    letter-spacing: -0.8px;
-
-    font-weight: 800;
-
-    color: #ffffff;
-
-    text-shadow:
-      0 2px 7px rgba(0, 0, 0, 0.65);
-  }
-
-
-  /* =====================================================
+  /* =======================================================
      HIDE DESKTOP HEADING
-  ===================================================== */
+  ======================================================= */
 
   .about-desktop-heading {
     display: none;
   }
 
 
-  /* =====================================================
-     CONTENT BELOW MAP
-  ===================================================== */
-
-  .about-container {
-    position: relative;
-
-    z-index: 4;
-
-    width: 88%;
-
-    margin: 0 auto;
-
-    padding: 30px 0 80px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-  }
-
-
-  .about-content {
-    width: 100%;
-
-    max-width: none;
-
-    margin: 0;
-
-    padding: 0;
-  }
-
-
-  /* =====================================================
+  /* =======================================================
      SUBTITLE
-  ===================================================== */
+  ======================================================= */
 
-  .about-content h3,
-  .about-subtitle {
-    margin: 0 0 20px;
+  .about-content h3 {
+    margin: 0 0 18px;
 
-    max-width: 340px;
+    font-size: 15px;
 
-    font-size: 17px;
-
-    line-height: 1.45;
+    line-height: 1.4;
 
     font-weight: 700;
 
@@ -1199,44 +1144,33 @@
   }
 
 
-  /* =====================================================
+  /* =======================================================
      DESCRIPTION
-  ===================================================== */
+  ======================================================= */
 
   .about-description {
-    width: 100%;
-
-    max-width: none;
-
-    margin: 0 0 28px;
+    margin: 0 0 25px;
 
     font-size: 12.5px;
 
-    line-height: 1.75;
+    line-height: 1.65;
 
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.82);
   }
 
 
-  .about-description strong {
-    color: #48e75b;
-  }
-
-
-  /* =====================================================
+  /* =======================================================
      TRUSTED BOX
-  ===================================================== */
+  ======================================================= */
 
   .trusted-box {
     width: 100%;
 
-    min-width: 0;
+    min-height: 58px;
 
-    min-height: 62px;
+    margin-bottom: 28px;
 
-    margin: 0;
-
-    padding: 12px 13px;
+    padding: 10px 12px;
 
     box-sizing: border-box;
 
@@ -1244,330 +1178,177 @@
 
     align-items: center;
 
-    gap: 11px;
+    gap: 10px;
 
-    border-radius: 10px;
+    border-radius: 9px;
   }
 
 
   .trusted-icon {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
   }
 
 
-  .trusted-box div {
-    gap: 3px;
+  .trusted-icon svg {
+    width: 23px;
+    height: 23px;
   }
 
 
-  .trusted-box span {
+  .trusted-text span {
     font-size: 10px;
-
-    line-height: 1.35;
   }
 
 
-  .trusted-box strong {
+  .trusted-text strong {
     font-size: 11px;
-
-    line-height: 1.35;
   }
 
 
-  /* =====================================================
+  /* =======================================================
      SOLUTIONS
-  ===================================================== */
+  ======================================================= */
 
   .solutions-section {
     width: 100%;
-
-    max-width: none;
-
-    margin-top: 40px;
-
-    padding: 0;
   }
 
 
   .solutions-title {
-    padding-bottom: 12px;
+    margin-bottom: 10px;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
   }
 
 
   .solutions-grid {
     width: 100%;
 
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
 
   .solution-item {
-    min-height: 66px;
+    min-height: 68px;
 
-    padding: 12px 9px;
+    padding: 10px 11px;
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    box-sizing: border-box;
-
-    border-right: 1px solid rgba(255, 255, 255, 0.14);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    gap: 8px;
   }
 
 
-  .solution-item:nth-child(1),
-  .solution-item:nth-child(2) {
-    border-top: none;
-  }
-
-
-  .solution-item:nth-child(even) {
-    border-right: none;
-  }
-
-
-  .solution-item svg {
+  .solution-icon {
     width: 20px;
-
     height: 20px;
-
-    flex-shrink: 0;
-
-    color: #45e85d;
   }
 
 
   .solution-item span {
-    font-size: 9px;
+    font-size: 10px;
 
-    line-height: 1.4;
-
-    font-weight: 500;
+    line-height: 1.3;
   }
 
 
-  /* =====================================================
+  /* =======================================================
      STATISTICS
-  ===================================================== */
+  ======================================================= */
 
   .about-stats {
     width: 100%;
 
-    margin-top: 40px;
-
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 10px;
+
+    align-self: auto;
   }
 
 
   .stat-card {
-    min-height: 135px;
+    min-height: 115px;
 
-    padding: 15px 8px;
+    padding: 14px;
   }
 
 
-  .stat-card .stat-icon {
-    width: 29px;
-
-    height: 29px;
-
-    margin-bottom: 9px;
+  .stat-icon svg {
+    width: 27px;
+    height: 27px;
   }
 
 
   .stat-card strong {
-    font-size: 25px;
-
-    margin-bottom: 6px;
+    font-size: 21px;
   }
 
 
   .stat-card span {
     font-size: 9px;
-
-    line-height: 1.4;
-  }
-
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .about-image {
-    /*
-      Slightly shorter so the section
-      does not consume too much screen.
-    */
-    height: 360px;
-  }
-
-
-  .about-overlay {
-    height: 480px;
-  }
-
-
-  .about-mobile-heading {
-    top: 190px;
-
-    padding: 0 22px;
-  }
-
-
-  .about-mobile-heading .about-label-line {
-    width: 36px;
-
-    height: 3px;
-
-    margin-bottom: 10px;
-  }
-
-
-  .about-mobile-heading h2 {
-    max-width: 290px;
-
-    font-size: 25px;
-
-    line-height: 1.06;
-
-    letter-spacing: -0.6px;
-  }
-
-
-  .about-container {
-    width: 88%;
-
-    padding-top: 28px;
-
-    padding-bottom: 70px;
-  }
-
-
-  .about-content h3,
-  .about-subtitle {
-    font-size: 16px;
-
-    line-height: 1.45;
-  }
-
-
-  .about-description {
-    font-size: 12px;
-
-    line-height: 1.75;
   }
 
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 380px) {
-
-  .about-image {
-    height: 340px;
-  }
-
-
-  .about-overlay {
-    height: 450px;
-  }
-
+@media (max-width: 400px) {
 
   .about-mobile-heading {
-    top: 178px;
+    top: 190px;
 
-    padding: 0 19px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
 
   .about-mobile-heading h2 {
-    max-width: 280px;
+    font-size: 25px;
 
-    font-size: 23px;
+    line-height: 1.04;
+  }
 
-    line-height: 1.07;
 
-    letter-spacing: -0.5px;
+  .about-mobile-heading .about-label-line {
+    width: 45px;
+
+    margin-bottom: 9px;
   }
 
 
   .about-container {
-    width: 90%;
-
-    padding-top: 26px;
-
-    padding-bottom: 65px;
+    padding: 22px 18px 50px;
   }
 
 
-  .about-content h3,
-  .about-subtitle {
-    font-size: 15px;
+  .about-content h3 {
+    font-size: 14px;
   }
 
 
   .about-description {
-    font-size: 11.5px;
-  }
-
-
-  .solution-item {
-    min-height: 62px;
-
-    padding: 10px 7px;
-
-    gap: 7px;
-  }
-
-
-  .solution-item svg {
-    width: 18px;
-
-    height: 18px;
-  }
-
-
-  .solution-item span {
-    font-size: 8px;
+    font-size: 12px;
   }
 
 
   .stat-card {
-    min-height: 120px;
+    min-height: 105px;
+
+    padding: 12px;
   }
 
 
   .stat-card strong {
-    font-size: 23px;
-  }
-
-
-  .stat-card span {
-    font-size: 8px;
+    font-size: 19px;
   }
 
 }
