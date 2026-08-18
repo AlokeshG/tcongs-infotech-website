@@ -77,12 +77,16 @@ function CompanyCard({ company }) {
 
 function TestimonialsSection() {
   return (
-    <section className="testimonials-section">
+    <section
+      className="testimonials-section"
+      id="work"
+    >
 
       <div className="companies-container">
 
         {/* HEADER */}
         <div className="companies-header">
+
           <div className="companies-heading">
 
             <span className="companies-eyebrow">
@@ -98,7 +102,9 @@ function TestimonialsSection() {
             </p>
 
           </div>
+
         </div>
+
 
         {/* COMPANY CARDS */}
         <div className="companies-grid">

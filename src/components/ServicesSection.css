@@ -1,42 +1,45 @@
-/* =========================================
+/* =========================================================
    SERVICES SECTION
-========================================= */
+========================================================= */
 
 .services-section {
   width: 100%;
 
-  /* Reduced upper spacing */
   padding: 55px 0 120px;
 
   background: #f5f4ef;
+
   color: #06252a;
 
   overflow: hidden;
 }
 
 
-/* =========================================
+/* =========================================================
    HEADING
-========================================= */
+========================================================= */
 
 .services-heading {
   width: min(1050px, 90%);
 
-  margin: 0 auto 60px;
+  margin: 0 auto 55px;
 }
+
 
 .services-label {
   display: inline-block;
 
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 
   font-size: 12px;
+
   font-weight: 700;
 
   letter-spacing: 3px;
 
   color: #286ac5;
 }
+
 
 .services-heading h2 {
   margin: 0;
@@ -52,14 +55,16 @@
   color: #06252a;
 }
 
+
 .services-heading h2 span {
   color: #286ac5;
 }
 
+
 .services-heading p {
   max-width: 650px;
 
-  margin: 25px 0 0;
+  margin: 23px 0 0;
 
   font-size: 17px;
 
@@ -69,9 +74,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    SERVICES CONTAINER
-========================================= */
+========================================================= */
 
 .services-container {
   width: min(1050px, 90%);
@@ -80,7 +85,7 @@
 
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   border: 1px solid #d5d5d0;
 
@@ -92,16 +97,16 @@
 }
 
 
-/* =========================================
+/* =========================================================
    SERVICE CARD
-========================================= */
+========================================================= */
 
 .service-card {
   position: relative;
 
   min-height: 370px;
 
-  padding: 42px 40px;
+  padding: 40px 38px;
 
   background: #ffffff;
 
@@ -115,27 +120,24 @@
 }
 
 
-/* Vertical divider */
-
 .service-card:nth-child(odd) {
   border-right: 1px solid #d5d5d0;
 }
 
-
-/* Last two cards */
 
 .service-card:nth-last-child(-n + 2) {
   border-bottom: none;
 }
 
 
-/* =========================================
+/* =========================================================
    HOVER
-========================================= */
+========================================================= */
 
 .service-card:hover {
   background: #06252a;
 }
+
 
 .service-card:hover .service-category,
 .service-card:hover h3,
@@ -143,27 +145,31 @@
   color: #ffffff;
 }
 
+
 .service-card:hover .service-number {
   color: rgba(255, 255, 255, 0.08);
 }
 
+
 .service-card:hover .service-button {
   border-color: #ffffff;
+
   color: #ffffff;
 }
 
 
-/* =========================================
+/* =========================================================
    NUMBER
-========================================= */
+========================================================= */
 
 .service-number {
   position: absolute;
 
-  right: 20px;
-  bottom: -30px;
+  right: 18px;
 
-  font-size: 180px;
+  bottom: -28px;
+
+  font-size: 175px;
 
   line-height: 1;
 
@@ -180,14 +186,15 @@
     transform 0.35s ease;
 }
 
+
 .service-card:hover .service-number {
   transform: translateY(-10px);
 }
 
 
-/* =========================================
+/* =========================================================
    CONTENT
-========================================= */
+========================================================= */
 
 .service-card-content {
   position: relative;
@@ -198,14 +205,14 @@
 }
 
 
-/* =========================================
+/* =========================================================
    CATEGORY
-========================================= */
+========================================================= */
 
 .service-category {
   display: block;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   font-size: 11px;
 
@@ -213,18 +220,20 @@
 
   letter-spacing: 2.5px;
 
+  line-height: 1.2;
+
   color: #286ac5;
 
   transition: color 0.35s ease;
 }
 
 
-/* =========================================
+/* =========================================================
    TITLE
-========================================= */
+========================================================= */
 
 .service-card h3 {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 
   font-size: clamp(30px, 3vw, 42px);
 
@@ -240,9 +249,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    DESCRIPTION
-========================================= */
+========================================================= */
 
 .service-card p {
   max-width: 470px;
@@ -251,7 +260,7 @@
 
   font-size: 15px;
 
-  line-height: 1.65;
+  line-height: 1.6;
 
   color: #4c686d;
 
@@ -259,18 +268,20 @@
 }
 
 
-/* =========================================
+/* =========================================================
    BUTTON
-========================================= */
+========================================================= */
 
 .service-button {
-  margin-top: 28px;
+  margin-top: 25px;
 
-  padding: 12px 19px;
+  padding: 11px 18px;
 
   display: inline-flex;
 
   align-items: center;
+
+  justify-content: center;
 
   gap: 8px;
 
@@ -295,14 +306,15 @@
     transform 0.3s ease;
 }
 
+
 .service-button:hover {
   transform: translateX(5px);
 }
 
 
-/* =========================================
+/* =========================================================
    SERVICE POPUP OVERLAY
-========================================= */
+========================================================= */
 
 .service-modal-overlay {
   position: fixed;
@@ -310,40 +322,53 @@
   inset: 0;
 
   width: 100%;
-  height: 100%;
+
+  height: 100dvh;
+
+  padding: 20px;
+
+  box-sizing: border-box;
 
   display: flex;
 
   align-items: center;
-  justify-content: center;
 
-  padding: 20px;
+  justify-content: center;
 
   background: rgba(3, 25, 29, 0.72);
 
   backdrop-filter: blur(7px);
+
   -webkit-backdrop-filter: blur(7px);
 
   z-index: 99999;
+
+  overflow: hidden;
 
   animation: serviceModalFade 0.25s ease;
 }
 
 
-/* =========================================
+/* =========================================================
    SERVICE POPUP
-========================================= */
+   DESKTOP
+========================================================= */
 
 .service-modal {
   position: relative;
 
-  width: min(560px, 100%);
+  width: min(
+    560px,
+    calc(100vw - 40px)
+  );
 
-  max-height: 92vh;
+  height: auto;
 
-  overflow-y: auto;
+  max-height: calc(100dvh - 40px);
 
-  padding: 38px;
+  padding: 30px 38px 22px;
+
+  box-sizing: border-box;
 
   background: #ffffff;
 
@@ -356,27 +381,40 @@
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.35);
 
+  overflow: hidden;
+
   animation: serviceModalSlide 0.3s ease;
 }
 
 
-/* =========================================
+/* =========================================================
    CLOSE BUTTON
-========================================= */
+========================================================= */
 
 .service-modal-close {
   position: absolute;
 
-  top: 18px;
-  right: 18px;
+  top: 13px;
 
-  width: 40px;
-  height: 40px;
+  right: 13px;
+
+  width: 44px;
+
+  height: 44px;
+
+  min-width: 44px;
+
+  min-height: 44px;
+
+  padding: 0;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  box-sizing: border-box;
 
   border: 1px solid #d5d5d5;
 
@@ -394,6 +432,7 @@
     transform 0.25s ease;
 }
 
+
 .service-modal-close:hover {
   background: #06252a;
 
@@ -403,97 +442,113 @@
 }
 
 
-/* =========================================
+/* =========================================================
    POPUP HEADER
-========================================= */
+========================================================= */
 
 .service-modal-header {
-  padding-right: 45px;
+  padding-right: 50px;
 
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
+
 
 .service-modal-header > span {
   display: block;
 
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 
   color: #286ac5;
 
-  font-size: 11px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  letter-spacing: 2.5px;
+  letter-spacing: 2.8px;
 }
 
+
 .service-modal-header h2 {
-  margin: 0 0 14px;
+  margin: 0 0 9px;
 
-  font-size: clamp(30px, 4vw, 42px);
+  font-size: clamp(34px, 4vw, 42px);
 
-  line-height: 1.08;
+  line-height: 1.05;
 
   letter-spacing: -1.8px;
 
   color: #06252a;
 }
 
+
 .service-modal-header h2 strong {
   color: #286ac5;
+
+  font-weight: 750;
 }
+
 
 .service-modal-header p {
   margin: 0;
 
-  font-size: 15px;
+  font-size: 14px;
 
-  line-height: 1.6;
+  line-height: 1.45;
 
   color: #557075;
 }
 
 
-/* =========================================
+/* =========================================================
    FORM
-========================================= */
+========================================================= */
 
 .service-form {
+  width: 100%;
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 18px;
+  gap: 10px;
+
+  box-sizing: border-box;
 }
 
-
-/* =========================================
-   FORM GROUP
-========================================= */
 
 .form-group {
+  width: 100%;
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 7px;
+  gap: 4px;
+
+  box-sizing: border-box;
 }
 
-.form-group label {
-  font-size: 13px;
 
-  font-weight: 600;
+.form-group label {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
 
   color: #06252a;
 }
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .form-group input,
 .form-group textarea {
   width: 100%;
 
   box-sizing: border-box;
-
-  padding: 13px 15px;
 
   border: 1px solid #d2d8d9;
 
@@ -515,15 +570,26 @@
     background 0.25s ease;
 }
 
+
 .form-group input {
-  height: 48px;
+  height: 44px;
+
+  min-height: 44px;
+
+  padding: 0 14px;
 }
+
 
 .form-group textarea {
-  min-height: 105px;
+  height: 62px;
 
-  resize: vertical;
+  min-height: 62px;
+
+  padding: 9px 14px;
+
+  resize: none;
 }
+
 
 .form-group input:focus,
 .form-group textarea:focus {
@@ -535,41 +601,176 @@
     0 0 0 3px rgba(40, 106, 197, 0.1);
 }
 
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #9aa7a9;
 }
 
 
-/* =========================================
+/* =========================================================
+   PHONE INPUT
+========================================================= */
+
+.phone-input-wrapper {
+  width: 100%;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d2d8d9;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.country-code-wrapper {
+  position: relative;
+
+  width: 135px;
+
+  flex-shrink: 0;
+
+  border-right: 1px solid #d2d8d9;
+
+  background: #f3f6f6;
+}
+
+
+.country-code-wrapper select {
+  width: 100%;
+
+  height: 100%;
+
+  padding:
+    0 30px 0 12px;
+
+  border: none;
+
+  outline: none;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  background: transparent;
+
+  color: #06252a;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.country-code-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  right: 9px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #557075;
+}
+
+
+.phone-input-wrapper > input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0 14px;
+
+  border: none !important;
+
+  outline: none;
+
+  background: transparent !important;
+
+  color: #06252a;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  box-shadow: none !important;
+}
+
+
+.phone-input-wrapper:focus-within {
+  border-color: #286ac5;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(40, 106, 197, 0.1);
+}
+
+
+/* =========================================================
    SELECTED SERVICE
-========================================= */
+========================================================= */
 
 .selected-service {
-  padding: 14px 16px;
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 0 14px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 15px;
 
-  border-radius: 9px;
+  box-sizing: border-box;
+
+  border-radius: 8px;
 
   background: #f3f6f6;
 
   border: 1px solid #dce3e3;
 }
 
+
 .selected-service span {
-  font-size: 12px;
+  font-size: 11px;
 
   color: #6d7c7f;
 }
 
+
 .selected-service strong {
-  font-size: 13px;
+  font-size: 12px;
 
   color: #286ac5;
 
@@ -577,23 +778,30 @@
 }
 
 
-/* =========================================
+/* =========================================================
    SUBMIT BUTTON
-========================================= */
+========================================================= */
 
 .service-submit-button {
   width: 100%;
 
-  min-height: 50px;
+  height: 46px;
 
-  margin-top: 4px;
+  min-height: 46px;
+
+  margin-top: 2px;
+
+  padding: 0 18px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
+
+  box-sizing: border-box;
 
   border: none;
 
@@ -605,7 +813,7 @@
 
   font-size: 14px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   cursor: pointer;
 
@@ -614,6 +822,7 @@
     transform 0.25s ease;
 }
 
+
 .service-submit-button:hover {
   background: #0b3b42;
 
@@ -621,11 +830,12 @@
 }
 
 
-/* =========================================
+/* =========================================================
    POPUP ANIMATIONS
-========================================= */
+========================================================= */
 
 @keyframes serviceModalFade {
+
   from {
     opacity: 0;
   }
@@ -633,241 +843,925 @@
   to {
     opacity: 1;
   }
+
 }
+
 
 @keyframes serviceModalSlide {
+
   from {
     opacity: 0;
 
-    transform: translateY(25px) scale(0.97);
+    transform:
+      translateY(20px)
+      scale(0.98);
   }
 
   to {
     opacity: 1;
 
-    transform: translateY(0) scale(1);
+    transform:
+      translateY(0)
+      scale(1);
   }
+
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 900px) {
 
   .services-section {
-    padding: 45px 0 100px;
+    padding:
+      45px
+      0
+      100px;
   }
 
+
   .services-heading {
+    width: 92%;
+
     margin-bottom: 45px;
   }
+
 
   .services-container {
     width: 92%;
   }
 
+
   .service-card {
     min-height: 350px;
 
-    padding: 36px 30px;
+    padding:
+      34px
+      30px;
   }
+
 
   .service-number {
     font-size: 145px;
   }
 
-  .service-modal {
-    width: min(540px, 94%);
+
+  .service-card h3 {
+    font-size: 34px;
   }
+
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+
+  /* TABLET POPUP */
+
+  .service-modal-overlay {
+    padding: 15px;
+  }
+
+
+  .service-modal {
+    width: min(
+      520px,
+      calc(100vw - 30px)
+    );
+
+    max-height: calc(100dvh - 30px);
+
+    padding:
+      26px
+      32px
+      20px;
+  }
+
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   COMPACT SERVICES
+========================================================= */
 
 @media (max-width: 650px) {
 
   .services-section {
-    padding: 38px 0 90px;
+    width: 100%;
+
+    padding:
+      32px
+      0
+      70px;
+
+    overflow: hidden;
   }
+
+
+  /* =====================================
+     SECTION HEADING
+  ====================================== */
 
   .services-heading {
     width: 90%;
 
-    margin-bottom: 35px;
+    margin:
+      0 auto
+      28px;
   }
+
 
   .services-label {
-    margin-bottom: 15px;
+    margin-bottom: 11px;
 
-    font-size: 11px;
-
-    letter-spacing: 2.5px;
-  }
-
-  .services-heading h2 {
-    font-size: 42px;
-
-    letter-spacing: -2px;
-  }
-
-  .services-heading p {
-    font-size: 15px;
-  }
-
-  .services-container {
-    width: 92%;
-
-    grid-template-columns: 1fr;
-
-    border-radius: 18px;
-  }
-
-  .service-card {
-    min-height: 360px;
-
-    padding: 35px 26px;
-
-    border-right: none !important;
-
-    border-bottom: 1px solid #d5d5d0 !important;
-  }
-
-  .service-card:last-child {
-    border-bottom: none !important;
-  }
-
-  .service-card h3 {
-    font-size: 32px;
-
-    letter-spacing: -1.5px;
-  }
-
-  .service-card p {
-    font-size: 15px;
-  }
-
-  .service-number {
-    right: 10px;
-
-    font-size: 130px;
-  }
-
-
-  /* MOBILE POPUP */
-
-  .service-modal-overlay {
-    padding: 12px;
-  }
-
-  .service-modal {
-    width: 100%;
-
-    max-height: 94vh;
-
-    padding: 28px 22px;
-
-    border-radius: 17px;
-  }
-
-  .service-modal-close {
-    top: 13px;
-    right: 13px;
-
-    width: 36px;
-    height: 36px;
-  }
-
-  .service-modal-header {
-    padding-right: 38px;
-
-    margin-bottom: 23px;
-  }
-
-  .service-modal-header > span {
-    font-size: 10px;
+    font-size: 9px;
 
     letter-spacing: 2px;
   }
 
-  .service-modal-header h2 {
-    font-size: 30px;
 
-    letter-spacing: -1.3px;
+  .services-heading h2 {
+    font-size: 34px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.7px;
   }
 
-  .service-modal-header p {
-    font-size: 14px;
+
+  .services-heading p {
+    max-width: 100%;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
   }
 
-  .service-form {
-    gap: 15px;
+
+  /* =====================================
+     TWO COLUMN SERVICES
+  ====================================== */
+
+  .services-container {
+    width: 92%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    border-radius: 16px;
+
+    overflow: hidden;
   }
 
-  .form-group input {
-    height: 46px;
+
+  /* =====================================
+     MOBILE SERVICE CARD
+  ====================================== */
+
+  .service-card {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 390px;
+
+    padding:
+      25px
+      17px
+      22px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #d5d5d0;
+
+    border-right: none !important;
   }
 
-  .form-group input,
-  .form-group textarea {
-    font-size: 14px;
+
+  .service-card:nth-child(odd) {
+    border-right:
+      1px solid #d5d5d0 !important;
   }
 
-  .selected-service {
-    flex-direction: column;
 
-    align-items: flex-start;
+  .service-card:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+
+  /* CATEGORY */
+
+  .service-category {
+    margin-bottom: 14px;
+
+    font-size: 8px;
+
+    line-height: 1.25;
+
+    letter-spacing: 1.8px;
+
+    max-width: 100%;
+  }
+
+
+  /* TITLE */
+
+  .service-card h3 {
+    margin-bottom: 13px;
+
+    font-size: 23px;
+
+    line-height: 1.02;
+
+    letter-spacing: -1px;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* DESCRIPTION */
+
+  .service-card p {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color: #557075;
+  }
+
+
+  /* NUMBER */
+
+  .service-number {
+    right: 4px;
+
+    bottom: -15px;
+
+    font-size: 105px;
+
+    letter-spacing: -7px;
+
+    opacity: 0.9;
+  }
+
+
+  /* BUTTON */
+
+  .service-button {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 19px;
+
+    padding:
+      8px
+      11px;
+
+    min-height: 38px;
 
     gap: 5px;
+
+    font-size: 10px;
+
+    line-height: 1.05;
+
+    border-radius: 30px;
+
+    white-space: normal;
+
+    text-align: center;
   }
 
+
+  .service-button svg {
+    width: 13px;
+
+    height: 13px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =====================================================
+     MOBILE POPUP OVERLAY
+  ===================================================== */
+
+  .service-modal-overlay {
+    width: 100%;
+
+    height: 100dvh;
+
+    padding:
+      20px
+      14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     MOBILE POPUP
+     SMALL + CENTERED
+  ===================================================== */
+
+  .service-modal {
+    position: relative;
+
+    width: min(
+      390px,
+      calc(100vw - 28px)
+    );
+
+    /*
+       This is the important change.
+       The popup is NOT full screen.
+    */
+
+    height: auto;
+
+    max-height: 88dvh;
+
+    padding:
+      22px
+      18px
+      16px;
+
+    box-sizing: border-box;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.35);
+  }
+
+
+  /* =====================================================
+     CLOSE BUTTON
+  ===================================================== */
+
+  .service-modal-close {
+    top: 8px;
+
+    right: 8px;
+
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 38px;
+
+    min-height: 38px;
+  }
+
+
+  /* =====================================================
+     POPUP HEADER
+  ===================================================== */
+
+  .service-modal-header {
+    padding-right: 42px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .service-modal-header > span {
+    margin-bottom: 5px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .service-modal-header h2 {
+    margin-bottom: 6px;
+
+    font-size: 25px;
+
+    line-height: 1.04;
+
+    letter-spacing: -1px;
+  }
+
+
+  .service-modal-header p {
+    font-size: 10px;
+
+    line-height: 1.35;
+  }
+
+
+  /* =====================================================
+     FORM
+  ===================================================== */
+
+  .service-form {
+    gap: 6px;
+  }
+
+
+  .form-group {
+    gap: 3px;
+  }
+
+
+  .form-group label {
+    font-size: 10px;
+  }
+
+
+  .form-group input {
+    height: 37px;
+
+    min-height: 37px;
+
+    padding:
+      0
+      10px;
+
+    font-size: 13px;
+  }
+
+
+  .form-group textarea {
+    height: 48px;
+
+    min-height: 48px;
+
+    padding:
+      7px
+      10px;
+
+    font-size: 13px;
+
+    resize: none;
+  }
+
+
+  /* =====================================================
+     PHONE
+  ===================================================== */
+
+  .phone-input-wrapper {
+    height: 37px;
+
+    min-height: 37px;
+  }
+
+
+  .country-code-wrapper {
+    width: 112px;
+  }
+
+
+  .country-code-wrapper select {
+    font-size: 10px;
+
+    padding:
+      0
+      24px
+      0
+      8px;
+  }
+
+
+  .country-code-arrow {
+    right: 7px;
+
+    width: 13px;
+
+    height: 13px;
+  }
+
+
+  .phone-input-wrapper > input {
+    font-size: 13px;
+
+    padding:
+      0
+      9px;
+  }
+
+
+  /* =====================================================
+     SELECTED SERVICE
+  ===================================================== */
+
+  .selected-service {
+    min-height: 37px;
+
+    padding:
+      0
+      10px;
+
+    gap: 8px;
+  }
+
+
+  .selected-service span {
+    font-size: 9px;
+  }
+
+
   .selected-service strong {
-    text-align: left;
+    font-size: 9px;
+
+    white-space: nowrap;
+  }
+
+
+  /* =====================================================
+     SUBMIT
+  ===================================================== */
+
+  .service-submit-button {
+    height: 39px;
+
+    min-height: 39px;
+
+    margin-top: 1px;
+
+    font-size: 12px;
+
+    gap: 8px;
+  }
+
+
+  .service-submit-button svg {
+    width: 15px;
+
+    height: 15px;
   }
 
 }
 
 
-/* =========================================
-   VERY SMALL MOBILE
-========================================= */
+/* =========================================================
+   SMALL MOBILE
+   360px / 375px / 390px
+========================================================= */
 
 @media (max-width: 400px) {
 
   .services-section {
-    padding-top: 32px;
+    padding:
+      28px
+      0
+      60px;
   }
+
+
+  /* =====================================
+     HEADING
+  ====================================== */
+
+  .services-heading {
+    width: 91%;
+
+    margin-bottom: 24px;
+  }
+
+
+  .services-label {
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+  }
+
 
   .services-heading h2 {
-    font-size: 36px;
+    font-size: 30px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.4px;
   }
+
+
+  .services-heading p {
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =====================================
+     CARDS
+  ====================================== */
+
+  .services-container {
+    width: 94%;
+
+    border-radius: 14px;
+  }
+
 
   .service-card {
-    padding: 30px 22px;
+    min-height: 365px;
+
+    padding:
+      22px
+      13px
+      18px;
   }
+
+
+  .service-category {
+    margin-bottom: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .service-card h3 {
+    margin-bottom: 11px;
+
+    font-size: 20px;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  .service-card p {
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+
+  .service-number {
+    right: 2px;
+
+    bottom: -10px;
+
+    font-size: 88px;
+
+    letter-spacing: -6px;
+  }
+
+
+  .service-button {
+    margin-top: 16px;
+
+    padding:
+      7px
+      9px;
+
+    min-height: 34px;
+
+    font-size: 9px;
+
+    gap: 4px;
+  }
+
+
+  .service-button svg {
+    width: 11px;
+
+    height: 11px;
+  }
+
+
+  /* =====================================
+     SMALL MOBILE POPUP
+  ====================================== */
+
+  .service-modal-overlay {
+    padding:
+      15px
+      10px;
+
+    overflow: hidden;
+  }
+
 
   .service-modal {
-    padding: 25px 18px;
+    width: min(
+      350px,
+      calc(100vw - 20px)
+    );
+
+    max-height: 86dvh;
+
+    padding:
+      18px
+      15px
+      13px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
   }
+
+
+  /* CLOSE */
+
+  .service-modal-close {
+    top: 6px;
+
+    right: 6px;
+
+    width: 34px;
+
+    height: 34px;
+
+    min-width: 34px;
+
+    min-height: 34px;
+  }
+
+
+  /* HEADER */
+
+  .service-modal-header {
+    padding-right: 38px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .service-modal-header > span {
+    margin-bottom: 4px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.7px;
+  }
+
 
   .service-modal-header h2 {
-    font-size: 27px;
-  }
-}
-.service-page-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  color: inherit;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
+    margin-bottom: 5px;
 
-.service-page-link:hover {
-  text-decoration: underline;
+    font-size: 21px;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  .service-modal-header p {
+    font-size: 9px;
+
+    line-height: 1.3;
+  }
+
+
+  /* FORM */
+
+  .service-form {
+    gap: 5px;
+  }
+
+
+  .form-group {
+    gap: 2px;
+  }
+
+
+  .form-group label {
+    font-size: 9px;
+  }
+
+
+  .form-group input {
+    height: 34px;
+
+    min-height: 34px;
+
+    padding:
+      0
+      9px;
+
+    font-size: 12px;
+  }
+
+
+  .form-group textarea {
+    height: 43px;
+
+    min-height: 43px;
+
+    padding:
+      6px
+      9px;
+
+    font-size: 12px;
+  }
+
+
+  /* PHONE */
+
+  .phone-input-wrapper {
+    height: 34px;
+
+    min-height: 34px;
+  }
+
+
+  .country-code-wrapper {
+    width: 102px;
+  }
+
+
+  .country-code-wrapper select {
+    font-size: 9px;
+
+    padding-left: 7px;
+
+    padding-right: 21px;
+  }
+
+
+  .country-code-arrow {
+    right: 6px;
+
+    width: 12px;
+
+    height: 12px;
+  }
+
+
+  .phone-input-wrapper > input {
+    font-size: 12px;
+
+    padding:
+      0
+      8px;
+  }
+
+
+  /* SELECTED SERVICE */
+
+  .selected-service {
+    min-height: 34px;
+
+    padding:
+      0
+      9px;
+  }
+
+
+  .selected-service span {
+    font-size: 8px;
+  }
+
+
+  .selected-service strong {
+    font-size: 8px;
+  }
+
+
+  /* BUTTON */
+
+  .service-submit-button {
+    height: 36px;
+
+    min-height: 36px;
+
+    font-size: 11px;
+
+    gap: 7px;
+  }
+
+
+  .service-submit-button svg {
+    width: 14px;
+
+    height: 14px;
+  }
+
 }

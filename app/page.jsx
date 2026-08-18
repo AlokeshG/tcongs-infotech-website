@@ -11,14 +11,12 @@ import ResourcesSection from "../src/components/ResourcesSection";
 import AboutSection from "../src/components/AboutSection";
 import ApproachSection from "../src/components/ApproachSection";
 import TestimonialsSection from "../src/components/TestimonialsSection";
-import CaseStudy from "../src/components/CaseStudy";
 import CTASection from "../src/components/CTASection";
 import Footer from "../src/components/Footer";
 import ChatAssistant from "../src/components/ChatAssistant";
 
 export default function HomePage() {
 
-  // Chat open/close state
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
@@ -48,8 +46,6 @@ export default function HomePage() {
       <ApproachSection />
 
       <TestimonialsSection />
-
-      <CaseStudy />
 
       <CTASection />
 

@@ -12,12 +12,16 @@ import ResourcesSection from "./components/ResourcesSection";
 import AboutSection from "./components/AboutSection";
 import ApproachSection from "./components/ApproachSection";
 import TestimonialsSection from "./components/TestimonialsSection";
-import CaseStudy from "./components/CaseStudy";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
 import CaseStudyPage from "./pages/CaseStudyPage";
+import CareersPage from "./components/CareersPage";
 
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
 
 function HomePage() {
 
@@ -31,15 +35,23 @@ function HomePage() {
       />
 
       <SolutionSection />
+
       <Partners />
+
       <StartSection />
+
       <ServicesSection />
+
       <ResourcesSection />
+
       <AboutSection />
+
       <ApproachSection />
+
       <TestimonialsSection />
-      <CaseStudy />
+
       <CTASection />
+
       <Footer />
 
       <ChatAssistant
@@ -51,21 +63,42 @@ function HomePage() {
 }
 
 
+/* =========================================================
+   APP ROUTES
+========================================================= */
+
 function App() {
+
   return (
     <BrowserRouter>
+
       <Routes>
 
-        <Route path="/" element={<HomePage />} />
+        {/* HOME */}
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
 
+
+        {/* CAREERS */}
+        <Route
+          path="/careers"
+          element={<CareersPage />}
+        />
+
+
+        {/* CASE STUDY */}
         <Route
           path="/case-study/:id"
           element={<CaseStudyPage />}
         />
 
       </Routes>
+
     </BrowserRouter>
   );
 }
+
 
 export default App;

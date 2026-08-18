@@ -1,46 +1,17 @@
-import { useEffect, useState } from "react";
 import {
-  Trophy,
   ShieldCheck,
   Users,
   BadgeCheck,
-  TrendingUp,
   CalendarDays,
   ArrowRight,
+  Trophy,
+  ThumbsUp,
+  BarChart3,
 } from "lucide-react";
 
 import "./CTASection.css";
 
 function CTASection() {
-  const [rating, setRating] = useState(0);
-  const [showStars, setShowStars] = useState(false);
-  const [showReviews, setShowReviews] = useState(false);
-
-  useEffect(() => {
-    let start = 0;
-
-    const interval = setInterval(() => {
-      start += 0.1;
-
-      if (start >= 4.9) {
-        start = 4.9;
-        clearInterval(interval);
-
-        setTimeout(() => {
-          setShowStars(true);
-        }, 200);
-
-        setTimeout(() => {
-          setShowReviews(true);
-        }, 700);
-      }
-
-      setRating(Number(start.toFixed(1)));
-    }, 70);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="cta-section">
 
@@ -49,16 +20,16 @@ function CTASection() {
 
       <div className="cta-wrapper">
 
-        {/* ==============================
-            LEFT CARD
-        ============================== */}
+        {/* =====================================================
+            LEFT CTA CARD
+        ===================================================== */}
 
         <div className="cta-content">
 
           <h2>
-            Ready for <span>technology</span> that fits
+            Ready for <span>technology</span>
             <br />
-            your business?
+            that fits your business?
           </h2>
 
           <p>
@@ -69,144 +40,313 @@ function CTASection() {
           </p>
 
           <button className="consultation-btn">
-            <CalendarDays size={15} strokeWidth={1.8} />
 
-            <span>Schedule a Consultation</span>
+            <CalendarDays
+              size={15}
+              strokeWidth={1.8}
+            />
 
-            <ArrowRight size={17} strokeWidth={1.8} />
+            <span>
+              Schedule a Consultation
+            </span>
+
+            <ArrowRight
+              size={17}
+              strokeWidth={1.8}
+            />
+
           </button>
 
         </div>
 
 
-        {/* ==============================
-            RIGHT CLUTCH CARD
-        ============================== */}
+        {/* =====================================================
+            RIGHT REVIEWS PANEL
+        ===================================================== */}
 
-        <div className="clutch-card">
+        <div className="reviews-panel">
 
-          <div className="clutch-main">
+          <div className="reviews-cards">
 
-            {/* Trophy */}
-            <div className="clutch-icon">
-              <Trophy size={19} strokeWidth={1.6} />
-            </div>
+            {/* =================================================
+                GOOGLE REVIEWS CARD
+            ================================================= */}
 
-            {/* Title */}
-            <div className="clutch-title">
-              Clutch
-            </div>
+            <div className="review-card google-card">
 
-            {/* Rating */}
-            <div className="clutch-rating">
-              {rating.toFixed(1)}
-            </div>
+              <div className="review-card-header">
 
-            {/* Stars */}
-            <div
-              className={`clutch-stars ${
-                showStars ? "stars-visible" : ""
-              }`}
-            >
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-            </div>
+                {/* REAL GOOGLE LOGO */}
+                <img
+                  src="/image.png"
+                  alt="Google"
+                  className="google-logo"
+                />
 
-            {/* Verified */}
-            <div
-              className={`clutch-reviews ${
-                showReviews ? "reviews-visible" : ""
-              }`}
-            >
-              VERIFIED <span>•</span> 25 REVIEWS
-            </div>
+                <div className="review-platform">
 
-          </div>
+                  <span>
+                    Google Reviews
+                  </span>
+
+                  <div className="platform-line"></div>
+
+                </div>
+
+              </div>
 
 
-          {/* ==============================
-              STATISTICS
-          ============================== */}
+              {/* Rating */}
 
-          <div className="clutch-stats">
+              <div className="review-rating">
+                4.9
+              </div>
 
-            {/* STAT 1 */}
-            <div className="clutch-stat">
 
-              <ShieldCheck
-                size={22}
-                strokeWidth={1.5}
-              />
+              {/* Stars */}
 
-              <div>
-                <strong>Verified</strong>
-                <span>Professionals</span>
+              <div className="review-stars">
+
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+
+              </div>
+
+
+              <div className="review-count">
+                Based on 58 reviews
+              </div>
+
+
+              <div className="review-divider"></div>
+
+
+              {/* Feature 1 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <ShieldCheck
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    Verified Reviews
+                  </strong>
+
+                  <span>
+                    Authentic feedback from our clients
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Feature 2 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <Users
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    5 Star Rating
+                  </strong>
+
+                  <span>
+                    Consistent client satisfaction
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Feature 3 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <ThumbsUp
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    Highly Recommended
+                  </strong>
+
+                  <span>
+                    By businesses across industries
+                  </span>
+
+                </div>
+
               </div>
 
             </div>
 
 
-            {/* STAT 2 */}
-            <div className="clutch-stat">
+            {/* =================================================
+                CLUTCH REVIEWS CARD
+            ================================================= */}
 
-              <Users
-                size={22}
-                strokeWidth={1.5}
-              />
+            <div className="review-card clutch-review-card">
 
-              <div>
-                <strong>25+</strong>
-                <span>Client Reviews</span>
+              <div className="review-card-header">
+
+                <div className="clutch-logo">
+                  Clutch
+                </div>
+
+                <div className="review-platform">
+
+                  <span>
+                    Clutch Reviews
+                  </span>
+
+                  <div className="platform-line"></div>
+
+                </div>
+
+              </div>
+
+
+              {/* Rating */}
+
+              <div className="review-rating">
+                4.9
+              </div>
+
+
+              {/* Stars */}
+
+              <div className="review-stars">
+
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+
+              </div>
+
+
+              <div className="review-count">
+                Based on 25 reviews
+              </div>
+
+
+              <div className="review-divider"></div>
+
+
+              {/* Feature 1 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <Trophy
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    Top Rated on Clutch
+                  </strong>
+
+                  <span>
+                    Recognized for excellence
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Feature 2 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <BadgeCheck
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    Verified Company
+                  </strong>
+
+                  <span>
+                    Clutch verified & trusted
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Feature 3 */}
+
+              <div className="review-feature">
+
+                <div className="feature-icon">
+
+                  <BarChart3
+                    size={19}
+                    strokeWidth={1.5}
+                  />
+
+                </div>
+
+                <div className="feature-text">
+
+                  <strong>
+                    Proven Track Record
+                  </strong>
+
+                  <span>
+                    Delivering results that matter
+                  </span>
+
+                </div>
+
               </div>
 
             </div>
-
-
-            {/* STAT 3 */}
-            <div className="clutch-stat">
-
-              <BadgeCheck
-                size={22}
-                strokeWidth={1.5}
-              />
-
-              <div>
-                <strong>4.9/5</strong>
-                <span>Average Rating</span>
-              </div>
-
-            </div>
-
-
-            {/* STAT 4 */}
-            <div className="clutch-stat">
-
-              <TrendingUp
-                size={22}
-                strokeWidth={1.5}
-              />
-
-              <div>
-                <strong>Proven</strong>
-                <span>Track Record</span>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* Bottom Slider */}
-          <div className="clutch-slider">
-
-            <span></span>
-            <span></span>
-            <span className="active"></span>
-            <span></span>
-            <span></span>
 
           </div>
 
@@ -218,4 +358,4 @@ function CTASection() {
   );
 }
 
-export default CTASection;  
+export default CTASection;

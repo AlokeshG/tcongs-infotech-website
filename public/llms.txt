@@ -1,0 +1,33 @@
+# Tcongs Infotech
+
+> Tcongs Infotech is a software development company building custom software, web applications, mobile applications, AI and machine learning solutions, and cloud solutions for growing businesses.
+
+## Services
+
+- Web Development
+  - https://YOUR-DOMAIN.com/services/web-development
+
+- AI & Machine Learning
+  - https://YOUR-DOMAIN.com/services/ai-and-machine-learning
+
+- Custom Software
+  - https://YOUR-DOMAIN.com/services/custom-software
+
+- Cloud Solutions
+  - https://YOUR-DOMAIN.com/services/cloud-solutions
+
+## Website
+
+- Homepage: https://YOUR-DOMAIN.com/
+
+## About
+
+Tcongs Infotech provides custom technology solutions designed around business requirements, workflows, scalability, and growth.
+
+## Contact
+
+For project enquiries and business discussions, visitors can use the contact and enquiry mechanisms provided on the website.
+
+## Important
+
+The URLs above use YOUR-DOMAIN.com temporarily because the final production domain has not yet been provided. Replace them with the final canonical domain before deployment.

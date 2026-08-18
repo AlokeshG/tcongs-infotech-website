@@ -1,25 +1,97 @@
 "use client";
 
-import React, { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, X, ChevronDown } from "lucide-react";
 import "./ServicesSection.css";
 import services from "../data/services";
 
 function ServicesSection() {
   const [selectedService, setSelectedService] = useState(null);
 
+  const [countryCode, setCountryCode] = useState("+91");
+
+
+  /* =========================================================
+     OPEN POPUP
+  ========================================================= */
+
   const openServicePopup = (service) => {
     setSelectedService(service);
+
     document.body.style.overflow = "hidden";
   };
 
+
+  /* =========================================================
+     CLOSE POPUP
+  ========================================================= */
+
   const closeServicePopup = () => {
     setSelectedService(null);
-    document.body.style.overflow = "auto";
+
+    document.body.style.overflow = "";
   };
+
+
+  /* =========================================================
+     RESTORE BODY SCROLL
+  ========================================================= */
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+
+  /* =========================================================
+     NAME
+     ONLY LETTERS, SPACE, HYPHEN, APOSTROPHE
+  ========================================================= */
+
+  const handleNameInput = (e) => {
+    e.target.value = e.target.value.replace(
+      /[^a-zA-ZÀ-ÿ\s'-]/g,
+      ""
+    );
+  };
+
+
+  /* =========================================================
+     EMAIL
+     REMOVE SPACES
+  ========================================================= */
+
+  const handleEmailInput = (e) => {
+    e.target.value = e.target.value.replace(/\s/g, "");
+  };
+
+
+  /* =========================================================
+     PHONE
+     ONLY NUMBERS
+  ========================================================= */
+
+  const handlePhoneInput = (e) => {
+    e.target.value = e.target.value
+      .replace(/\D/g, "")
+      .slice(0, 15);
+  };
+
+
+  /* =========================================================
+     SUBMIT
+  ========================================================= */
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const form = e.currentTarget;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
     alert(
       `Thank you! Your request for ${selectedService?.title} has been submitted.`
@@ -28,15 +100,20 @@ function ServicesSection() {
     closeServicePopup();
   };
 
+
   return (
     <>
-      {/* =========================================
+      {/* =====================================================
           SERVICES SECTION
-      ========================================== */}
+      ===================================================== */}
 
-      <section className="services-section" id="services">
+      <section
+        className="services-section"
+        id="services"
+      >
 
         {/* HEADING */}
+
         <div className="services-heading">
 
           <span className="services-label">
@@ -58,6 +135,7 @@ function ServicesSection() {
 
 
         {/* SERVICES */}
+
         <div className="services-container">
 
           {services.map((service) => (
@@ -67,13 +145,11 @@ function ServicesSection() {
               key={service.id}
             >
 
-              {/* NUMBER */}
               <span className="service-number">
                 {service.number}
               </span>
 
 
-              {/* CARD CONTENT */}
               <div className="service-card-content">
 
                 <span className="service-category">
@@ -89,27 +165,20 @@ function ServicesSection() {
                 </p>
 
 
-                {/* EXPLORE BUTTON */}
                 <button
                   type="button"
                   className="service-button"
-                  onClick={() => openServicePopup(service)}
+                  onClick={() =>
+                    openServicePopup(service)
+                  }
                 >
+
                   Explore Service
 
                   <ArrowRight size={18} />
+
                 </button>
 
-                <a
-                  href={`/services/${service.title
-                    .toLowerCase()
-                    .replace(/&/g, "and")
-                    .replace(/\s+/g, "-")}`}
-                  className="service-page-link"
-                >
-                  View Service
-                  <ArrowRight size={18} />
-                </a>
               </div>
 
             </article>
@@ -121,9 +190,9 @@ function ServicesSection() {
       </section>
 
 
-      {/* =========================================
+      {/* =====================================================
           SERVICE POPUP
-      ========================================== */}
+      ===================================================== */}
 
       {selectedService && (
 
@@ -134,21 +203,29 @@ function ServicesSection() {
 
           <div
             className="service-modal"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) =>
+              e.stopPropagation()
+            }
           >
 
-            {/* CLOSE BUTTON */}
+            {/* CLOSE */}
+
             <button
               type="button"
               className="service-modal-close"
               onClick={closeServicePopup}
               aria-label="Close popup"
             >
-              <X size={22} />
+
+              <X size={21} />
+
             </button>
 
 
-            {/* POPUP HEADER */}
+            {/* =================================================
+                HEADER
+            ================================================= */}
+
             <div className="service-modal-header">
 
               <span>
@@ -156,29 +233,38 @@ function ServicesSection() {
               </span>
 
               <h2>
+
                 Let's talk about
+
                 <br />
 
                 <strong>
                   {selectedService.title}
                 </strong>
+
               </h2>
 
               <p>
-                Tell us about your requirements and our team will
-                get in touch with you.
+                Tell us about your requirements and our team
+                will get in touch with you.
               </p>
 
             </div>
 
 
-            {/* FORM */}
+            {/* =================================================
+                FORM
+            ================================================= */}
+
             <form
               className="service-form"
               onSubmit={handleSubmit}
             >
 
-              {/* NAME */}
+              {/* =================================================
+                  FULL NAME
+              ================================================= */}
+
               <div className="form-group">
 
                 <label htmlFor="service-name">
@@ -187,15 +273,24 @@ function ServicesSection() {
 
                 <input
                   id="service-name"
+                  name="fullName"
                   type="text"
                   placeholder="Enter your name"
+                  autoComplete="name"
                   required
+                  minLength={2}
+                  maxLength={60}
+                  pattern="[A-Za-zÀ-ÿ\s'-]+"
+                  onInput={handleNameInput}
                 />
 
               </div>
 
 
-              {/* EMAIL */}
+              {/* =================================================
+                  EMAIL
+              ================================================= */}
+
               <div className="form-group">
 
                 <label htmlFor="service-email">
@@ -204,32 +299,92 @@ function ServicesSection() {
 
                 <input
                   id="service-email"
+                  name="email"
                   type="email"
                   placeholder="Enter your email"
+                  autoComplete="email"
                   required
+                  maxLength={100}
+                  onInput={handleEmailInput}
                 />
 
               </div>
 
 
-              {/* PHONE */}
+              {/* =================================================
+                  PHONE NUMBER
+              ================================================= */}
+
               <div className="form-group">
 
                 <label htmlFor="service-phone">
                   Phone Number
                 </label>
 
-                <input
-                  id="service-phone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  required
-                />
+
+                <div className="phone-input-wrapper">
+
+                  {/* COUNTRY CODE */}
+
+                  <div className="country-code-wrapper">
+
+                    <select
+                      id="country-code"
+                      name="countryCode"
+                      value={countryCode}
+                      onChange={(e) =>
+                        setCountryCode(e.target.value)
+                      }
+                      aria-label="Country code"
+                    >
+
+                      <option value="+971">
+                         UAE +971
+                      </option>
+
+                      <option value="+91">
+                         India +91
+                      </option>
+
+                      <option value="+1">
+                         USA +1
+                      </option>
+
+                    </select>
+
+                    <ChevronDown
+                      className="country-code-arrow"
+                      size={16}
+                    />
+
+                  </div>
+
+
+                  {/* PHONE NUMBER */}
+
+                  <input
+                    id="service-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    autoComplete="tel"
+                    inputMode="numeric"
+                    pattern="[0-9]{7,15}"
+                    minLength={7}
+                    maxLength={15}
+                    required
+                    onInput={handlePhoneInput}
+                  />
+
+                </div>
 
               </div>
 
 
-              {/* MESSAGE */}
+              {/* =================================================
+                  PROJECT
+              ================================================= */}
+
               <div className="form-group">
 
                 <label htmlFor="service-message">
@@ -238,15 +393,20 @@ function ServicesSection() {
 
                 <textarea
                   id="service-message"
-                  rows="4"
+                  name="message"
+                  rows="3"
                   placeholder="Tell us what you need..."
+                  maxLength={1000}
                   required
-                ></textarea>
+                />
 
               </div>
 
 
-              {/* SELECTED SERVICE */}
+              {/* =================================================
+                  SELECTED SERVICE
+              ================================================= */}
+
               <div className="selected-service">
 
                 <span>
@@ -260,14 +420,21 @@ function ServicesSection() {
               </div>
 
 
-              {/* SUBMIT */}
+              {/* =================================================
+                  SUBMIT
+              ================================================= */}
+
               <button
                 type="submit"
                 className="service-submit-button"
               >
-                Send Request
+
+                <span>
+                  Send Request
+                </span>
 
                 <ArrowRight size={18} />
+
               </button>
 
             </form>
@@ -277,6 +444,7 @@ function ServicesSection() {
         </div>
 
       )}
+
     </>
   );
 }

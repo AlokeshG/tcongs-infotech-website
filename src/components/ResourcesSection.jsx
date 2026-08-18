@@ -12,14 +12,14 @@ function ResourcesSection() {
       id: 0,
       title: (
         <>
-          Collaborating
+          Web
           <br />
-          with AI
+          Development
         </>
       ),
-      plainTitle: "Collaborating with AI",
+      plainTitle: "Web Development",
       description:
-        "For business teams that want to get real work out of AI, not just experiments.",
+        "We create modern, responsive and high-performance websites that fit your business and help you grow.",
       footer: "CRAFT the input. OWN the output.",
     },
 
@@ -27,14 +27,14 @@ function ResourcesSection() {
       id: 1,
       title: (
         <>
-          AI
+          AI &
           <br />
-          Tools
+          Machine Learning
         </>
       ),
-      plainTitle: "AI Tools",
+      plainTitle: "AI & Machine Learning",
       description:
-        "Discover practical AI tools that help teams work smarter and faster.",
+        "We build intelligent AI solutions that automate processes, improve decisions and create better customer experiences.",
       footer: "CHOOSE the right tool. CREATE better results.",
     },
 
@@ -42,14 +42,14 @@ function ResourcesSection() {
       id: 2,
       title: (
         <>
-          AI
+          Custom
           <br />
-          Skills
+          Software
         </>
       ),
-      plainTitle: "AI Skills",
+      plainTitle: "Custom Software",
       description:
-        "Build the essential AI skills your team needs to work effectively.",
+        "We develop scalable software solutions designed around your unique business requirements and workflow.",
       footer: "LEARN the skill. APPLY the knowledge.",
     },
 
@@ -57,14 +57,14 @@ function ResourcesSection() {
       id: 3,
       title: (
         <>
-          AI
+          Cloud
           <br />
-          World
+          Solutions
         </>
       ),
-      plainTitle: "AI World",
+      plainTitle: "Cloud Solutions",
       description:
-        "Understand how AI is changing modern business and workplace productivity.",
+        "We help businesses use modern cloud technologies to build secure, scalable and reliable applications..",
       footer: "UNDERSTAND AI. USE IT BETTER.",
     },
   ];

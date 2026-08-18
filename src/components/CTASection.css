@@ -6,26 +6,26 @@
   position: relative;
 
   width: 100%;
-  min-height: 500px;
+  min-height: 520px;
+
+  padding: 70px 40px 75px;
 
   overflow: hidden;
+
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 70px 40px;
-
-  box-sizing: border-box;
-
   background:
     radial-gradient(
-      circle at 15% 55%,
+      circle at 12% 55%,
       rgba(38, 104, 145, 0.45),
       transparent 38%
     ),
     radial-gradient(
-      circle at 88% 45%,
+      circle at 90% 45%,
       rgba(17, 144, 102, 0.48),
       transparent 45%
     ),
@@ -62,27 +62,32 @@
 
 
 /* =========================================================
-   MAIN WRAPPER
+   MAIN WRAPPER - DESKTOP
 ========================================================= */
 
 .cta-wrapper {
   position: relative;
 
-  width: 100%;
+  z-index: 2;
 
-  max-width: 1100px;
-
-  min-height: 370px;
-
-  display: flex;
-  align-items: center;
+  width: min(100%, 1065px);
 
   margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, 0.83fr)
+    minmax(560px, 1.17fr);
+
+  align-items: center;
+
+  gap: 18px;
 }
 
 
 /* =========================================================
-   LEFT CONTENT CARD
+   LEFT CTA CARD
 ========================================================= */
 
 .cta-content {
@@ -90,19 +95,17 @@
 
   z-index: 3;
 
-  width: 570px;
+  min-height: 420px;
 
-  min-height: 330px;
+  padding: 72px 36px 55px;
 
   box-sizing: border-box;
-
-  padding: 44px 36px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(1, 43, 49, 0.97),
-      rgba(2, 51, 55, 0.94)
+      rgba(1, 43, 49, 0.98),
+      rgba(2, 51, 55, 0.96)
     );
 
   border: 1px solid rgba(91, 190, 201, 0.25);
@@ -132,21 +135,23 @@
 
 
 /* =========================================================
-   HEADING
+   LEFT HEADING
 ========================================================= */
 
 .cta-content h2 {
-  margin: 0 0 22px;
+  margin: 0;
+
+  max-width: 390px;
 
   color: #ffffff;
 
-  font-size: 34px;
+  font-size: 30px;
 
-  line-height: 1.3;
+  line-height: 1.25;
 
   font-weight: 700;
 
-  letter-spacing: -1.1px;
+  letter-spacing: -0.8px;
 }
 
 
@@ -156,19 +161,19 @@
 
 
 /* =========================================================
-   DESCRIPTION
+   LEFT DESCRIPTION
 ========================================================= */
 
 .cta-content p {
-  max-width: 475px;
+  max-width: 390px;
 
-  margin: 0 0 28px;
+  margin: 25px 0 34px;
 
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.86);
 
-  font-size: 16px;
+  font-size: 15px;
 
-  line-height: 1.65;
+  line-height: 1.7;
 
   font-weight: 400;
 }
@@ -185,13 +190,13 @@
 
   justify-content: center;
 
-  gap: 8px;
+  gap: 10px;
 
   min-width: 205px;
 
-  height: 46px;
+  min-height: 50px;
 
-  padding: 0 16px;
+  padding: 0 17px;
 
   border: none;
 
@@ -230,38 +235,28 @@
 
 
 /* =========================================================
-   CLUTCH CARD
+   RIGHT REVIEWS PANEL
 ========================================================= */
 
-.clutch-card {
-  position: absolute;
+.reviews-panel {
+  position: relative;
 
-  z-index: 2;
+  min-height: 480px;
 
-  right: 0;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 570px;
-
-  height: 390px;
+  padding: 20px 17px 48px;
 
   box-sizing: border-box;
-
-  padding: 28px 28px 20px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(5, 25, 32, 0.98),
-      rgba(7, 27, 34, 0.97)
+      rgba(5, 25, 32, 0.99),
+      rgba(7, 27, 34, 0.98)
     );
 
-  border: 10px solid #0a1d24;
+  border-radius: 25px;
 
-  border-radius: 28px;
+  border: 1px solid rgba(5, 213, 220, 0.08);
 
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.35);
@@ -271,15 +266,19 @@
 
 
 /* =========================================================
-   CARD GRID
+   RIGHT PANEL GRID
 ========================================================= */
 
-.clutch-card::before {
+.reviews-panel::before {
   content: "";
 
   position: absolute;
 
   inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.24;
 
   background-image:
     linear-gradient(
@@ -293,65 +292,152 @@
     );
 
   background-size: 8px 8px;
-
-  pointer-events: none;
 }
 
 
 /* =========================================================
-   CLUTCH MAIN
+   TWO REVIEW CARDS
 ========================================================= */
 
-.clutch-main {
+.reviews-cards {
   position: relative;
 
   z-index: 2;
 
+  width: 100%;
+
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   REVIEW CARD
+========================================================= */
+
+.review-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 25px 36px 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(19, 192, 204, 0.25);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 45, 53, 0.92),
+      rgba(0, 38, 45, 0.92)
+    );
+
+  box-shadow:
+    inset 0 0 25px rgba(0, 150, 160, 0.025);
+}
+
+
+/* =========================================================
+   REVIEW CARD HEADER
+========================================================= */
+
+.review-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 42px;
+}
+
+
+/* =========================================================
+   GOOGLE LOGO
+   TRANSPARENT - DESKTOP
+========================================================= */
+
+.google-logo {
+  width: 40px;
+  height: 40px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: transparent;
+
+  border: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+
+/* =========================================================
+   CLUTCH LOGO
+========================================================= */
+
+.clutch-logo {
+  color: #f3f7f8;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -1.2px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PLATFORM TITLE
+========================================================= */
+
+.review-platform {
   display: flex;
 
   flex-direction: column;
 
-  align-items: center;
-
-  text-align: center;
+  gap: 6px;
 }
 
 
-/* =========================================================
-   TROPHY ICON
-========================================================= */
+.review-platform span {
+  color: #f3f7f8;
 
-.clutch-icon {
-  width: 28px;
-
-  height: 28px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  margin-bottom: 4px;
-
-  color: #16c1c3;
-}
-
-
-/* =========================================================
-   CLUTCH TITLE
-========================================================= */
-
-.clutch-title {
-  margin-bottom: 2px;
-
-  color: #ffffff;
-
-  font-size: 17px;
+  font-size: 14px;
 
   line-height: 1.2;
 
   font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+.platform-line {
+  width: 48px;
+
+  height: 2px;
+
+  border-radius: 2px;
+
+  background: #19bdc9;
 }
 
 
@@ -359,14 +445,12 @@
    RATING
 ========================================================= */
 
-.clutch-rating {
-  margin-top: 0;
+.review-rating {
+  margin-top: 23px;
 
-  color: #ffffff;
+  font-size: 61px;
 
-  font-size: 76px;
-
-  line-height: 0.98;
+  line-height: 0.95;
 
   font-weight: 800;
 
@@ -374,34 +458,16 @@
 
   background:
     linear-gradient(
-      90deg,
-      #73c6f0 0%,
-      #ffffff 48%,
-      #3bd4aa 100%
+      100deg,
+      #a7dff8 5%,
+      #eafcff 38%,
+      #40d2a7 82%
     );
 
   -webkit-background-clip: text;
-
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
-
-  animation: ratingPop 0.45s ease-out;
-}
-
-
-@keyframes ratingPop {
-
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
 }
 
 
@@ -409,198 +475,117 @@
    STARS
 ========================================================= */
 
-.clutch-stars {
+.review-stars {
   display: flex;
-
-  justify-content: center;
 
   align-items: center;
 
-  gap: 5px;
+  gap: 3px;
 
-  margin-top: 7px;
-
-  opacity: 0;
-
-  transform: translateY(7px);
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+  margin-top: 8px;
 }
 
 
-.clutch-stars.stars-visible {
-  opacity: 1;
+.review-stars span {
+  color: #ffc51c;
 
-  transform: translateY(0);
-}
-
-
-.clutch-stars span {
-  color: #ffd429;
-
-  font-size: 20px;
+  font-size: 21px;
 
   line-height: 1;
-
-  opacity: 0;
-
-  transform: scale(0.5);
 }
 
 
 /* =========================================================
-   STAR ANIMATION
+   REVIEW COUNT
 ========================================================= */
 
-.stars-visible span:nth-child(1) {
-  animation:
-    starAppear 0.3s ease forwards;
-}
+.review-count {
+  margin-top: 8px;
 
+  color: rgba(240, 248, 249, 0.82);
 
-.stars-visible span:nth-child(2) {
-  animation:
-    starAppear 0.3s 0.1s ease forwards;
-}
+  font-size: 12px;
 
-
-.stars-visible span:nth-child(3) {
-  animation:
-    starAppear 0.3s 0.2s ease forwards;
-}
-
-
-.stars-visible span:nth-child(4) {
-  animation:
-    starAppear 0.3s 0.3s ease forwards;
-}
-
-
-.stars-visible span:nth-child(5) {
-  animation:
-    starAppear 0.3s 0.4s ease forwards;
-}
-
-
-@keyframes starAppear {
-
-  to {
-    opacity: 1;
-
-    transform: scale(1);
-  }
-
+  line-height: 1.4;
 }
 
 
 /* =========================================================
-   VERIFIED TEXT
+   DIVIDER
 ========================================================= */
 
-.clutch-reviews {
-  margin-top: 9px;
+.review-divider {
+  width: 100%;
 
-  color: #ffffff;
+  height: 1px;
 
-  font-size: 11px;
+  margin: 18px 0 14px;
 
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-
-  opacity: 0;
-
-  transform: translateY(7px);
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-
-.clutch-reviews span {
-  color: #6d777b;
-
-  padding: 0 3px;
-}
-
-
-.clutch-reviews.reviews-visible {
-  opacity: 1;
-
-  transform: translateY(0);
+  background:
+    rgba(135, 203, 209, 0.18);
 }
 
 
 /* =========================================================
-   STATISTICS AREA
+   REVIEW FEATURE
 ========================================================= */
 
-.clutch-stats {
-  position: absolute;
+.review-feature {
+  display: flex;
 
-  z-index: 3;
+  align-items: center;
 
-  left: 28px;
+  gap: 11px;
 
-  right: 28px;
-
-  bottom: 53px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-
-  padding-top: 16px;
+  min-height: 48px;
 }
 
 
 /* =========================================================
-   INDIVIDUAL STAT
+   FEATURE ICON
 ========================================================= */
 
-.clutch-stat {
+.feature-icon {
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 200, 210, 0.42);
+
+  border-radius: 50%;
+
+  color: #12c8d3;
+
+  background:
+    rgba(0, 121, 130, 0.08);
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature-text {
   min-width: 0;
 
   display: flex;
 
   flex-direction: column;
 
-  align-items: center;
-
-  justify-content: flex-start;
-
-  text-align: center;
-
-  color: #08b9bd;
+  gap: 2px;
 }
 
 
-.clutch-stat svg {
-  margin-bottom: 7px;
+.feature-text strong {
+  color: #eef7f8;
 
-  color: #08b9bd;
-}
-
-
-.clutch-stat div {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-}
-
-
-.clutch-stat strong {
-  color: #ffffff;
-
-  font-size: 10px;
+  font-size: 12px;
 
   line-height: 1.3;
 
@@ -608,75 +593,27 @@
 }
 
 
-.clutch-stat span {
-  color: rgba(255, 255, 255, 0.82);
+.feature-text span {
+  color: rgba(202, 226, 229, 0.66);
 
   font-size: 9px;
 
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 
 /* =========================================================
-   REVIEW BUTTON
+   SLIDER DOTS
 ========================================================= */
 
-.reviews-btn {
+.reviews-slider {
   position: absolute;
 
   z-index: 5;
 
-  right: 25px;
-
-  bottom: 19px;
-
-  height: 39px;
-
-  padding: 0 17px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: transparent;
-
-  border: 1px solid rgba(255, 255, 255, 0.75);
-
-  border-radius: 6px;
-
-  color: #ffffff;
-
-  font-size: 12px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
-}
-
-
-.reviews-btn:hover {
-  background: #ffffff;
-
-  color: #092d32;
-}
-
-
-/* =========================================================
-   BOTTOM SLIDER
-========================================================= */
-
-.clutch-slider {
-  position: absolute;
-
-  z-index: 4;
+  bottom: 17px;
 
   left: 50%;
-
-  bottom: 10px;
 
   transform: translateX(-50%);
 
@@ -684,56 +621,117 @@
 
   align-items: center;
 
-  gap: 25px;
+  gap: 20px;
 }
 
 
-.clutch-slider span {
-  width: 4px;
-
-  height: 4px;
+.reviews-slider span {
+  width: 7px;
+  height: 7px;
 
   border-radius: 50%;
 
-  background: #d9e2e3;
+  background: rgba(220, 235, 236, 0.65);
 }
 
 
-.clutch-slider span.active {
-  width: 105px;
+.reviews-slider span.active {
+  width: 8px;
+  height: 8px;
 
-  height: 4px;
-
-  border-radius: 10px;
-
-  background: #718084;
+  background: #18c1cc;
 }
 
 
 /* =========================================================
-   LARGE TABLET
+   LARGE DESKTOP
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1200px) {
+
+  .cta-section {
+    min-height: 570px;
+
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .cta-wrapper {
+    max-width: 1065px;
+  }
+
+  .cta-content {
+    min-height: 420px;
+
+    padding:
+      70px
+      36px
+      55px;
+  }
+
+  .reviews-panel {
+    min-height: 480px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1199px) {
 
   .cta-section {
     padding-left: 25px;
     padding-right: 25px;
   }
 
-
   .cta-wrapper {
     max-width: 950px;
-  }
 
+    grid-template-columns:
+      minmax(330px, 0.85fr)
+      minmax(500px, 1.15fr);
+  }
 
   .cta-content {
-    width: 500px;
+    min-height: 400px;
+
+    padding:
+      55px
+      30px
+      45px;
   }
 
+  .cta-content h2 {
+    font-size: 28px;
+  }
 
-  .clutch-card {
-    width: 520px;
+  .cta-content p {
+    font-size: 14px;
+  }
+
+  .reviews-panel {
+    min-height: 450px;
+
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .review-card {
+    padding:
+      23px
+      24px
+      20px;
+  }
+
+  .review-rating {
+    font-size: 54px;
+  }
+
+  .clutch-logo {
+    font-size: 23px;
   }
 
 }
@@ -748,44 +746,48 @@
   .cta-section {
     min-height: auto;
 
-    padding: 70px 25px;
+    padding:
+      65px
+      25px
+      70px;
   }
 
-
   .cta-wrapper {
+    width: 100%;
+
     max-width: 700px;
 
-    min-height: auto;
+    display: flex;
 
     flex-direction: column;
 
-    gap: 30px;
+    gap: 22px;
   }
-
 
   .cta-content {
     width: 100%;
 
     min-height: auto;
 
-    padding: 38px 32px;
+    padding:
+      45px
+      35px;
   }
 
+  .cta-content h2 {
+    max-width: 600px;
 
-  .clutch-card {
-    position: relative;
+    font-size: 30px;
+  }
 
-    top: auto;
+  .cta-content p {
+    max-width: 620px;
+  }
 
-    right: auto;
-
-    transform: none;
-
+  .reviews-panel {
     width: 100%;
 
-    max-width: 570px;
-
-    height: 390px;
+    min-height: 470px;
   }
 
 }
@@ -795,173 +797,378 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
   .cta-section {
-    padding: 55px 16px;
-  }
+    min-height: auto;
 
+    padding:
+      45px
+      16px
+      55px;
+  }
 
   .cta-wrapper {
     width: 100%;
 
-    gap: 25px;
+    gap: 18px;
   }
 
+
+  /* -----------------------------------------
+     CTA CARD
+  ----------------------------------------- */
 
   .cta-content {
-    padding: 30px 24px;
+    width: 100%;
 
-    border-radius: 6px;
+    padding:
+      35px
+      24px;
+
+    border-radius: 7px;
   }
-
 
   .cta-content h2 {
-    font-size: 27px;
+    max-width: 100%;
 
-    line-height: 1.25;
+    font-size: 26px;
 
-    letter-spacing: -0.7px;
+    line-height: 1.27;
+
+    letter-spacing: -0.6px;
   }
-
 
   .cta-content p {
+    margin:
+      20px
+      0
+      27px;
+
     font-size: 14px;
 
-    line-height: 1.6;
+    line-height: 1.65;
   }
-
 
   .consultation-btn {
     width: 100%;
 
-    max-width: 220px;
+    max-width: 240px;
+
+    min-height: 48px;
+
+    font-size: 13px;
   }
 
 
-  .clutch-card {
+  /* -----------------------------------------
+     REVIEWS PANEL
+  ----------------------------------------- */
+
+  .reviews-panel {
     width: 100%;
 
-    height: 360px;
+    min-height: auto;
 
-    padding: 25px 15px;
+    padding:
+      13px
+      11px
+      50px;
 
-    border-width: 7px;
-
-    border-radius: 21px;
+    border-radius: 17px;
   }
 
 
-  .clutch-rating {
-    font-size: 65px;
+  /* -----------------------------------------
+     REVIEW CARDS STACK
+  ----------------------------------------- */
+
+  .reviews-cards {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
   }
 
 
-  .clutch-stars span {
-    font-size: 18px;
+  /* -----------------------------------------
+     REVIEW CARD
+  ----------------------------------------- */
+
+  .review-card {
+    width: 100%;
+
+    padding:
+      23px
+      20px;
+
+    border-radius: 13px;
   }
 
 
-  .clutch-reviews {
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .google-logo {
+  width: 35px;
+  height: 35px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  background: transparent;
+
+  border: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+  .clutch-logo {
+    font-size: 22px;
+  }
+
+  .review-platform span {
+    font-size: 13px;
+  }
+
+  .platform-line {
+    width: 43px;
+  }
+
+
+  /* -----------------------------------------
+     RATING
+  ----------------------------------------- */
+
+  .review-rating {
+    margin-top: 19px;
+
+    font-size: 55px;
+
+    letter-spacing: -3px;
+  }
+
+
+  /* -----------------------------------------
+     STARS
+  ----------------------------------------- */
+
+  .review-stars {
+    gap: 3px;
+
+    margin-top: 7px;
+  }
+
+  .review-stars span {
+    font-size: 19px;
+  }
+
+
+  /* -----------------------------------------
+     COUNT
+  ----------------------------------------- */
+
+  .review-count {
+    margin-top: 7px;
+
+    font-size: 11px;
+  }
+
+
+  /* -----------------------------------------
+     DIVIDER
+  ----------------------------------------- */
+
+  .review-divider {
+    margin:
+      15px
+      0
+      11px;
+  }
+
+
+  /* -----------------------------------------
+     FEATURES
+  ----------------------------------------- */
+
+  .review-feature {
+    min-height: 45px;
+
+    gap: 10px;
+  }
+
+  .feature-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .feature-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .feature-text strong {
+    font-size: 11px;
+  }
+
+  .feature-text span {
     font-size: 9px;
-
-    letter-spacing: 2px;
   }
 
 
-  .clutch-stats {
-    left: 10px;
+  /* -----------------------------------------
+     SLIDER
+  ----------------------------------------- */
 
-    right: 10px;
-
-    bottom: 55px;
-
-    padding-top: 13px;
-  }
-
-
-  .clutch-stat svg {
-    width: 19px;
-
-    height: 19px;
-  }
-
-
-  .clutch-stat strong {
-    font-size: 8px;
-  }
-
-
-  .clutch-stat span {
-    font-size: 7px;
-  }
-
-
-  .reviews-btn {
-    right: 15px;
-
+  .reviews-slider {
     bottom: 17px;
 
-    height: 35px;
-
-    padding: 0 11px;
-
-    font-size: 10px;
-  }
-
-
-  .clutch-slider {
     gap: 17px;
-
-    bottom: 7px;
   }
 
+  .reviews-slider span {
+    width: 6px;
+    height: 6px;
+  }
 
-  .clutch-slider span.active {
-    width: 65px;
+  .reviews-slider span.active {
+    width: 7px;
+    height: 7px;
   }
 
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
 
-  .cta-content h2 {
-    font-size: 24px;
+  .cta-section {
+    padding:
+      35px
+      12px
+      45px;
   }
 
+
+  /* CTA */
+
+  .cta-content {
+    padding:
+      31px
+      20px;
+  }
+
+  .cta-content h2 {
+    font-size: 23px;
+
+    line-height: 1.28;
+  }
 
   .cta-content p {
     font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .consultation-btn {
+    max-width: 100%;
+
+    font-size: 12px;
   }
 
 
-  .clutch-card {
-    height: 340px;
+  /* REVIEWS */
+
+  .reviews-panel {
+    padding:
+      10px
+      9px
+      48px;
+
+    border-radius: 15px;
   }
 
-
-  .clutch-rating {
-    font-size: 58px;
+  .review-card {
+    padding:
+      21px
+      17px;
   }
 
-
-  .clutch-stat strong {
-    font-size: 7px;
+  .review-rating {
+    font-size: 50px;
   }
 
-
-  .clutch-stat span {
-    font-size: 6.5px;
+  .review-stars span {
+    font-size: 18px;
   }
 
+  .review-count {
+    font-size: 10px;
+  }
 
-  .reviews-btn {
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .feature-text strong {
+    font-size: 10px;
+  }
+
+  .feature-text span {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .cta-content h2 {
+    font-size: 21px;
+  }
+
+  .cta-content p {
+    font-size: 12px;
+  }
+
+  .review-rating {
+    font-size: 46px;
+  }
+
+  .review-stars span {
+    font-size: 16px;
+  }
+
+  .review-feature {
+    gap: 8px;
+  }
+
+  .feature-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .feature-text strong {
     font-size: 9px;
+  }
+
+  .feature-text span {
+    font-size: 7.5px;
   }
 
 }

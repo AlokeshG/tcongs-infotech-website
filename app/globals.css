@@ -366,3 +366,86 @@ img {
 section {
   width: 100%;
 }
+/* =========================================================
+   GLOBAL MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+/* =========================================================
+   VERY SMALL MOBILE
+   360px and below
+========================================================= */
+
+@media (max-width: 390px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(26px, 8vw, 36px);
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+}

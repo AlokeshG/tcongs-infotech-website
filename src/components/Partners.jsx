@@ -1,13 +1,9 @@
 function Partners() {
   const partners = [
-    "TECHFLOW",
-    "NEXORA",
-    "CLOUDSYNC",
-    "DIGITALX",
-    "SOFTCORE",
-    "INNOVATE",
-    "WEBCRAFT",
-    "DATAWISE",
+    "MGT Networks",
+    "VAT BOX Tax Agency",
+    "Kreston GTA",
+    "Cosmic Nutracos",
   ];
 
   return (
@@ -71,15 +67,18 @@ function Partners() {
             <div
               key={`first-${index}`}
               style={{
-                width: "190px",
-                minWidth: "190px",
+                width: "230px",
+                minWidth: "230px",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "rgba(255,255,255,0.58)",
-                fontSize: "23px",
+                padding: "0 15px",
+                boxSizing: "border-box",
+                color: "rgba(255,255,255,0.65)",
+                fontSize: "18px",
                 fontWeight: "700",
+                textAlign: "center",
                 whiteSpace: "nowrap",
               }}
             >
@@ -92,15 +91,18 @@ function Partners() {
             <div
               key={`second-${index}`}
               style={{
-                width: "190px",
-                minWidth: "190px",
+                width: "230px",
+                minWidth: "230px",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "rgba(255,255,255,0.58)",
-                fontSize: "23px",
+                padding: "0 15px",
+                boxSizing: "border-box",
+                color: "rgba(255,255,255,0.65)",
+                fontSize: "18px",
                 fontWeight: "700",
+                textAlign: "center",
                 whiteSpace: "nowrap",
               }}
             >
@@ -135,7 +137,7 @@ function Partners() {
             .partners-moving-track > div {
               width: 145px !important;
               min-width: 145px !important;
-              font-size: 17px !important;
+              font-size: 14px !important;
             }
           }
         `}

@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 * {
   margin: 0;
@@ -28,15 +28,23 @@ button {
   font-family: inherit;
 }
 
-/* =========================================
+
+/* =========================================================
    NAVBAR
-========================================= */
+========================================================= */
 
 .navbar {
-  width: calc(100% - 20px);
+  position: fixed;
+
+  top: 10px;
+  left: 10px;
+  right: 10px;
+
+  width: auto;
   height: 76px;
 
-  margin: 10px auto 0;
+  margin: 0;
+
   padding: 0;
 
   display: flex;
@@ -47,16 +55,15 @@ button {
 
   background: #06252a;
 
-  position: sticky;
-  top: 10px;
+  z-index: 9999;
 
-  z-index: 1000;
+  overflow: hidden;
 }
 
 
-/* =========================================
+/* =========================================================
    LEFT BRAND AREA
-========================================= */
+========================================================= */
 
 .navbar-brand {
   width: 145px;
@@ -75,9 +82,9 @@ button {
 }
 
 
-/* =========================================
+/* =========================================================
    LOGO
-========================================= */
+========================================================= */
 
 .navbar-logo {
   width: 38px;
@@ -92,16 +99,21 @@ button {
   flex-shrink: 0;
 }
 
-/* =========================================
+
+/* =========================================================
    BRAND TEXT
-========================================= */
+========================================================= */
 
 .brand-text {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
-  align-items: center; /* keeps both texts left aligned */
+  align-items: flex-start;
+
   margin-left: 2px;
+
+  min-width: 0;
 }
 
 
@@ -119,7 +131,7 @@ button {
 
   color: #ffffff;
 
-  text-align: center;
+  white-space: nowrap;
 }
 
 
@@ -129,9 +141,6 @@ button {
   display: block;
 
   margin-top: 5px;
-  margin-left: 5px;
-
-  padding: 0;
 
   font-size: 8px;
   font-weight: 500;
@@ -142,14 +151,13 @@ button {
 
   color: rgba(255, 255, 255, 0.7);
 
-  text-align: center;
-
-  align-self: flex-start;
+  white-space: nowrap;
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .navbar-links {
   flex: 1;
@@ -163,9 +171,18 @@ button {
   justify-content: center;
 
   gap: 28px;
+
+  min-width: 0;
 }
 
 .navbar-links a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
   font-size: 14px;
 
   font-weight: 500;
@@ -174,17 +191,21 @@ button {
 
   white-space: nowrap;
 
-  transition: opacity 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .navbar-links a:hover {
   opacity: 0.55;
+
+  transform: translateY(-1px);
 }
 
 
-/* =========================================
-   LET'S TALK
-========================================= */
+/* =========================================================
+   LET'S TALK BUTTON
+========================================================= */
 
 .talk-button {
   height: 100%;
@@ -200,6 +221,8 @@ button {
   justify-content: center;
 
   gap: 7px;
+
+  flex-shrink: 0;
 
   border: none;
 
@@ -217,41 +240,238 @@ button {
 
   cursor: pointer;
 
-  transition: background 0.25s ease;
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease;
 }
 
 .talk-button:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.talk-button:active {
+  transform: scale(0.98);
+}
 
-/* =========================================
-   TABLET
-========================================= */
 
-@media (max-width: 900px) {
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
-  .navbar {
-    height: 72px;
+.hero {
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  padding: 120px 30px 120px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND GLOW
+========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: rgba(78, 210, 190, 0.08);
+
+  filter: blur(100px);
+
+  top: 15%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1200px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+  font-size: clamp(55px, 7vw, 110px);
+
+  line-height: 0.95;
+
+  letter-spacing: -5px;
+
+  font-weight: 700;
+
+  margin: 0;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero p {
+  max-width: 650px;
+
+  margin: 35px auto 0;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.hero-button {
+  margin-top: 35px;
+
+  padding: 16px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #ffffff;
+
+  color: #062126;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  z-index: 10;
+}
+
+.scroll-icon {
+  width: 50px;
+  height: 62px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  border-radius: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  animation: scrollMove 2s infinite;
+}
+
+.scroll-indicator span {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+}
+
+@keyframes scrollMove {
+
+  0% {
+    transform: translateY(0);
   }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   901px - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
 
   .navbar-brand {
     width: 135px;
 
     padding: 0 15px;
-  }
-
-  .navbar-logo {
-    width: 36px;
-    height: 36px;
-  }
-
-  .brand-name {
-    font-size: 15px;
-  }
-
-  .brand-subtitle {
-    font-size: 7px;
   }
 
   .navbar-links {
@@ -267,62 +487,359 @@ button {
 
     padding: 0 15px;
   }
+
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   <= 768px
+========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
 
   .navbar {
-    width: calc(100% - 16px);
+    position: fixed;
 
-    height: 68px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
 
-    margin-top: 8px;
+    width: auto;
+
+    height: 62px;
+
+    margin: 0;
+
+    padding: 0 10px;
 
     border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
   }
+
+
+  /* -----------------------------------------
+     LOGO AREA
+  ----------------------------------------- */
 
   .navbar-brand {
     width: auto;
 
-    padding: 0 14px;
+    height: 100%;
+
+    padding: 0 8px;
 
     border-right: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex: 0 0 auto;
+
+    min-width: 0;
   }
+
 
   .navbar-logo {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
+
+
+  .brand-text {
+    margin-left: 0;
+
+    align-items: flex-start;
+
+    min-width: 0;
+  }
+
 
   .brand-name {
-    font-size: 14px;
+    font-size: 13px;
+
+    letter-spacing: -0.3px;
   }
 
+
   .brand-subtitle {
-    font-size: 7px;
-    letter-spacing: 1.8px;
+    margin-top: 4px;
+
+    font-size: 6px;
+
+    letter-spacing: 1.7px;
   }
+
+
+  /* -----------------------------------------
+     HIDE DESKTOP NAVIGATION
+  ----------------------------------------- */
 
   .navbar-links {
     display: none;
   }
 
+
+  /* -----------------------------------------
+     LET'S TALK — RIGHT SIDE
+  ----------------------------------------- */
+
   .talk-button {
-    height: 100%;
+    height: 44px;
 
-    min-width: 105px;
+    min-width: 100px;
 
-    padding: 0 14px;
+    margin-left: auto;
 
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0 12px;
 
-    border-radius: 0 10px 10px 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    flex: 0 0 auto;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    font-size: 13px;
+
+    white-space: nowrap;
   }
+
+
+  .talk-button svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+  }
+
+
+  .talk-button span {
+    display: inline;
+  }
+
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
+  .hero {
+    min-height: calc(100vh - 90px);
+
+    padding: 100px 20px 100px;
+  }
+
+
+  .hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+
+    line-height: 1;
+  }
+
+
+  .hero p {
+    font-size: 16px;
+
+    margin-top: 25px;
+  }
+
+
+  .hero-button {
+    margin-top: 25px;
+
+    padding: 14px 25px;
+  }
+
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    top: 8px;
+
+    left: 8px;
+    right: 8px;
+
+    height: 58px;
+
+    padding: 0 7px;
+  }
+
+
+  .navbar-brand {
+    padding: 0 6px;
+
+    gap: 7px;
+  }
+
+
+  .navbar-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+
+  .brand-subtitle {
+    font-size: 5.5px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .talk-button {
+    min-width: 92px;
+
+    height: 42px;
+
+    padding: 0 9px;
+
+    gap: 5px;
+
+    font-size: 12px;
+  }
+
+
+  .talk-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  .talk-button span {
+    display: inline;
+  }
+
+
+  .hero {
+    min-height: calc(100vh - 80px);
+
+    padding: 90px 16px 90px;
+  }
+
+
+  .hero h1 {
+    font-size: 40px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .hero p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    left: 6px;
+    right: 6px;
+
+    height: 56px;
+
+    padding: 0 5px;
+  }
+
+
+  .navbar-brand {
+    padding: 0 4px;
+
+    gap: 6px;
+  }
+
+
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .brand-name {
+    font-size: 11px;
+  }
+
+
+  .brand-subtitle {
+    font-size: 5px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  .talk-button {
+    min-width: 86px;
+
+    height: 40px;
+
+    padding: 0 7px;
+
+    font-size: 11px;
+  }
+
+
+  .talk-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH TARGET SAFETY
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .navbar a,
+  .navbar button {
+    min-height: 44px;
+  }
+
 }
 
 /* =========================
