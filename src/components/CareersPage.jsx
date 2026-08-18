@@ -241,7 +241,7 @@ function CareersPage() {
                 {/* RIGHT IMAGE */}
                 <div className="careers-hero-image">
                     <img
-                        src="/tcongs/careers-team.jpg"
+                        src="/careers-team.jpg"
                         alt="Tcongs Infotech team working together"
                         className="careers-team-image"
                     />
@@ -498,7 +498,7 @@ function CareersPage() {
                 <div className="careers-footer-brand">
 
                     <img
-                        src={tcongsLogo.src || tcongsLogo}
+                       src="/tcongs-logo.png"
                         alt="Tcongs Infotech"
                     />
 
