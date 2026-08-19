@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
+import "./App.css";
+
 import Navbar from "./components/Navbar";
 import ChatAssistant from "./components/ChatAssistant";
 
@@ -29,10 +31,19 @@ function HomePage() {
 
   return (
     <>
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
+
       <Navbar
         chatOpen={chatOpen}
         setChatOpen={setChatOpen}
       />
+
+
+      {/* =====================================================
+          MAIN HOME PAGE
+      ===================================================== */}
 
       <SolutionSection />
 
@@ -52,19 +63,30 @@ function HomePage() {
 
       <CTASection />
 
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
       <Footer />
+
+
+      {/* =====================================================
+          CHAT ASSISTANT
+      ===================================================== */}
 
       <ChatAssistant
         isOpen={chatOpen}
         setIsOpen={setChatOpen}
       />
+
     </>
   );
 }
 
 
 /* =========================================================
-   APP ROUTES
+   APP
 ========================================================= */
 
 function App() {
@@ -74,21 +96,38 @@ function App() {
 
       <Routes>
 
-        {/* HOME */}
+        {/* =================================================
+            HOME
+        ================================================= */}
+
         <Route
           path="/"
           element={<HomePage />}
         />
 
 
-        {/* CAREERS */}
+        {/* =================================================
+            CAREERS
+            Supports both:
+            /careers
+            /careers/
+        ================================================= */}
+
         <Route
           path="/careers"
           element={<CareersPage />}
         />
 
+        <Route
+          path="/careers/"
+          element={<CareersPage />}
+        />
 
-        {/* CASE STUDY */}
+
+        {/* =================================================
+            CASE STUDY
+        ================================================= */}
+
         <Route
           path="/case-study/:id"
           element={<CaseStudyPage />}

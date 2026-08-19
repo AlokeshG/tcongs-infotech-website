@@ -20,8 +20,8 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -34,105 +34,87 @@ button {
 ========================================================= */
 
 .navbar {
-  position: fixed;
+  position: relative;
 
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  width: calc(100% - 36px);
+  min-height: 76px;
 
-  width: auto;
-  height: 76px;
-
-  margin: 0;
-
-  padding: 0;
+  margin: 18px auto 0;
 
   display: flex;
   align-items: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background: #062d30;
 
-  background: #06252a;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 
-  z-index: 9999;
+  border-radius: 16px;
 
-  overflow: hidden;
+  z-index: 1000;
+
+  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   LEFT BRAND AREA
+   LOGO / BRAND
 ========================================================= */
 
 .navbar-brand {
-  width: 145px;
-  height: 100%;
+  height: 76px;
 
-  padding: 0 18px;
+  min-width: 225px;
 
   display: flex;
   align-items: center;
 
-  gap: 9px;
+  padding: 0 25px;
 
-  flex-shrink: 0;
+  color: #ffffff;
 
   border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.navbar-logo {
-  width: 38px;
-  height: 38px;
-
-  display: block;
-
-  object-fit: cover;
-
-  border-radius: 50%;
 
   flex-shrink: 0;
 }
 
+.navbar-logo {
+  width: 58px;
+  height: 58px;
 
-/* =========================================================
-   BRAND TEXT
-========================================================= */
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+
+  margin-left: 14px;
+
+  line-height: 1;
 }
-
-
-/* TCONGS */
 
 .brand-name {
-  display: block;
-  line-height: 1;
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
 }
 
-
-/* INFOTECH */
-
 .brand-subtitle {
-  display: block;
-  margin-top: 3px;
-  margin-left: 1px;
+  margin-top: 5px;
 
-  font-size: 8px;
+  font-size: 9px;
+
   font-weight: 600;
-  line-height: 1;
 
-  letter-spacing: 1.7px;
-  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 3px;
+
+  opacity: 0.7;
 
   white-space: nowrap;
 }
@@ -145,15 +127,13 @@ button {
 .navbar-links {
   flex: 1;
 
-  height: 100%;
-
   display: flex;
 
   align-items: center;
 
   justify-content: center;
 
-  gap: 28px;
+  gap: 42px;
 
   min-width: 0;
 }
@@ -162,27 +142,39 @@ button {
   display: inline-flex;
 
   align-items: center;
-  justify-content: center;
-
-  min-height: 44px;
-
-  font-size: 14px;
-
-  font-weight: 500;
 
   color: #ffffff;
 
+  font-size: 17px;
+
+  font-weight: 500;
+
   white-space: nowrap;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .navbar-links a:hover {
-  opacity: 0.55;
+  color: #0fc4d4;
+}
 
-  transform: translateY(-1px);
+
+/* =========================================================
+   RIGHT SIDE ACTIONS
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding: 0 20px;
+
+  flex-shrink: 0;
 }
 
 
@@ -191,312 +183,128 @@ button {
 ========================================================= */
 
 .talk-button {
-  height: 100%;
+  height: 42px;
 
-  min-width: 120px;
-
-  padding: 0 20px;
-
-  display: flex;
+  display: inline-flex;
 
   align-items: center;
 
   justify-content: center;
 
-  gap: 7px;
+  gap: 9px;
 
-  flex-shrink: 0;
+  padding: 0 8px;
 
   border: none;
-
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-
-  border-radius: 0 12px 12px 0;
 
   background: transparent;
 
   color: #ffffff;
 
-  font-size: 14px;
+  font-size: 17px;
 
   font-weight: 600;
-
-  cursor: pointer;
 
   white-space: nowrap;
 
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease;
+  cursor: pointer;
+
+  flex-shrink: 0;
 }
 
-.talk-button:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
+.talk-button svg {
+  display: block;
 
-.talk-button:active {
-  transform: scale(0.98);
+  flex-shrink: 0;
 }
 
 
 /* =========================================================
-   HERO SECTION
+   MOBILE MENU BUTTON
+   HIDDEN ON DESKTOP
 ========================================================= */
 
-.hero {
-  min-height: calc(100vh - 120px);
+.mobile-menu-button {
+  display: none;
 
-  display: flex;
-
-  flex-direction: column;
+  width: 40px;
+  height: 40px;
 
   align-items: center;
-
   justify-content: center;
 
-  text-align: center;
+  padding: 0;
 
-  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-  padding: 120px 30px 120px;
-
-  overflow: hidden;
-}
-
-
-/* =========================================================
-   HERO BACKGROUND GLOW
-========================================================= */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  width: 600px;
-  height: 600px;
-
-  border-radius: 50%;
-
-  background: rgba(78, 210, 190, 0.08);
-
-  filter: blur(100px);
-
-  top: 15%;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content {
-  position: relative;
-
-  z-index: 1;
-
-  max-width: 1200px;
-
-  width: 100%;
-}
-
-
-/* =========================================================
-   HERO HEADING
-========================================================= */
-
-.hero h1 {
-  font-size: clamp(55px, 7vw, 110px);
-
-  line-height: 0.95;
-
-  letter-spacing: -5px;
-
-  font-weight: 700;
-
-  margin: 0;
-
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
-.hero p {
-  max-width: 650px;
-
-  margin: 35px auto 0;
-
-  font-size: 18px;
-
-  line-height: 1.6;
-
-  color: rgba(255, 255, 255, 0.75);
-}
-
-
-/* =========================================================
-   HERO BUTTON
-========================================================= */
-
-.hero-button {
-  margin-top: 35px;
-
-  padding: 16px 30px;
-
-  border: none;
-
-  border-radius: 50px;
+  border-radius: 6px;
 
   background: #ffffff;
 
-  color: #062126;
-
-  font-size: 16px;
-
-  font-weight: 600;
+  color: #071f21;
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.hero-button:hover {
-  transform: translateY(-3px);
-
-  padding-left: 35px;
-  padding-right: 35px;
+.mobile-menu-button svg {
+  display: block;
 }
 
 
 /* =========================================================
-   SCROLL INDICATOR
+   MOBILE DROPDOWN
+   HIDDEN ON DESKTOP
 ========================================================= */
 
-.scroll-indicator {
-  position: absolute;
-
-  bottom: 30px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 10px;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  z-index: 10;
-}
-
-.scroll-icon {
-  width: 50px;
-  height: 62px;
-
-  border: 1px solid rgba(255, 255, 255, 0.6);
-
-  border-radius: 30px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  animation: scrollMove 2s infinite;
-}
-
-.scroll-indicator span {
-  font-size: 11px;
-
-  letter-spacing: 4px;
-
-  font-weight: 600;
-}
-
-@keyframes scrollMove {
-
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(8px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-
+.mobile-dropdown {
+  display: none;
 }
 
 
 /* =========================================================
-   TABLET
-   901px - 1200px
+   DESKTOP SAFETY
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (min-width: 769px) {
 
-  .navbar-brand {
-    width: 135px;
-
-    padding: 0 15px;
+  .mobile-menu-button {
+    display: none !important;
   }
 
-  .navbar-links {
-    gap: 20px;
-  }
-
-  .navbar-links a {
-    font-size: 13px;
-  }
-
-  .talk-button {
-    min-width: 110px;
-
-    padding: 0 15px;
+  .mobile-dropdown {
+    display: none !important;
   }
 
 }
 
 
 /* =========================================================
-   MOBILE
-   <= 768px
+   TABLET + MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
 
+  /* -------------------------------------------------------
+     NAVBAR
+  ------------------------------------------------------- */
+
   .navbar {
     position: fixed;
 
-    top: 10px;
+    top: 8px;
     left: 10px;
     right: 10px;
 
     width: auto;
 
+    min-height: 62px;
     height: 62px;
 
     margin: 0;
 
-    padding: 0 10px;
-
-    border-radius: 10px;
+    padding: 0 6px;
 
     display: flex;
 
@@ -504,97 +312,315 @@ button {
 
     justify-content: space-between;
 
-    overflow: hidden;
+    border-radius: 13px;
+
+    overflow: visible;
+
+    z-index: 99999;
   }
 
 
-  /* -----------------------------------------
-     LOGO AREA
-  ----------------------------------------- */
+  /* -------------------------------------------------------
+     LOGO
+  ------------------------------------------------------- */
 
   .navbar-brand {
-    width: auto;
+    height: 62px;
 
-    height: 100%;
+    min-width: 0;
 
-    padding: 0 8px;
-
-    border-right: none;
+    flex: 1 1 auto;
 
     display: flex;
 
     align-items: center;
 
-    gap: 8px;
+    padding: 0 6px;
 
-    flex: 0 0 auto;
+    border-right: none;
 
-    min-width: 0;
+    gap: 7px;
+
+    overflow: hidden;
   }
 
 
   .navbar-logo {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    max-width: 40px;
+
+    object-fit: contain;
   }
 
 
   .brand-text {
     margin-left: 0;
 
-    align-items: flex-start;
-
     min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
   }
 
 
   .brand-name {
-    font-size: 13px;
+    font-size: 14px;
 
-    letter-spacing: -0.3px;
+    line-height: 1;
+
+    white-space: nowrap;
   }
 
 
   .brand-subtitle {
-    margin-top: 4px;
+    margin-top: 3px;
 
-    font-size: 6px;
+    font-size: 5.5px;
 
-    letter-spacing: 1.7px;
+    letter-spacing: 1.8px;
+
+    white-space: nowrap;
   }
 
 
-  /* -----------------------------------------
-     HIDE DESKTOP NAVIGATION
-  ----------------------------------------- */
+  /* -------------------------------------------------------
+     HIDE DESKTOP LINKS
+  ------------------------------------------------------- */
 
   .navbar-links {
-    display: none;
+    display: none !important;
   }
 
 
-  /* -----------------------------------------
-     LET'S TALK — RIGHT SIDE
-  ----------------------------------------- */
+  /* -------------------------------------------------------
+     RIGHT SIDE
+     
+     ALWAYS:
+     
+     [ Let's Talk ] [ MENU ]
+  ------------------------------------------------------- */
 
-  .talk-button {
-    height: 44px;
-
-    min-width: 100px;
-
-    margin-left: auto;
-
-    padding: 0 12px;
+  .navbar-actions {
+    height: 62px;
 
     display: flex;
+
+    flex: 0 0 auto;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    padding: 0;
+
+    margin: 0;
+  }
+
+
+  /* -------------------------------------------------------
+     LET'S TALK
+  ------------------------------------------------------- */
+
+  .talk-button {
+    width: auto;
+
+    min-width: 82px;
+
+    height: 42px;
+
+    padding: 0 6px;
+
+    display: inline-flex;
 
     align-items: center;
 
     justify-content: center;
 
-    gap: 6px;
+    gap: 5px;
 
-    flex: 0 0 auto;
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+  }
+
+
+  .talk-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .talk-button span {
+    display: inline-block;
+
+    white-space: nowrap;
+  }
+
+
+  /* -------------------------------------------------------
+     HAMBURGER
+     
+     THIS IS DIRECTLY BESIDE LET'S TALK
+  ------------------------------------------------------- */
+
+  .mobile-menu-button {
+    display: flex !important;
+
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    max-width: 38px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #071f21;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-menu-button svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  /* -------------------------------------------------------
+     DROPDOWN PANEL
+     
+     IMPORTANT:
+     ABSOLUTELY POSITIONED BELOW THE NAVBAR
+     
+     It does NOT participate in the navbar flex row.
+  ------------------------------------------------------- */
+
+  .mobile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    right: 0;
+
+    width: 220px;
+
+    display: block;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: transparent;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+
+    z-index: 100000;
+  }
+
+
+  /* -------------------------------------------------------
+     OPEN DROPDOWN
+  ------------------------------------------------------- */
+
+  .mobile-dropdown.is-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+
+  /* -------------------------------------------------------
+     DROPDOWN BOX
+  ------------------------------------------------------- */
+
+  .mobile-dropdown-inner {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: flex-start;
+
+    gap: 2px;
+
+    padding: 7px;
+
+    background: #062d30;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 12px;
+
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.4);
+  }
+
+
+  /* -------------------------------------------------------
+     EACH DROPDOWN ITEM
+     
+     EVERY LINK IS ITS OWN ROW
+  ------------------------------------------------------- */
+
+  .mobile-dropdown-link {
+    width: 100%;
+
+    height: 44px;
+
+    min-height: 44px;
+
+    max-height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex !important;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding: 0 14px;
+
+    margin: 0;
 
     border: none;
 
@@ -602,61 +628,28 @@ button {
 
     background: transparent;
 
-    font-size: 13px;
+    color: #ffffff !important;
 
-    white-space: nowrap;
-  }
+    font-size: 15px;
 
-
-  .talk-button svg {
-    width: 18px;
-    height: 18px;
-
-    flex-shrink: 0;
-  }
-
-
-  .talk-button span {
-    display: inline;
-  }
-
-
-  /* -----------------------------------------
-     HERO
-  ----------------------------------------- */
-
-  .hero {
-    min-height: calc(100vh - 90px);
-
-    padding: 100px 20px 100px;
-  }
-
-
-  .hero h1 {
-    font-size: 48px;
-
-    letter-spacing: -2px;
+    font-weight: 500;
 
     line-height: 1;
+
+    text-align: left;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
   }
 
 
-  .hero p {
-    font-size: 16px;
+  .mobile-dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.08);
 
-    margin-top: 25px;
-  }
-
-
-  .hero-button {
-    margin-top: 25px;
-
-    padding: 14px 25px;
-  }
-
-
-  .scroll-indicator {
-    bottom: 20px;
+    color: #0fc4d4 !important;
   }
 
 }
@@ -664,7 +657,6 @@ button {
 
 /* =========================================================
    SMALL MOBILE
-   <= 480px
 ========================================================= */
 
 @media (max-width: 480px) {
@@ -677,20 +669,27 @@ button {
 
     height: 58px;
 
-    padding: 0 7px;
+    min-height: 58px;
+
+    padding: 0 5px;
   }
 
 
   .navbar-brand {
-    padding: 0 6px;
+    height: 58px;
 
-    gap: 7px;
+    padding: 0 4px;
+
+    gap: 6px;
   }
 
 
   .navbar-logo {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+    max-width: 36px;
   }
 
 
@@ -700,22 +699,29 @@ button {
 
 
   .brand-subtitle {
-    font-size: 5.5px;
+    font-size: 5px;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
+  }
+
+
+  .navbar-actions {
+    height: 58px;
+
+    gap: 3px;
   }
 
 
   .talk-button {
-    min-width: 92px;
+    min-width: 76px;
 
-    height: 42px;
+    height: 38px;
 
-    padding: 0 9px;
+    padding: 0 5px;
 
-    gap: 5px;
+    gap: 4px;
 
-    font-size: 12px;
+    font-size: 11px;
   }
 
 
@@ -725,27 +731,45 @@ button {
   }
 
 
-  .talk-button span {
-    display: inline;
+  .mobile-menu-button {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+    max-width: 35px;
   }
 
 
-  .hero {
-    min-height: calc(100vh - 80px);
-
-    padding: 90px 16px 90px;
+  .mobile-menu-button svg {
+    width: 20px;
+    height: 20px;
   }
 
 
-  .hero h1 {
-    font-size: 40px;
+  .mobile-dropdown {
+    width: 210px;
 
-    letter-spacing: -1.5px;
+    max-width: calc(100vw - 16px);
   }
 
 
-  .hero p {
-    font-size: 15px;
+  .mobile-dropdown-inner {
+    padding: 5px;
+  }
+
+
+  .mobile-dropdown-link {
+    height: 42px;
+
+    min-height: 42px;
+
+    max-height: 42px;
+
+    flex-basis: 42px;
+
+    font-size: 14px;
+
+    padding: 0 12px;
   }
 
 }
@@ -753,460 +777,117 @@ button {
 
 /* =========================================================
    VERY SMALL MOBILE
-   <= 360px
 ========================================================= */
 
 @media (max-width: 360px) {
 
   .navbar {
-    left: 6px;
-    right: 6px;
+    top: 6px;
 
-    height: 56px;
+    left: 5px;
+    right: 5px;
 
-    padding: 0 5px;
+    height: 55px;
+
+    min-height: 55px;
+
+    padding: 0 3px;
   }
 
 
   .navbar-brand {
-    padding: 0 4px;
+    height: 55px;
 
-    gap: 6px;
+    padding: 0 2px;
+
+    gap: 5px;
   }
 
 
   .navbar-logo {
+    width: 31px;
+    height: 31px;
+
+    min-width: 31px;
+    max-width: 31px;
+  }
+
+
+  .brand-name {
+    font-size: 10px;
+  }
+
+
+  .brand-subtitle {
+    font-size: 4.5px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .navbar-actions {
+    height: 55px;
+
+    gap: 2px;
+  }
+
+
+  .talk-button {
+    min-width: 68px;
+
+    height: 34px;
+
+    padding: 0 3px;
+
+    gap: 3px;
+
+    font-size: 10px;
+  }
+
+
+  .talk-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  .mobile-menu-button {
     width: 32px;
     height: 32px;
+
+    min-width: 32px;
+    max-width: 32px;
   }
 
 
-  .brand-name {
-    font-size: 11px;
+  .mobile-menu-button svg {
+    width: 19px;
+    height: 19px;
   }
 
 
-  .brand-subtitle {
-    font-size: 5px;
+  .mobile-dropdown {
+    width: 195px;
 
-    letter-spacing: 1.3px;
+    max-width: calc(100vw - 10px);
   }
 
 
-  .talk-button {
-    min-width: 86px;
+  .mobile-dropdown-inner {
+    padding: 5px;
+  }
 
+
+  .mobile-dropdown-link {
     height: 40px;
 
-    padding: 0 7px;
+    min-height: 40px;
 
-    font-size: 11px;
-  }
+    max-height: 40px;
 
+    flex-basis: 40px;
 
-  .talk-button svg {
-    width: 16px;
-    height: 16px;
-  }
-
-}
-
-
-/* =========================================================
-   TOUCH TARGET SAFETY
-========================================================= */
-
-@media (max-width: 768px) {
-
-  .navbar a,
-  .navbar button {
-    min-height: 44px;
+    font-size: 12px;
   }
 
 }
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero {
-  min-height: calc(100vh - 120px);
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
-  position: relative;
-
-  padding: 80px 30px 120px;
-
-  overflow: hidden;
-}
-
-
-/* =========================
-   HERO BACKGROUND GLOW
-========================= */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  width: 600px;
-  height: 600px;
-
-  border-radius: 50%;
-
-  background: rgba(78, 210, 190, 0.08);
-
-  filter: blur(100px);
-
-  top: 15%;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  pointer-events: none;
-}
-
-
-/* =========================
-   HERO CONTENT
-========================= */
-
-.hero-content {
-  position: relative;
-
-  z-index: 1;
-
-  max-width: 1200px;
-
-  width: 100%;
-}
-
-
-/* =========================
-   HERO HEADING
-========================= */
-
-.hero h1 {
-  font-size: clamp(55px, 7vw, 110px);
-
-  line-height: 0.95;
-
-  letter-spacing: -5px;
-
-  font-weight: 700;
-
-  margin: 0;
-
-  color: #ffffff;
-}
-
-
-/* =========================
-   HERO DESCRIPTION
-========================= */
-
-.hero p {
-  max-width: 650px;
-
-  margin: 35px auto 0;
-
-  font-size: 18px;
-
-  line-height: 1.6;
-
-  color: rgba(255, 255, 255, 0.75);
-}
-
-
-/* =========================
-   HERO BUTTON
-========================= */
-
-.hero-button {
-  margin-top: 35px;
-
-  padding: 16px 30px;
-
-  border: none;
-
-  border-radius: 50px;
-
-  background: #ffffff;
-
-  color: #062126;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-
-  padding-left: 35px;
-
-  padding-right: 35px;
-}
-
-
-/* =========================
-   SCROLL INDICATOR
-========================= */
-
-.scroll-indicator {
-  position: absolute;
-
-  bottom: 30px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 10px;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  z-index: 10;
-}
-
-.scroll-icon {
-  width: 50px;
-  height: 62px;
-
-  border: 1px solid rgba(255, 255, 255, 0.6);
-
-  border-radius: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  animation: scrollMove 2s infinite;
-}
-
-.scroll-indicator span {
-  font-size: 11px;
-
-  letter-spacing: 4px;
-
-  font-weight: 600;
-}
-
-@keyframes scrollMove {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(8px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-  .navbar-brand {
-    width: 210px;
-  }
-
-  .navbar-links {
-    gap: 20px;
-  }
-
-  .navbar-links a {
-    font-size: 14px;
-  }
-
-  .talk-button {
-    padding: 13px 18px;
-  }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  .navbar {
-    width: calc(100% - 24px);
-
-    height: 78px;
-
-    margin-top: 12px;
-
-    padding: 0 16px;
-
-    top: 12px;
-  }
-
-
-  .navbar-brand {
-    width: auto;
-
-    flex: 1;
-
-    gap: 10px;
-  }
-
-
-  .navbar-logo {
-    width: 45px;
-
-    height: 45px;
-  }
-
-
-  .brand-name {
-    font-size: 18px;
-  }
-
-
-  .brand-subtitle {
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    margin-top: 4px;
-  }
-
-
-  .navbar-links {
-    display: none;
-  }
-
-
-  .talk-button {
-    padding: 11px 16px;
-
-    font-size: 14px;
-  }
-
-
-  .talk-button svg {
-    width: 16px;
-
-    height: 16px;
-  }
-
-
-  .hero {
-    min-height: calc(100vh - 90px);
-
-    padding: 60px 20px 100px;
-  }
-
-
-  .hero h1 {
-    font-size: 48px;
-
-    letter-spacing: -2px;
-
-    line-height: 1;
-  }
-
-
-  .hero p {
-    font-size: 16px;
-
-    margin-top: 25px;
-  }
-
-
-  .hero-button {
-    margin-top: 25px;
-
-    padding: 14px 25px;
-  }
-
-
-  .scroll-indicator {
-    bottom: 20px;
-  }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 480px) {
-
-  .navbar {
-    height: 72px;
-  }
-
-
-  .navbar-logo {
-    width: 40px;
-
-    height: 40px;
-  }
-
-
-  .brand-name {
-    font-size: 16px;
-  }
-
-
-  .brand-subtitle {
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
-  }
-
-
-  .talk-button {
-    padding: 10px 13px;
-  }
-
-
-  .talk-button span {
-    display: none;
-  }
-
-
-  .hero h1 {
-    font-size: 40px;
-
-    letter-spacing: -1.5px;
-  }
-
-
-  .hero p {
-    font-size: 15px;
-  }
-
-}
-
-
