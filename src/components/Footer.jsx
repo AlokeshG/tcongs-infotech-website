@@ -42,7 +42,10 @@ function Footer() {
 
       <div className="footer-content">
 
-        {/* ================= COMPANY ================= */}
+
+        {/* =====================================
+            COMPANY
+        ====================================== */}
 
         <div className="footer-column">
 
@@ -50,96 +53,186 @@ function Footer() {
 
           <div className="footer-line"></div>
 
-          <a href="/tcongs/">
+
+          {/* ABOUT */}
+
+          <a href="/#about">
+
             <ChevronRight size={11} />
-            <span>Tcongs Infotech</span>
+
+            <span>
+              About
+            </span>
+
           </a>
 
-          <a href="/tcongs/#about">
+
+          {/* OUR WORK */}
+
+          <a href="/#work">
+
             <ChevronRight size={11} />
-            <span>About</span>
+
+            <span>
+              Our Work
+            </span>
+
           </a>
 
-          <a href="/tcongs/#work">
+
+          {/* CAREERS */}
+
+          <a href="/careers/">
+
             <ChevronRight size={11} />
-            <span>Our Work</span>
+
+            <span>
+              Careers
+            </span>
+
           </a>
 
-          <a href="/tcongs/careers/">
-            <ChevronRight size={11} />
-            <span>Careers</span>
-          </a>
 
-          <a href="/tcongs/services/">
+          {/* SERVICES */}
+
+          <a href="/#services">
+
             <ChevronRight size={11} />
-            <span>Services</span>
+
+            <span>
+              Services
+            </span>
+
           </a>
 
         </div>
 
 
-        {/* ================= SOLUTIONS ================= */}
+
+        {/* =====================================
+            SOLUTIONS
+        ====================================== */}
 
         <div className="footer-column">
 
-          <h4>SOLUTIONS</h4>
+          <h4>
+            SOLUTIONS
+          </h4>
 
           <div className="footer-line"></div>
 
-          <a href="/tcongs/services/web-development/">
+
+          {/* WEB DEVELOPMENT */}
+
+          <a href="/services/web-development/">
+
             <ChevronRight size={11} />
-            <span>Web Development</span>
+
+            <span>
+              Web Development
+            </span>
+
           </a>
 
-          <a href="/tcongs/services/app-development/">
+
+          {/* APP DEVELOPMENT */}
+
+          <a href="/services/app-development/">
+
             <ChevronRight size={11} />
-            <span>App Development</span>
+
+            <span>
+              App Development
+            </span>
+
           </a>
 
-          <a href="/tcongs/services/ui-ux-design/">
+
+          {/* UI/UX */}
+
+          <a href="/services/ui-ux-design/">
+
             <ChevronRight size={11} />
-            <span>UI/UX Design</span>
+
+            <span>
+              UI/UX Design
+            </span>
+
           </a>
 
-          <a href="/tcongs/services/custom-software/">
+
+          {/* SOFTWARE */}
+
+          <a href="/services/custom-software/">
+
             <ChevronRight size={11} />
-            <span>Software Development</span>
+
+            <span>
+              Software Development
+            </span>
+
           </a>
 
-          <a href="/tcongs/services/ai-and-machine-learning/">
+
+          {/* AI */}
+
+          <a href="/services/ai-and-machine-learning/">
+
             <ChevronRight size={11} />
-            <span>AI & Machine Learning</span>
+
+            <span>
+              AI & Machine Learning
+            </span>
+
           </a>
 
-          <a href="/tcongs/services/digital-solutions/">
+
+          {/* DIGITAL */}
+
+          <a href="/services/digital-solutions/">
+
             <ChevronRight size={11} />
-            <span>Digital Solutions</span>
+
+            <span>
+              Digital Solutions
+            </span>
+
           </a>
 
         </div>
 
 
-        {/* ================= CONTACT INFORMATION ================= */}
+
+        {/* =====================================
+            CONTACT INFORMATION
+        ====================================== */}
 
         <div className="footer-column contact-column">
 
-          <h4>CONTACT INFORMATION</h4>
+          <h4>
+            CONTACT INFORMATION
+          </h4>
 
           <div className="footer-line"></div>
 
 
-          {/* SCHEDULE CONSULTATION */}
+          {/* CONSULTATION */}
 
           <a
-            href="/tcongs/#company-section"
+            href="/#company-section"
             className="simple-footer-link"
           >
+
             <ChevronRight size={11} />
-            <span>Schedule a Consultation</span>
+
+            <span>
+              Schedule a Consultation
+            </span>
+
           </a>
 
 
-          {/* COMPANY */}
+          {/* COMPANY ADDRESS */}
 
           <div className="contact-item">
 
@@ -238,13 +331,19 @@ function Footer() {
         </div>
 
 
-        {/* ================= FOLLOW US ================= */}
+
+        {/* =====================================
+            FOLLOW US
+        ====================================== */}
 
         <div className="footer-column follow-column">
 
-          <h4>FOLLOW US</h4>
+          <h4>
+            FOLLOW US
+          </h4>
 
           <div className="footer-line"></div>
+
 
           <div className="social-icons">
 
@@ -263,7 +362,6 @@ function Footer() {
 
           {/* =================================
               REVIEW - MOBILE
-              Appears BELOW Follow Us
           ================================= */}
 
           <div className="footer-review footer-review-mobile">
@@ -297,6 +395,7 @@ function Footer() {
       </div>
 
 
+
       {/* =====================================
           LARGE BACKGROUND LOGO
       ====================================== */}
@@ -304,6 +403,7 @@ function Footer() {
       <div className="footer-big-logo">
         Tcongs Infotech
       </div>
+
 
 
       {/* =====================================
@@ -318,11 +418,15 @@ function Footer() {
             © 2026 Tcongs Infotech. All Rights Reserved.
           </span>
 
+
           <span className="separator">
             |
           </span>
 
-          <a href="/tcongs/privacy-policy/">
+
+          {/* PRIVACY POLICY */}
+
+          <a href="/privacy-policy/">
             Privacy Policy
           </a>
 
@@ -330,7 +434,7 @@ function Footer() {
             |
           </span>
 
-          <a href="/tcongs/terms-of-service/">
+          <a href="/terms-of-service/">
             Terms of Service
           </a>
 
@@ -338,24 +442,27 @@ function Footer() {
             |
           </span>
 
-          <a href="/tcongs/sitemap/">
+          <a href="/sitemap/">
             Sitemap
           </a>
-
         </div>
 
 
-        {/* BACK TO TOP */}
+
+        {/* =====================================
+            BACK TO TOP
+        ====================================== */}
 
         <button
           type="button"
-          className={`back-to-top ${
-            showTop ? "show" : ""
-          }`}
+          className={`back-to-top ${showTop ? "show" : ""
+            }`}
           onClick={scrollToTop}
           aria-label="Back to top"
         >
+
           <ArrowUp size={15} />
+
         </button>
 
       </div>

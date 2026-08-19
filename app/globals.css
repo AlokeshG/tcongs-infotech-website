@@ -449,3 +449,296 @@ section {
     font-size: 16px;
   }
 }
+/* =========================================================
+   LEGAL / SITEMAP PAGES
+========================================================= */
+
+.legal-page {
+  min-height: 100vh;
+
+  padding: 120px 20px 100px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(183, 214, 74, 0.045) 1px,
+      transparent 1px
+    ),
+    #062d30;
+
+  background-size: 24px 24px;
+
+  color: #ffffff;
+}
+
+
+.legal-container {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+
+  padding: 50px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.legal-back {
+  display: inline-flex;
+
+  margin-bottom: 40px;
+
+  color: #35d47b;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.legal-back:hover {
+  color: #b7d64a;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.legal-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #35d47b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.legal-container h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 6vw, 64px);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+
+.legal-updated {
+  margin: 16px 0 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.legal-container section {
+  margin-top: 48px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+.legal-container h2 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.legal-container p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.legal-email {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  color: #35d47b;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.legal-email:hover {
+  color: #b7d64a;
+}
+
+
+/* =========================================================
+   SITEMAP LINKS
+========================================================= */
+
+.sitemap-links {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+.sitemap-links a {
+  display: block;
+
+  padding: 14px 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.sitemap-links a:hover {
+  color: #ffffff;
+
+  border-color: #35d47b;
+
+  background: rgba(53, 212, 123, 0.06);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .legal-page {
+    padding: 80px 14px 60px;
+  }
+
+
+  .legal-container {
+    padding: 28px 20px;
+
+    border-radius: 18px;
+  }
+
+
+  .legal-back {
+    margin-bottom: 30px;
+  }
+
+
+  .legal-container h1 {
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .legal-container h2 {
+    font-size: 21px;
+  }
+
+
+  .legal-container p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  .sitemap-links {
+    grid-template-columns: 1fr;
+  }
+
+
+  .sitemap-links a {
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+  }
+
+}

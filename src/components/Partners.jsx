@@ -1,9 +1,9 @@
 function Partners() {
   const partners = [
-    "MGT Networks",
-    "VAT BOX Tax Agency",
-    "Kreston GTA",
-    "Cosmic Nutracos",
+    "MGT NETWORKS",
+    "VAT BOX TAX AGENCY",
+    "KRESTON GTA",
+    "COSMIC NUTRACOS",
   ];
 
   return (

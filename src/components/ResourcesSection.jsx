@@ -267,20 +267,6 @@ Technology that fits your business.
             ================================== */}
 
             <div className="resources-buttons">
-
-              <button
-                type="button"
-                className="resource-btn"
-                onClick={downloadGuide}
-              >
-                Download the Guide
-
-                <span>
-                  →
-                </span>
-              </button>
-
-
               <button
                 type="button"
                 className="resource-btn"
